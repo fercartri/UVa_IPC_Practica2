@@ -31,7 +31,7 @@ import javax.swing.Timer;
  */
 public class Vista extends javax.swing.JFrame {
     private Controlador miControlador;
-    no compila
+    
     /**
      * Cronómetro para comprobar el pago con tarjeta de crédito
      */
