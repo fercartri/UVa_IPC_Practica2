@@ -1,4 +1,4 @@
-package uva.ipc.practica2.vistaComprarBillete;
+package uva.ipc.practica2.vistaMisViajes;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

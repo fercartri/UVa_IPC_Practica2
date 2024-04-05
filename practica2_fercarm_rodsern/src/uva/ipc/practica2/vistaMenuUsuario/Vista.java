@@ -1,4 +1,4 @@
-package uva.ipc.practica2.vistaComprarBillete;
+package uva.ipc.practica2.vistaMenuUsuario;
 
 import java.awt.Component;
 import java.awt.Container;
