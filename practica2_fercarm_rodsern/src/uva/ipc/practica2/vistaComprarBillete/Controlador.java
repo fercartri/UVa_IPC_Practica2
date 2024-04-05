@@ -1,11 +1,11 @@
-package uva.ipc.practica1.vista;
+package uva.ipc.practica2.vistaComprarBillete;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
-import uva.ipc.practica1.modelo.Modelo;
+import uva.ipc.practica2.modelo.Modelo;
 
 /**
  * Clase para el controlador de la aplicación

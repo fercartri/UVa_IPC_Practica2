@@ -1,4 +1,4 @@
-package uva.ipc.practica1.modelo;
+package uva.ipc.practica2.modelo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
