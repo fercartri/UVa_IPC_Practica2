@@ -184,7 +184,7 @@ public class Vista extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1500, 750));
         getContentPane().setLayout(new java.awt.GridLayout(1, 3));
 
-        info1.setBackground(new java.awt.Color(233, 255, 255));
+        info1.setBackground(new java.awt.Color(255, 51, 51));
         info1.setPreferredSize(new java.awt.Dimension(500, 750));
 
         titulo1.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
