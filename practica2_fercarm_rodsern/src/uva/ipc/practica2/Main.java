@@ -11,11 +11,20 @@ import uva.ipc.practica2.vistaComprarBillete.Vista;
  * Grupo 45 del L5
  */
 public class Main {
+    private static GestorVistas gestor;
+    private static uva.ipc.practica2.modelo.Modelo modelo;
+    
+    public static GestorVistas getGestorVistas(){
+        return gestor;
+    }
+    
+    public static Modelo getEjemploModelo(){
+        return modelo;
+    }
+    
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Vista().setVisible(true);
-            }
-        });
+        gestor = new GestorVistas();
+        modelo = new Modelo();
+        gestor.mostrarVistaMenuPrincipal();
     }
 }
