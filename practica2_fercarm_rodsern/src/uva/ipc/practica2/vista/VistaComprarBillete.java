@@ -25,12 +25,12 @@ import javax.swing.JList;
 import javax.swing.Timer;
 
 /**
- * Clase para la interfaz gráfica de la aplicación
+ * Clase para la interfaz gráfica de la vista de comprar billete
  * @author Fernando Carmona
  * @author Rodrigo Serna
  */
 public class VistaComprarBillete extends javax.swing.JFrame {
-    private ControladorComprarBilletes miControlador;
+    private ControladorComprarBillete miControlador;
     
     /**
      * Cronómetro para comprobar el pago con tarjeta de crédito
@@ -62,7 +62,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      */
     public VistaComprarBillete() {
         initComponents();
-        miControlador = new Controlador(this);
+        miControlador = new ControladorComprarBillete(this);
         cargarEstaciones();
         setVisible(1,0,0);
         setNoVisible(0,1,1);

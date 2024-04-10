@@ -1,26 +1,26 @@
-package uva.ipc.practica1.vista;
+package uva.ipc.practica2.vista;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
-import uva.ipc.practica1.modelo.Modelo;
+import uva.ipc.practica2.modelo.Modelo;
 
 /**
- * Clase para el controlador de la aplicación
+ * Clase para el controlador de la vista de comprar billete
  * @author Fernando Carmona
  * @author Rodrigo Serna
  */
-public class Controlador {
-    private Vista miVista;
+public class ControladorComprarBillete {
+    private VistaComprarBillete miVista;
     private Modelo miModelo;
     
     /**
      * Inicializar la vista y el modelo a partir de una vista proporcionada
      * @param vista un objeto vista cualquiera
      */
-    public Controlador(Vista vista) {
+    public ControladorComprarBillete(VistaComprarBillete vista) {
         this.miVista = vista;
         this.miModelo = new Modelo();
     }

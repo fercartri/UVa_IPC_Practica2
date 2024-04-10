@@ -1,9 +1,10 @@
 package uva.ipc.practica2;
 
-import uva.ipc.practica2.*;
+import uva.ipc.practica2.modelo.Modelo;
+import uva.ipc.practica2.vista.GestorVistas;
 
 /**
- * Aplicación sencilla para comprar billetes de tren
+ * Aplicación sencilla para la gestión y compra de billetes de tren
  * @author Fernando Carmona
  * @author Rodrigo Serna
  * Grupo 45 del L5

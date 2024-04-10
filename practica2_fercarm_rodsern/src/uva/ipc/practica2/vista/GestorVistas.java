@@ -3,8 +3,8 @@ package uva.ipc.practica2.vista;
 import javax.swing.JFrame;
 
 /**
- * @author Fernando Carmona Palacio
- * @author Rodrigo Serna Albarrán
+ * @author Fernando Carmona
+ * @author Rodrigo Serna
  */
 public class GestorVistas {
 

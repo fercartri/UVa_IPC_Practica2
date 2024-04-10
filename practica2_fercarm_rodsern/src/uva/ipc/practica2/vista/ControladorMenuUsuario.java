@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package uva.ipc.practica2.vista;
 
 /**
- *
- * @author Fernando
+ * Clase para el controlador de la vista de menu usuario
+ * @author Fernando Carmona
+ * @author Rodrigo Serna
  */
 public class ControladorMenuUsuario {
     
