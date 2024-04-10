@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package uva.ipc.practica2.vista;
 
 /**
- *
- * @author Fernando
+ * Clase para la interfaz gráfica de la vista de menu principal
+ * @author Fernando Carmona
+ * @author Rodrigo Serna
  */
 public class VistaMenuPrincipal extends javax.swing.JFrame {
 
