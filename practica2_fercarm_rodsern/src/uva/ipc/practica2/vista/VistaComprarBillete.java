@@ -1,4 +1,4 @@
-package uva.ipc.practica2.vistaRecargarTarjeta;
+package uva.ipc.practica2.vista;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -29,8 +29,8 @@ import javax.swing.Timer;
  * @author Fernando Carmona
  * @author Rodrigo Serna
  */
-public class Vista extends javax.swing.JFrame {
-    private Controlador miControlador;
+public class VistaComprarBillete extends javax.swing.JFrame {
+    private ControladorComprarBilletes miControlador;
     
     /**
      * Cronómetro para comprobar el pago con tarjeta de crédito
@@ -60,7 +60,7 @@ public class Vista extends javax.swing.JFrame {
     /**
      * Crea la vista en el estado inicial (mostrando solo el primer paso)
      */
-    public Vista() {
+    public VistaComprarBillete() {
         initComponents();
         miControlador = new Controlador(this);
         cargarEstaciones();
@@ -319,7 +319,7 @@ public class Vista extends javax.swing.JFrame {
         subtitulo2.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
         subtitulo2.setForeground(new java.awt.Color(94, 145, 136));
         subtitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        subtitulo2.setText("TREN Y NÚMERO DE BILLETES");
+        subtitulo2.setText("tREN");
         subtitulo2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         subtitulo2.setMaximumSize(new java.awt.Dimension(268, 19));
         subtitulo2.setMinimumSize(new java.awt.Dimension(268, 19));

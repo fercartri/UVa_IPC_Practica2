@@ -1,8 +1,6 @@
 package uva.ipc.practica2;
 
-import uva.ipc.practica2.modelo.Modelo;
-import uva.ipc.practica2.vistaComprarBillete.Controlador;
-import uva.ipc.practica2.vistaComprarBillete.Vista;
+import uva.ipc.practica2.*;
 
 /**
  * Aplicación sencilla para comprar billetes de tren
