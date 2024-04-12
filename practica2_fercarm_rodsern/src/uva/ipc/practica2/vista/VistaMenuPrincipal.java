@@ -23,67 +23,90 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btn_comprar = new javax.swing.JButton();
+        btn_tarjeta = new javax.swing.JButton();
+        btn_salir = new javax.swing.JButton();
         lb_bienvenida = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(233, 255, 255));
 
-        lb_bienvenida.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
-        lb_bienvenida.setText("Bienvenido a TCyL");
+        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
 
-        jButton1.setText("Comprar billete");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_comprar.setBackground(new java.awt.Color(94, 145, 136));
+        btn_comprar.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        btn_comprar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_comprar.setText("COMPRAR BILLETE");
+        btn_comprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_comprarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Acceso con tarjeta");
+        btn_tarjeta.setBackground(new java.awt.Color(94, 145, 136));
+        btn_tarjeta.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        btn_tarjeta.setForeground(new java.awt.Color(255, 255, 255));
+        btn_tarjeta.setText("ACCESO CON TARJETA");
 
-        jButton3.setText("Salir");
+        btn_salir.setBackground(new java.awt.Color(94, 145, 136));
+        btn_salir.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        btn_salir.setForeground(new java.awt.Color(255, 255, 255));
+        btn_salir.setText("SALIR");
+
+        lb_bienvenida.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
+        lb_bienvenida.setForeground(new java.awt.Color(94, 145, 136));
+        lb_bienvenida.setText("Bienvenido a TCyL");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(28, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(lb_bienvenida)
+                            .addComponent(btn_salir)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_comprar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_tarjeta)))
+                .addGap(26, 26, 26))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lb_bienvenida)
+                .addGap(75, 75, 75)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_comprar)
+                    .addComponent(btn_tarjeta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(btn_salir)
+                .addGap(30, 30, 30))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(50, 50, 50))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(lb_bienvenida))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(jButton3)))
-                .addContainerGap(30, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lb_bienvenida)
-                .addGap(75, 75, 75)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(85, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_comprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_comprarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_comprarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,9 +145,10 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btn_comprar;
+    private javax.swing.JButton btn_salir;
+    private javax.swing.JButton btn_tarjeta;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_bienvenida;
     // End of variables declaration//GEN-END:variables
 }
