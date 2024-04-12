@@ -49,6 +49,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
             if(miControlador.tarjetaRenfePasada(getPrecio())){
                 lb_error4.setVisible(false);
                 pago_correcto.setVisible(true);
+                miControlador.meterBilleteHistorial();
             }
             else{
                 lb_error4.setText("Saldo insuficiente");
@@ -879,6 +880,10 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      */
     private void btn_sig_p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sig_p2ActionPerformed
         if(!lista_rutas_posibles.isSelectionEmpty()){   //Hay algún elemento seleccionado
+            //TODO coger el dato del billete de la lista de rutas posibles
+            int indice = lista_rutas_posibles.getSelectedIndex();
+            String datosBillete = lista_rutas_posibles.getSelectedValue();
+            miControlador.prepararDatosHistorial(datosBillete);
             radio_btn_credito.setSelected(false);
             radio_btn_renfe.setSelected(false);
             setVisible(0,0,1);
@@ -960,6 +965,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         if(miControlador.comprobarPagoCredito(getPIN())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
             lb_error4.setVisible(false);
             pago_correcto.setVisible(true);
+            miControlador.meterBilleteHistorial();
         }
         else{
             pin.setText("");

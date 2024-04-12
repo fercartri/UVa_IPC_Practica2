@@ -24,6 +24,6 @@ public class Main {
     public static void main(String args[]) {
         gestor = new GestorVistas();
         modelo = new Modelo();
-        gestor.mostrarVistaMenuPrincipal();
+        gestor.mostrarVistaComprarBillete();
     }
 }

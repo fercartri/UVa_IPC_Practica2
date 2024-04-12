@@ -1,7 +1,10 @@
 package uva.ipc.practica2.modelo;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -136,5 +139,33 @@ public class Modelo {
      */
     public double getSaldo(){
         return saldo;
-    }    
+    }
+
+    public void guardarHistorial(String datosBillete){
+        // Ruta del archivo
+        String rutaArchivo = "./file/historial.txt";
+        System.out.println("Voy a crear el archivo");
+        // Verificar si el archivo no existe y crearlo si es necesario
+        File archivo = new File(rutaArchivo);
+        if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Escribir en el archivo
+        try (FileWriter fw = new FileWriter(archivo, true);
+            BufferedWriter bw = new BufferedWriter(fw)) {
+
+            bw.write(datosBillete);
+            bw.newLine(); // Agrega una nueva línea al final
+            bw.close();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }

@@ -15,6 +15,7 @@ import uva.ipc.practica2.modelo.Modelo;
 public class ControladorComprarBillete {
     private VistaComprarBillete miVista;
     private Modelo miModelo;
+    private String datosBillete;
     
     /**
      * Inicializar la vista y el modelo a partir de una vista proporcionada
@@ -202,4 +203,14 @@ public class ControladorComprarBillete {
             return false;
         }
     }
+    
+    
+    public void prepararDatosHistorial(String billete){
+        datosBillete = billete;
+    }
+    
+    public void meterBilleteHistorial(){
+        miModelo.guardarHistorial(datosBillete);
+    }
+            
 }
