@@ -23,114 +23,123 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        panelGlobal = new javax.swing.JPanel();
+        pnlTextos = new javax.swing.JPanel();
+        lbSaldo = new javax.swing.JLabel();
+        lbNumBilletes = new javax.swing.JLabel();
+        pnlBotones = new javax.swing.JPanel();
+        pnlBtnSup = new javax.swing.JPanel();
+        btnRecargar = new javax.swing.JButton();
+        btnMisViajes = new javax.swing.JButton();
+        pnlBtnInf = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel2.setLayout(new java.awt.BorderLayout(15, 15));
+        panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
+        panelGlobal.setLayout(new java.awt.BorderLayout(15, 15));
 
-        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel1.setLayout(new java.awt.GridLayout(2, 1, 0, 15));
+        pnlTextos.setBackground(new java.awt.Color(233, 255, 255));
+        pnlTextos.setLayout(new java.awt.GridLayout(2, 1, 0, 15));
 
-        jLabel1.setBackground(new java.awt.Color(233, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SALDO DE LA TARJETA: X€");
-        jPanel1.add(jLabel1);
+        lbSaldo.setBackground(new java.awt.Color(233, 255, 255));
+        lbSaldo.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        lbSaldo.setForeground(new java.awt.Color(94, 145, 136));
+        lbSaldo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbSaldo.setText("SALDO DE LA TARJETA: X€");
+        pnlTextos.add(lbSaldo);
 
-        jLabel2.setBackground(new java.awt.Color(233, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("NÚMERO DE BILLETES COMPRADOS: XX");
-        jPanel1.add(jLabel2);
+        lbNumBilletes.setBackground(new java.awt.Color(233, 255, 255));
+        lbNumBilletes.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        lbNumBilletes.setForeground(new java.awt.Color(94, 145, 136));
+        lbNumBilletes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbNumBilletes.setText("NÚMERO DE BILLETES COMPRADOS: XX");
+        pnlTextos.add(lbNumBilletes);
 
-        jPanel2.add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        panelGlobal.add(pnlTextos, java.awt.BorderLayout.PAGE_START);
 
-        jPanel3.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel3.setLayout(new java.awt.GridLayout(2, 0));
+        pnlBotones.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBotones.setLayout(new java.awt.GridLayout(2, 0));
 
-        jPanel5.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBtnSup.setBackground(new java.awt.Color(233, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(94, 145, 136));
-        jButton1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("RECARGAR TARJETA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRecargar.setBackground(new java.awt.Color(94, 145, 136));
+        btnRecargar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnRecargar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecargar.setText("RECARGAR TARJETA");
+        btnRecargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRecargarActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton1);
+        pnlBtnSup.add(btnRecargar);
 
-        jButton2.setBackground(new java.awt.Color(94, 145, 136));
-        jButton2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("MIS VIAJES");
-        jPanel5.add(jButton2);
+        btnMisViajes.setBackground(new java.awt.Color(94, 145, 136));
+        btnMisViajes.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnMisViajes.setForeground(new java.awt.Color(255, 255, 255));
+        btnMisViajes.setText("MIS VIAJES");
+        pnlBtnSup.add(btnMisViajes);
 
-        jPanel3.add(jPanel5);
+        pnlBotones.add(pnlBtnSup);
 
-        jPanel6.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBtnInf.setBackground(new java.awt.Color(233, 255, 255));
 
-        jButton3.setBackground(new java.awt.Color(94, 145, 136));
-        jButton3.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("VOLVER");
+        btnVolver.setBackground(new java.awt.Color(94, 145, 136));
+        btnVolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("VOLVER");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlBtnInfLayout = new javax.swing.GroupLayout(pnlBtnInf);
+        pnlBtnInf.setLayout(pnlBtnInfLayout);
+        pnlBtnInfLayout.setHorizontalGroup(
+            pnlBtnInfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 619, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGroup(pnlBtnInfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBtnInfLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jButton3)
+                    .addComponent(btnVolver)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlBtnInfLayout.setVerticalGroup(
+            pnlBtnInfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 73, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGroup(pnlBtnInfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBtnInfLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jButton3)
+                    .addComponent(btnVolver)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jPanel3.add(jPanel6);
+        pnlBotones.add(pnlBtnInf);
 
-        jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
+        panelGlobal.add(pnlBotones, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+            .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+            .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRecargarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,15 +177,15 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JButton btnMisViajes;
+    private javax.swing.JButton btnRecargar;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel lbNumBilletes;
+    private javax.swing.JLabel lbSaldo;
+    private javax.swing.JPanel panelGlobal;
+    private javax.swing.JPanel pnlBotones;
+    private javax.swing.JPanel pnlBtnInf;
+    private javax.swing.JPanel pnlBtnSup;
+    private javax.swing.JPanel pnlTextos;
     // End of variables declaration//GEN-END:variables
 }
