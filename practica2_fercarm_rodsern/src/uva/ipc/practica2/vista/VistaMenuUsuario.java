@@ -28,17 +28,19 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.setLayout(new java.awt.BorderLayout(15, 15));
 
-        jPanel1.setLayout(new java.awt.GridLayout(2, 1));
+        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
+        jPanel1.setLayout(new java.awt.GridLayout(2, 1, 0, 15));
 
         jLabel1.setBackground(new java.awt.Color(233, 255, 255));
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
@@ -57,6 +59,9 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         jPanel2.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         jPanel3.setBackground(new java.awt.Color(233, 255, 255));
+        jPanel3.setLayout(new java.awt.GridLayout(2, 0));
+
+        jPanel5.setBackground(new java.awt.Color(233, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(94, 145, 136));
         jButton1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -67,35 +72,57 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1);
+        jPanel5.add(jButton1);
 
         jButton2.setBackground(new java.awt.Color(94, 145, 136));
         jButton2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("MIS VIAJES");
-        jPanel3.add(jButton2);
+        jPanel5.add(jButton2);
 
-        jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
+        jPanel3.add(jPanel5);
 
-        jPanel4.setBackground(new java.awt.Color(233, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(233, 255, 255));
 
         jButton3.setBackground(new java.awt.Color(94, 145, 136));
         jButton3.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("VOLVER");
-        jPanel4.add(jButton3);
 
-        jPanel2.add(jPanel4, java.awt.BorderLayout.PAGE_END);
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 619, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 73, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel3.add(jPanel6);
+
+        jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
         );
 
         pack();
@@ -149,6 +176,7 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
