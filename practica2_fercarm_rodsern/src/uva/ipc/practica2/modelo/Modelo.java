@@ -147,9 +147,17 @@ public class Modelo {
         miFecha = fecha;
     }
     
+    public void guardarOrigen(String origen){
+        miOrigen = origen;
+    }
+    
+    public void guardarDestino(String destino){
+        miDestino = destino;
+    }
     
     
-    public void guardarHistorial(String datosBillete, String origen, String destino, boolean bicicleta, boolean mascota, boolean silla){
+    
+    public void guardarHistorial(String datosBillete, boolean bicicleta, boolean mascota, boolean silla){
         // Ruta del archivo
         String rutaArchivo = "./file/historial.txt";
         String bicicletaString = "false";
@@ -179,9 +187,9 @@ public class Modelo {
         datosFinal = datosFinal.concat(";");
         datosFinal = datosFinal.concat(id);
         datosFinal = datosFinal.concat(";");
-        datosFinal = datosFinal.concat(origen);
+        datosFinal = datosFinal.concat(miOrigen);
         datosFinal = datosFinal.concat(";");
-        datosFinal = datosFinal.concat(destino);
+        datosFinal = datosFinal.concat(miDestino);
         datosFinal = datosFinal.concat(";");
         datosFinal = datosFinal.concat(tiempo);
         datosFinal = datosFinal.concat(";");

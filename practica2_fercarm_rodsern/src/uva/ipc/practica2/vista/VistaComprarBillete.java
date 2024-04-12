@@ -649,7 +649,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * @param dos un número entero que valdrá 2 para ocultar el paso 2
      * @param tres un número entero que valdrá 3 para ocultar el paso 3
      */
-    private void setNoVisible(int uno, int dos, int tres){        
+    public void setNoVisible(int uno, int dos, int tres){        
         Component[] componentesuno;
         Component[] componentesdos;
         Component[] componentestres;
@@ -683,7 +683,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * @param dos un número entero que valdrá 2 para mostrar el paso 2
      * @param tres un número entero que valdrá 3 para mostrar el paso 3
      */
-    private void setVisible(int uno, int dos, int tres){        
+    public void setVisible(int uno, int dos, int tres){        
         Component[] componentesuno;
         Component[] componentesdos;
         
@@ -715,7 +715,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     /**
      * Resetea todos los elementos al estado inicial
      */
-    private void resetTodo(){
+    public void resetTodo(){
         cargarEstaciones();
         calendario.setDate(null);
         resetErrores();
@@ -732,7 +732,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     /**
      * Almacena en los JCombobox de origen y destino las posibles estaciones 
      */
-    private void cargarEstaciones(){
+    public void cargarEstaciones(){
         ArrayList<String> aux = new ArrayList<>();
         
         elegir_salida.removeAllItems();
@@ -751,7 +751,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * @param destino la estación de destino
      * @param findesemana un booleano que indique si la fecha es un fin de semana
      */
-    private void cargarRutasPosibles(String origen, String destino, boolean findesemana){
+    public void cargarRutasPosibles(String origen, String destino, boolean findesemana){
         ArrayList<String> aux = new ArrayList<>();
         
         lista_rutas_posibles.removeAll();
@@ -767,7 +767,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     /**
      * Elimina la visibilidad de las etiquetas de error
      */
-    private void resetErrores(){
+    public void resetErrores(){
         lb_error1.setVisible(false);
         lb_error2.setVisible(false);
         lb_error3.setVisible(false);

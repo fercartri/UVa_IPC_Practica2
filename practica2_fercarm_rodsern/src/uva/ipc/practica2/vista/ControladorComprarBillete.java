@@ -210,13 +210,13 @@ public class ControladorComprarBillete {
     }
     
     public void meterBilleteHistorial(){
-        miModelo.guardarHistorial(datosBillete,miVista.getOrigen(), miVista.getDestino(), miVista.getBicicleta(),miVista.getMascota(), miVista.getSilla());
+        miModelo.guardarHistorial(datosBillete, miVista.getBicicleta(),miVista.getMascota(), miVista.getSilla());
     }
     
     //PROCESAR EVENTOS------------------------------------------------------------------------------------
     public void procesarBtnSigP1ActionPerformed(){
         if(!compEstaciones(miVista.getOrigen(), miVista.getDestino())){    //Ruta no valida
-            miVista.lb_error1.setVisible(true);
+            lb_error1.setVisible(true);
             lb_error2.setVisible(false);
         }
         else if(!compFecha(miVista.getFecha())){  //Ruta correcta pero fecha no valida
@@ -228,11 +228,11 @@ public class ControladorComprarBillete {
             lb_error2.setVisible(false);
             cargarRutasPosibles(miVista.getOrigen(), miVista.getDestino(), miVista.getFinDeSemana());
             miModelo.guardarFecha(miVista.getFecha());
-            miControlador.guardarOrigen();
-            miControlador.guardarDestino();
+            miModelo.guardarOrigen(miVista.getOrigen());
+            miModelo.guardarDestino(miVista.getDestino());
 
-            setVisible(0,1,0);       
-            setNoVisible(1,0,1);
+            miVista.setVisible(0,1,0);       
+            miVista.setNoVisible(1,0,1);
         }
     }
             
