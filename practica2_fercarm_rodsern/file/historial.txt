@@ -1,2 +1,1 @@
-CYL5 22:25 25min 4.25 €
-CYL2 14:00 65min 14.0 €
+26-04-2024;16:25;CYL5;nombre;nombre;25min;4.25€;false;false;false;

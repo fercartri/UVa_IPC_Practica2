@@ -797,6 +797,19 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         return (String)elegir_destino.getSelectedItem();
     }
     
+    public boolean getBicicleta(){
+        return check_box_bici.isSelected();
+    }
+    
+    public boolean getMascota(){
+        return check_box_mascota.isSelected();
+    }
+     
+    public boolean getSilla(){
+        return check_box_silla.isSelected();
+    }
+    
+    
     /**
      * Consulta la fecha seleccionada por el usuario
      * @return una fecha en formato dd-MM-yyyy
@@ -858,21 +871,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Evento al pulsar el botón de siguiente del primer paso
      */
     private void btn_sig_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sig_p1ActionPerformed
-        if(!miControlador.compEstaciones(getOrigen(), getDestino())){    //Ruta no valida
-            lb_error1.setVisible(true);
-            lb_error2.setVisible(false);
-        }
-        else if(!miControlador.compFecha(getFecha())){  //Ruta correcta pero fecha no valida
-            lb_error1.setVisible(false);
-            lb_error2.setVisible(true);
-        }
-        else{   //Ambas son correctas
-            lb_error1.setVisible(false);
-            lb_error2.setVisible(false);
-            cargarRutasPosibles(getOrigen(), getDestino(), getFinDeSemana());
-                setVisible(0,1,0);       
-                setNoVisible(1,0,1);
-        }
+        miControlador.procesarBtnSigP1ActionPerformed();
     }//GEN-LAST:event_btn_sig_p1ActionPerformed
 
     /**

@@ -16,6 +16,7 @@ public class ControladorComprarBillete {
     private VistaComprarBillete miVista;
     private Modelo miModelo;
     private String datosBillete;
+   
     
     /**
      * Inicializar la vista y el modelo a partir de una vista proporcionada
@@ -204,13 +205,35 @@ public class ControladorComprarBillete {
         }
     }
     
-    
     public void prepararDatosHistorial(String billete){
         datosBillete = billete;
     }
     
     public void meterBilleteHistorial(){
-        miModelo.guardarHistorial(datosBillete);
+        miModelo.guardarHistorial(datosBillete,miVista.getOrigen(), miVista.getDestino(), miVista.getBicicleta(),miVista.getMascota(), miVista.getSilla());
+    }
+    
+    //PROCESAR EVENTOS------------------------------------------------------------------------------------
+    public void procesarBtnSigP1ActionPerformed(){
+        if(!compEstaciones(miVista.getOrigen(), miVista.getDestino())){    //Ruta no valida
+            miVista.lb_error1.setVisible(true);
+            lb_error2.setVisible(false);
+        }
+        else if(!compFecha(miVista.getFecha())){  //Ruta correcta pero fecha no valida
+            lb_error1.setVisible(false);
+            lb_error2.setVisible(true);
+        }
+        else{   //Ambas son correctas
+            lb_error1.setVisible(false);
+            lb_error2.setVisible(false);
+            cargarRutasPosibles(miVista.getOrigen(), miVista.getDestino(), miVista.getFinDeSemana());
+            miModelo.guardarFecha(miVista.getFecha());
+            miControlador.guardarOrigen();
+            miControlador.guardarDestino();
+
+            setVisible(0,1,0);       
+            setNoVisible(1,0,1);
+        }
     }
             
 }

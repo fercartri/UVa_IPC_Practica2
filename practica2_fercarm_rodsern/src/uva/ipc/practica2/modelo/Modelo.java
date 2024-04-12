@@ -19,7 +19,9 @@ public class Modelo {
     private boolean tarjeta_credito_pasada;
     private boolean tarjeta_renfe_pasada;    
     private double saldo;
-    
+    private String miFecha;
+    private String miOrigen;
+    private String miDestino;
     
     public Modelo(){
         cargarEstaciones();
@@ -141,10 +143,58 @@ public class Modelo {
         return saldo;
     }
 
-    public void guardarHistorial(String datosBillete){
+    public void guardarFecha(String fecha){
+        miFecha = fecha;
+    }
+    
+    
+    
+    public void guardarHistorial(String datosBillete, String origen, String destino, boolean bicicleta, boolean mascota, boolean silla){
         // Ruta del archivo
         String rutaArchivo = "./file/historial.txt";
-        System.out.println("Voy a crear el archivo");
+        String bicicletaString = "false";
+        String mascotaString = "false";
+        String sillaString = "false";
+        if(bicicleta){
+            bicicletaString = "true";
+        }
+        if(mascota){
+            mascotaString = "true";
+        }
+        if(silla){
+            sillaString = "true";
+        }
+        //Preparar el formato correcto
+        String datosFinal;
+        String[] token = datosBillete.split(" ");
+        String hora = token[1];
+        String id = token [0];
+        String tiempo = token[2];
+        String precio = token[3];
+        precio = precio.concat(token[4]); //meter el símbolo de euro
+        datosFinal = miFecha;
+        System.out.println(datosFinal);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(hora);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(id);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(origen);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(destino);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(tiempo);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(precio);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(bicicletaString);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(sillaString);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(mascotaString);
+        datosFinal = datosFinal.concat(";");
+        
+        
         // Verificar si el archivo no existe y crearlo si es necesario
         File archivo = new File(rutaArchivo);
         if (!archivo.exists()) {
@@ -159,7 +209,7 @@ public class Modelo {
         try (FileWriter fw = new FileWriter(archivo, true);
             BufferedWriter bw = new BufferedWriter(fw)) {
 
-            bw.write(datosBillete);
+            bw.write(datosFinal);
             bw.newLine(); // Agrega una nueva línea al final
             bw.close();
             
