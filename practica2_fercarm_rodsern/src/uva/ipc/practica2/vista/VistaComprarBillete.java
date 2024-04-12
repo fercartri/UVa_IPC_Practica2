@@ -63,6 +63,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      */
     public VistaComprarBillete() {
         initComponents();
+        lista_rutas_posibles.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION); //Poner en modo de selección único
         miControlador = new ControladorComprarBillete(this);
         cargarEstaciones();
         setVisible(1,0,0);
@@ -92,7 +93,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         btn_intercambio = new javax.swing.JButton();
         calendario = new com.toedter.calendar.JDateChooser();
         lb_error1 = new javax.swing.JLabel();
-        lb_error2 = new javax.swing.JLabel();
         info2 = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
         subtitulo2 = new javax.swing.JLabel();
@@ -246,10 +246,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         lb_error1.setForeground(new java.awt.Color(255, 0, 0));
         lb_error1.setText("Ruta no existente");
 
-        lb_error2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        lb_error2.setForeground(new java.awt.Color(255, 0, 0));
-        lb_error2.setText("Fecha no válida");
-
         javax.swing.GroupLayout info1Layout = new javax.swing.GroupLayout(info1);
         info1.setLayout(info1Layout);
         info1Layout.setHorizontalGroup(
@@ -265,7 +261,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                         .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(subtitulo1)
                             .addComponent(lb_error1)
-                            .addComponent(lb_error2)
                             .addComponent(titulo1)))
                     .addGroup(info1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -277,7 +272,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                                     .addComponent(elegir_salida, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_intercambio)))))
-                .addContainerGap(341, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         info1Layout.setVerticalGroup(
             info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,9 +295,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                 .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(lb_error1)
-                .addGap(18, 18, 18)
-                .addComponent(lb_error2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addComponent(btn_sig_p1)
                 .addGap(75, 75, 75))
         );
@@ -769,7 +762,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      */
     public void resetErrores(){
         lb_error1.setVisible(false);
-        lb_error2.setVisible(false);
         lb_error3.setVisible(false);
         lb_error4.setVisible(false);
     }
@@ -855,15 +847,113 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Consulta el PIN introducido por el usuario
      * @return un array de caracteres cualquiera
      */
-    public char[] getPIN(){
+    public char[] getPin(){
         return pin.getPassword();
     }
     
+    public void setVisibilidadLbError1(boolean valor){
+        lb_error1.setVisible(valor);
+    }
     
+    public void setTextoLbError1(String valor){
+        lb_error1.setText(valor);
+    }
     
+    public void setVisibilidadLbError3(boolean valor){
+        lb_error3.setVisible(valor);
+    }
     
+    public void setVisibilidadLbError4(boolean valor){
+        lb_error4.setVisible(valor);
+    }
     
+    public void setTextoLbError4(String valor){
+        lb_error4.setText(valor);
+    }
     
+    public void setVisibilidadLbTarjetaRenfe(boolean valor){
+        lb_tarjetarenfe.setVisible(valor);
+    }
+    
+    public void setVisibilidadLbMantenerRenfe(boolean valor){
+        lb_mantener_renfe.setVisible(valor);
+    }
+    
+    public void setVisibilidadLbTarjetaCredito(boolean valor){
+        lb_tarjetacredito.setVisible(valor);
+    }
+    
+    public void setVisibilidadLbMantenerCredito(boolean valor){
+        lb_mantener_credito.setVisible(valor);
+    }
+    
+    public void setVisibilidadLbPin(boolean valor){
+        lb_pin.setVisible(valor);
+    }
+    
+    public void setVisibilidadPin(boolean valor){
+        pin.setVisible(valor);
+    }
+    
+    public void setVisibilidadButtonPin(boolean valor){
+        btn_pin.setVisible(valor);
+    }
+    
+    public boolean isListaRutasPosiblesSelected(){
+        return !(lista_rutas_posibles.isSelectionEmpty());
+    }
+    
+    public int getListaRutasPosiblesIndex(){
+        return lista_rutas_posibles.getSelectedIndex();
+    }
+    
+    public String getListaRutasPosiblesString(){
+        return lista_rutas_posibles.getSelectedValue();
+    }
+    
+    public void setRadioButtonRenfe(boolean valor){
+        radio_btn_renfe.setSelected(valor);
+    }
+    
+    public void setRadioButtonCredito(boolean valor){
+        radio_btn_credito.setSelected(valor);
+    }
+    
+    public boolean getRadioButtonCredito(){
+        return radio_btn_credito.isSelected();
+    }
+    
+    public boolean getRadioButtonRenfe(){
+        return radio_btn_renfe.isSelected();
+    }
+    
+    public int getIndexOrigen(){
+        return elegir_salida.getSelectedIndex();
+    }
+    
+    public int getIndexDestino(){
+        return elegir_destino.getSelectedIndex();
+    }
+    
+    public void setIndexDestino(int valor){
+        elegir_destino.setSelectedIndex(valor);
+    }
+    
+    public void setIndexOrigen(int valor){
+        elegir_salida.setSelectedIndex(valor);
+    }
+    
+    public void setVisibilidadPagoCorrecto(boolean valor){
+        pago_correcto.setVisible(valor);
+    }
+    
+    public void setPinText(String valor){
+        pin.setText(valor);
+    }
+    
+    public void disponerPagoCorrecto(){
+        pago_correcto.dispose();
+    }
     
     //EVENTOS***************************************************************************************************************************
     
@@ -878,99 +968,49 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Evento al pulsar el botón de siguiente del segundo paso
      */
     private void btn_sig_p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sig_p2ActionPerformed
-        if(!lista_rutas_posibles.isSelectionEmpty()){   //Hay algún elemento seleccionado
-            //TODO coger el dato del billete de la lista de rutas posibles
-            int indice = lista_rutas_posibles.getSelectedIndex();
-            String datosBillete = lista_rutas_posibles.getSelectedValue();
-            miControlador.prepararDatosHistorial(datosBillete);
-            radio_btn_credito.setSelected(false);
-            radio_btn_renfe.setSelected(false);
-            setVisible(0,0,1);
-            setNoVisible(1,1,0);
-        }
-        else{   //No hay elementos seleccionados
-            lb_error3.setVisible(true);
-        }
+        miControlador.procesarBtnSigP2ActionPerformed();
     }//GEN-LAST:event_btn_sig_p2ActionPerformed
     
     /**
      * Evento al pulsar el botón de anterior del segundo paso
      */
     private void btn_ant_p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ant_p2ActionPerformed
-        setVisible(1,0,0);
-        setNoVisible(0,1,1);
+        miControlador.procesarBtnAntP2ActionPerformed();
     }//GEN-LAST:event_btn_ant_p2ActionPerformed
 
     /**
      * Evento al seleccionar la opción de pago con tarjeta de usuario TCyL
      */
     private void radio_btn_renfeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_btn_renfeActionPerformed
-        miControlador.resetTodo();    
-        lb_error4.setVisible(false);
-        if(radio_btn_credito.isSelected()){
-            radio_btn_credito.setSelected(false);
-        }
-        radio_btn_renfe.setSelected(true);
-        lb_tarjetarenfe.setVisible(true);
-        lb_mantener_renfe.setVisible(true);
-        lb_tarjetacredito.setVisible(false);
-        lb_mantener_credito.setVisible(false);
-        lb_pin.setVisible(false);
-        pin.setVisible(false);
-        btn_pin.setVisible(false);
+        miControlador.procesarRadioBtnRenfeActionPerformed();
     }//GEN-LAST:event_radio_btn_renfeActionPerformed
 
     /**
      * Evento al seleccionar la opción de pago con tarjeta de crédito
      */
     private void radio_btn_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_btn_creditoActionPerformed
-        miControlador.resetTodo();
-        lb_error4.setVisible(false);
-        if(radio_btn_renfe.isSelected()){
-            radio_btn_renfe.setSelected(false);
-        }
-        radio_btn_credito.setSelected(true);
-        lb_tarjetacredito.setVisible(true);
-        lb_mantener_credito.setVisible(true);
-        lb_pin.setVisible(true);
-        pin.setVisible(true);
-        btn_pin.setVisible(true);
-        lb_tarjetarenfe.setVisible(false);
-        lb_mantener_renfe.setVisible(false);
+        miControlador.procesarRadioBtnCreditoActionPerformed();
     }//GEN-LAST:event_radio_btn_creditoActionPerformed
 
     /**
      * Evento al pulsar el botón de anterior del tercer paso
      */
     private void btn_ant_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ant_p3ActionPerformed
-        setVisible(0,1,0);
-        setNoVisible(1,0,1);
+        miControlador.procesarBtnAntP3ActionPerformed();
     }//GEN-LAST:event_btn_ant_p3ActionPerformed
 
     /**
      * Evento al pulsar el botón de intercambio de estaciones
      */
     private void btn_intercambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_intercambioActionPerformed
-        int origen = elegir_salida.getSelectedIndex();
-        int destino = elegir_destino.getSelectedIndex();
-        elegir_salida.setSelectedIndex(destino);
-        elegir_destino.setSelectedIndex(origen);
+        miControlador.procesarBtnIntercambioActionPerformed();
     }//GEN-LAST:event_btn_intercambioActionPerformed
 
     /**
      * Evento al pulsar el botón de aceptar el PIN
      */
     private void btn_pinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pinActionPerformed
-        if(miControlador.comprobarPagoCredito(getPIN())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
-            lb_error4.setVisible(false);
-            pago_correcto.setVisible(true);
-            miControlador.meterBilleteHistorial();
-        }
-        else{
-            pin.setText("");
-            lb_error4.setText("Error al procesar el pago");
-            lb_error4.setVisible(true);
-        }
+       miControlador.procesarBtnPinActionPerformed();
     }//GEN-LAST:event_btn_pinActionPerformed
     
     /**
@@ -1005,17 +1045,14 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Evento al pulsar el botón de comprar nuevo billete
      */
     private void btn_billeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_billeteActionPerformed
-        resetTodo();
-        setVisible(1,0,0);
-        setNoVisible(0,1,1);
-        pago_correcto.dispose();
+        miControlador.procesarBtnBilleteActionPerformed();
     }//GEN-LAST:event_btn_billeteActionPerformed
 
     /**
      * Evento al pulsar el botón de salir
      */
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        System.exit(0);
+        miControlador.procesarBtnSalirActionPerformed();
     }//GEN-LAST:event_btn_salirActionPerformed
 
     
@@ -1046,7 +1083,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     private javax.swing.JLabel lb_bicicleta;
     private javax.swing.JLabel lb_equipaje;
     private javax.swing.JLabel lb_error1;
-    private javax.swing.JLabel lb_error2;
     private javax.swing.JLabel lb_error3;
     private javax.swing.JLabel lb_error4;
     private javax.swing.JLabel lb_mantener_credito;

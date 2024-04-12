@@ -24,7 +24,7 @@ public class ControladorComprarBillete {
      */
     public ControladorComprarBillete(VistaComprarBillete vista) {
         this.miVista = vista;
-        this.miModelo = new Modelo();
+        this.miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
     /**
@@ -215,18 +215,18 @@ public class ControladorComprarBillete {
     
     //PROCESAR EVENTOS------------------------------------------------------------------------------------
     public void procesarBtnSigP1ActionPerformed(){
-        if(!compEstaciones(miVista.getOrigen(), miVista.getDestino())){    //Ruta no valida
-            lb_error1.setVisible(true);
-            lb_error2.setVisible(false);
+        if(!compEstaciones(miVista.getOrigen(), miVista.getDestino())){    //Ruta no valida\\
+            miVista.setTextoLbError1("Ruta no existente");
+            miVista.setVisibilidadLbError1(true);
         }
         else if(!compFecha(miVista.getFecha())){  //Ruta correcta pero fecha no valida
-            lb_error1.setVisible(false);
-            lb_error2.setVisible(true);
+            miVista.setTextoLbError1("Fecha no válida");
+            miVista.setVisibilidadLbError1(true);
+            
         }
         else{   //Ambas son correctas
-            lb_error1.setVisible(false);
-            lb_error2.setVisible(false);
-            cargarRutasPosibles(miVista.getOrigen(), miVista.getDestino(), miVista.getFinDeSemana());
+            miVista.setVisibilidadLbError1(false);
+            miVista. cargarRutasPosibles(miVista.getOrigen(), miVista.getDestino(), miVista.getFinDeSemana());
             miModelo.guardarFecha(miVista.getFecha());
             miModelo.guardarOrigen(miVista.getOrigen());
             miModelo.guardarDestino(miVista.getDestino());
@@ -235,5 +235,95 @@ public class ControladorComprarBillete {
             miVista.setNoVisible(1,0,1);
         }
     }
+    
+    public void procesarBtnSigP2ActionPerformed(){
+        if(miVista.isListaRutasPosiblesSelected()){   //Hay algún elemento seleccionado
+            //TODO coger el dato del billete de la lista de rutas posibles
+            int indice = miVista.getListaRutasPosiblesIndex();
+            String datosBillete = miVista.getListaRutasPosiblesString();
+            prepararDatosHistorial(datosBillete);
+            miVista.setRadioButtonCredito(false);
+            miVista.setRadioButtonRenfe(false);
+            miVista.setVisible(0,0,1);
+            miVista.setNoVisible(1,1,0);
+        }
+        else{   //No hay elementos seleccionados
+             miVista.setVisibilidadLbError3(true);
+        }    
+    }
+    
+    public void procesarBtnAntP2ActionPerformed(){
+        miVista.setVisible(1,0,0);
+        miVista.setNoVisible(0,1,1);
+    }
             
+    
+    public void procesarRadioBtnRenfeActionPerformed(){
+        resetTodo();    
+        miVista.setVisibilidadLbError4(false);
+        if(miVista.getRadioButtonCredito()){
+            miVista.setRadioButtonCredito(false);
+        }
+        miVista.setRadioButtonRenfe(true);
+        miVista.setVisibilidadLbTarjetaRenfe(true);
+        miVista.setVisibilidadLbMantenerRenfe(true);
+        miVista.setVisibilidadLbTarjetaCredito(false);
+        miVista.setVisibilidadLbMantenerCredito(false);
+        miVista.setVisibilidadLbPin(false);
+        miVista.setVisibilidadPin(false);
+        miVista.setVisibilidadButtonPin(false);
+    }
+    
+    public void procesarRadioBtnCreditoActionPerformed(){
+        resetTodo();
+        miVista.setVisibilidadLbError4(false);
+        if(miVista.getRadioButtonRenfe()){
+              miVista.setRadioButtonRenfe(false);
+        }
+        miVista.setRadioButtonCredito(true);
+        miVista.setVisibilidadLbTarjetaRenfe(false);
+        miVista.setVisibilidadLbMantenerRenfe(false);
+        miVista.setVisibilidadLbTarjetaCredito(true);
+        miVista.setVisibilidadLbMantenerCredito(true);
+        miVista.setVisibilidadLbPin(true);
+        miVista.setVisibilidadPin(true);
+        miVista.setVisibilidadButtonPin(true);
+    }
+    
+    public void procesarBtnAntP3ActionPerformed(){
+        miVista.setVisible(0,1,0);
+        miVista.setNoVisible(1,0,1);
+    }
+    
+    public void procesarBtnIntercambioActionPerformed(){
+        int origen = miVista.getIndexOrigen();
+        int destino = miVista.getIndexDestino();
+        miVista.setIndexDestino(origen);
+        miVista.setIndexOrigen(destino);
+    }
+    
+    public void procesarBtnPinActionPerformed(){
+         if(comprobarPagoCredito(miVista.getPin())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
+            miVista.setVisibilidadLbError4(false);
+            miVista.setVisibilidadPagoCorrecto(true);
+            meterBilleteHistorial();
+        }
+        else{
+            miVista.setPinText("");
+            miVista.setTextoLbError4("Error al procesar el pago");
+            miVista.setVisibilidadLbError4(true);
+        }
+    }
+    
+    public void procesarBtnBilleteActionPerformed(){
+        miVista.resetTodo();
+        miVista.setVisible(1,0,0);
+        miVista.setNoVisible(0,1,1);
+        miVista.disponerPagoCorrecto();
+    }
+    
+    public void procesarBtnSalirActionPerformed(){
+        System.exit(0);
+    }
+    
 }

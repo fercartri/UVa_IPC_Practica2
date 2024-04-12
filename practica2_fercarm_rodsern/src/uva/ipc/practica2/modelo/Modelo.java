@@ -181,7 +181,6 @@ public class Modelo {
         String precio = token[3];
         precio = precio.concat(token[4]); //meter el símbolo de euro
         datosFinal = miFecha;
-        System.out.println(datosFinal);
         datosFinal = datosFinal.concat(";");
         datosFinal = datosFinal.concat(hora);
         datosFinal = datosFinal.concat(";");

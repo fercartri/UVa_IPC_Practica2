@@ -1,1 +1,2 @@
 26-04-2024;16:25;CYL5;nombre;nombre;25min;4.25€;false;false;false;
+26-04-2024;22:50;CYL6;León - León;Astorga - León;25min;4.7€;false;false;false;
