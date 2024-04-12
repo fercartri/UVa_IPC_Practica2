@@ -23,103 +23,103 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        pnlGlobal = new javax.swing.JPanel();
+        pnlCentral = new javax.swing.JPanel();
+        lbRecargar = new javax.swing.JLabel();
+        pnlBilletes = new javax.swing.JPanel();
+        btnBillete10 = new javax.swing.JToggleButton();
+        btnBillete20 = new javax.swing.JToggleButton();
+        btnBillete50 = new javax.swing.JToggleButton();
+        pnlCabecera = new javax.swing.JPanel();
+        lbSaldo = new javax.swing.JLabel();
+        pnlPie = new javax.swing.JPanel();
+        btnRecargar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(233, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel1.setLayout(new java.awt.BorderLayout(15, 15));
+        pnlGlobal.setBackground(new java.awt.Color(233, 255, 255));
+        pnlGlobal.setLayout(new java.awt.BorderLayout(15, 15));
 
-        jPanel2.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel2.setLayout(new java.awt.GridLayout(2, 1));
+        pnlCentral.setBackground(new java.awt.Color(233, 255, 255));
+        pnlCentral.setLayout(new java.awt.GridLayout(2, 1));
 
-        jLabel1.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel1.setText("RECARGAR:");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        jPanel2.add(jLabel1);
+        lbRecargar.setForeground(new java.awt.Color(94, 145, 136));
+        lbRecargar.setText("RECARGAR:");
+        lbRecargar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        pnlCentral.add(lbRecargar);
 
-        jPanel7.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBilletes.setBackground(new java.awt.Color(233, 255, 255));
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete10.png"))); // NOI18N
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBillete10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete10.png"))); // NOI18N
+        btnBillete10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnBillete10ActionPerformed(evt);
             }
         });
-        jPanel7.add(jToggleButton1);
+        pnlBilletes.add(btnBillete10);
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete20.jpg"))); // NOI18N
-        jPanel7.add(jToggleButton2);
+        btnBillete20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete20.jpg"))); // NOI18N
+        pnlBilletes.add(btnBillete20);
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete50.png"))); // NOI18N
-        jPanel7.add(jToggleButton3);
+        btnBillete50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete50.png"))); // NOI18N
+        pnlBilletes.add(btnBillete50);
 
-        jPanel2.add(jPanel7);
+        pnlCentral.add(pnlBilletes);
 
-        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
+        pnlGlobal.add(pnlCentral, java.awt.BorderLayout.CENTER);
 
-        jPanel3.setBackground(new java.awt.Color(233, 255, 255));
+        pnlCabecera.setBackground(new java.awt.Color(233, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel2.setText("SALDO DE LA TARJETA: X€");
+        lbSaldo.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        lbSaldo.setForeground(new java.awt.Color(94, 145, 136));
+        lbSaldo.setText("SALDO DE LA TARJETA: X€");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlCabeceraLayout = new javax.swing.GroupLayout(pnlCabecera);
+        pnlCabecera.setLayout(pnlCabeceraLayout);
+        pnlCabeceraLayout.setHorizontalGroup(
+            pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 856, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlCabeceraLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
+                    .addComponent(lbSaldo)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlCabeceraLayout.setVerticalGroup(
+            pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlCabeceraLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
+                    .addComponent(lbSaldo)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+        pnlGlobal.add(pnlCabecera, java.awt.BorderLayout.PAGE_START);
 
-        jPanel4.setBackground(new java.awt.Color(233, 255, 255));
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 100, 5));
+        pnlPie.setBackground(new java.awt.Color(233, 255, 255));
+        pnlPie.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 100, 5));
 
-        jButton1.setBackground(new java.awt.Color(94, 145, 136));
-        jButton1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("RECARGAR ESTA CANTIDAD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRecargar.setBackground(new java.awt.Color(94, 145, 136));
+        btnRecargar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnRecargar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecargar.setText("RECARGAR ESTA CANTIDAD");
+        btnRecargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRecargarActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1);
+        pnlPie.add(btnRecargar);
 
-        jButton2.setBackground(new java.awt.Color(94, 145, 136));
-        jButton2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("VOLVER");
-        jPanel4.add(jButton2);
+        btnVolver.setBackground(new java.awt.Color(94, 145, 136));
+        btnVolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("VOLVER");
+        pnlPie.add(btnVolver);
 
-        jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_END);
+        pnlGlobal.add(pnlPie, java.awt.BorderLayout.PAGE_END);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,25 +127,25 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 856, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 368, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void btnBillete10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillete10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_btnBillete10ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRecargarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,17 +183,17 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton btnBillete10;
+    private javax.swing.JToggleButton btnBillete20;
+    private javax.swing.JToggleButton btnBillete50;
+    private javax.swing.JButton btnRecargar;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel lbRecargar;
+    private javax.swing.JLabel lbSaldo;
+    private javax.swing.JPanel pnlBilletes;
+    private javax.swing.JPanel pnlCabecera;
+    private javax.swing.JPanel pnlCentral;
+    private javax.swing.JPanel pnlGlobal;
+    private javax.swing.JPanel pnlPie;
     // End of variables declaration//GEN-END:variables
 }
