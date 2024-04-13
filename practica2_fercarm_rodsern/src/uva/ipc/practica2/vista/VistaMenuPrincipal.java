@@ -10,11 +10,11 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
     private ControladorMenuPrincipal miControlador;
     
     /**
-     * Creates new form Vista
+     * Creates new form VistaMenuPrincipal
      */
     public VistaMenuPrincipal() {
         initComponents();
-         miControlador = new ControladorMenuPrincipal(this);
+        miControlador = new ControladorMenuPrincipal(this);
     }
 
     /**
@@ -134,6 +134,7 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
@@ -147,9 +148,9 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         miControlador.procesarSalir();
     }//GEN-LAST:event_btnSalirActionPerformed
-       
-   
- 
+
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnComprar;

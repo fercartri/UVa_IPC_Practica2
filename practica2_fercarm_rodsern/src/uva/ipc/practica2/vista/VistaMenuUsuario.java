@@ -7,11 +7,14 @@ package uva.ipc.practica2.vista;
  */
 public class VistaMenuUsuario extends javax.swing.JFrame {
 
+    private ControladorMenuUsuario miControlador;
+    
     /**
      * Creates new form VistaMenuUsuario
      */
     public VistaMenuUsuario() {
         initComponents();
+        miControlador = new ControladorMenuUsuario(this);
     }
 
     /**
@@ -62,6 +65,7 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         pnlBotones.setLayout(new java.awt.GridLayout(2, 0));
 
         pnlBtnSup.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBtnSup.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5));
 
         btnRecargar.setBackground(new java.awt.Color(94, 145, 136));
         btnRecargar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -78,6 +82,11 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         btnMisViajes.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnMisViajes.setForeground(new java.awt.Color(255, 255, 255));
         btnMisViajes.setText("MIS VIAJES");
+        btnMisViajes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMisViajesActionPerformed(evt);
+            }
+        });
         pnlBtnSup.add(btnMisViajes);
 
         pnlBotones.add(pnlBtnSup);
@@ -131,51 +140,24 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
-        // TODO add your handling code here:
+        miControlador.procesarRecargar();
     }//GEN-LAST:event_btnRecargarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
+        miControlador.procesarVolver();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaMenuUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaMenuUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaMenuUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaMenuUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnMisViajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMisViajesActionPerformed
+        miControlador.procesarMisViajes();
+    }//GEN-LAST:event_btnMisViajesActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaMenuUsuario().setVisible(true);
-            }
-        });
-    }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMisViajes;
     private javax.swing.JButton btnRecargar;

@@ -18,7 +18,7 @@ public class ControladorMenuPrincipal {
         this.miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
-    
+    //Eventos-----------------------------------------------------------------------------
     public void procesarComprar(){
         Main.getGestorVistas().mostrarVistaComprarBillete();
     }
