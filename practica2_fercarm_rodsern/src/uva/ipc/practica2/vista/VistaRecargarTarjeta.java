@@ -25,6 +25,22 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dialogPago = new javax.swing.JDialog();
+        panelGlobal = new javax.swing.JPanel();
+        pnlDialogCentral = new javax.swing.JPanel();
+        pnlTarjeta = new javax.swing.JPanel();
+        pnlLbTarjeta = new javax.swing.JPanel();
+        tarjetaCredito = new javax.swing.JLabel();
+        pnlLbInfo = new javax.swing.JPanel();
+        lbInfoPasarTarjeta = new javax.swing.JLabel();
+        pnlPIN = new javax.swing.JPanel();
+        lbPIN = new javax.swing.JLabel();
+        PIN = new javax.swing.JTextField();
+        btnAceptarPin = new javax.swing.JButton();
+        pnlDialogCabecera = new javax.swing.JPanel();
+        lbTitulo = new javax.swing.JLabel();
+        pnlDialogPie = new javax.swing.JPanel();
+        btnCancelar = new javax.swing.JButton();
         pnlGlobal = new javax.swing.JPanel();
         pnlCentral = new javax.swing.JPanel();
         pnlBilletes = new javax.swing.JPanel();
@@ -37,7 +53,132 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         btnRecargar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
+        dialogPago.setTitle("Procesar Recargo");
+        dialogPago.setAlwaysOnTop(true);
+        dialogPago.setLocation(new java.awt.Point(200, 200));
+        dialogPago.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+
+        panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
+        panelGlobal.setLayout(new java.awt.BorderLayout());
+
+        pnlDialogCentral.setBackground(new java.awt.Color(233, 255, 255));
+        pnlDialogCentral.setLayout(new java.awt.GridLayout(2, 0));
+
+        pnlTarjeta.setBackground(new java.awt.Color(233, 255, 255));
+        pnlTarjeta.setLayout(new java.awt.GridLayout(2, 1));
+
+        pnlLbTarjeta.setBackground(new java.awt.Color(233, 255, 255));
+
+        tarjetaCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_credito.jpg"))); // NOI18N
+        pnlLbTarjeta.add(tarjetaCredito);
+
+        pnlTarjeta.add(pnlLbTarjeta);
+
+        pnlLbInfo.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbInfoPasarTarjeta.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbInfoPasarTarjeta.setForeground(new java.awt.Color(94, 145, 136));
+        lbInfoPasarTarjeta.setText("Mantenga la tarjeta AQUÍ 2 segundos");
+        pnlLbInfo.add(lbInfoPasarTarjeta);
+
+        pnlTarjeta.add(pnlLbInfo);
+
+        pnlDialogCentral.add(pnlTarjeta);
+
+        pnlPIN.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbPIN.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbPIN.setForeground(new java.awt.Color(94, 145, 136));
+        lbPIN.setText("PIN:");
+        pnlPIN.add(lbPIN);
+        pnlPIN.add(PIN);
+
+        btnAceptarPin.setBackground(new java.awt.Color(94, 145, 136));
+        btnAceptarPin.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnAceptarPin.setForeground(new java.awt.Color(255, 255, 255));
+        btnAceptarPin.setText("ACEPTAR");
+        pnlPIN.add(btnAceptarPin);
+
+        pnlDialogCentral.add(pnlPIN);
+
+        panelGlobal.add(pnlDialogCentral, java.awt.BorderLayout.CENTER);
+
+        pnlDialogCabecera.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbTitulo.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        lbTitulo.setForeground(new java.awt.Color(94, 145, 136));
+        lbTitulo.setText("PROCESAR EL RECARGO");
+
+        javax.swing.GroupLayout pnlDialogCabeceraLayout = new javax.swing.GroupLayout(pnlDialogCabecera);
+        pnlDialogCabecera.setLayout(pnlDialogCabeceraLayout);
+        pnlDialogCabeceraLayout.setHorizontalGroup(
+            pnlDialogCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 748, Short.MAX_VALUE)
+            .addGroup(pnlDialogCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDialogCabeceraLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbTitulo)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        pnlDialogCabeceraLayout.setVerticalGroup(
+            pnlDialogCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(pnlDialogCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDialogCabeceraLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbTitulo)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        panelGlobal.add(pnlDialogCabecera, java.awt.BorderLayout.PAGE_START);
+
+        pnlDialogPie.setBackground(new java.awt.Color(233, 255, 255));
+
+        btnCancelar.setBackground(new java.awt.Color(94, 145, 136));
+        btnCancelar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setText("CANCELAR");
+
+        javax.swing.GroupLayout pnlDialogPieLayout = new javax.swing.GroupLayout(pnlDialogPie);
+        pnlDialogPie.setLayout(pnlDialogPieLayout);
+        pnlDialogPieLayout.setHorizontalGroup(
+            pnlDialogPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 748, Short.MAX_VALUE)
+            .addGroup(pnlDialogPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDialogPieLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnCancelar)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        pnlDialogPieLayout.setVerticalGroup(
+            pnlDialogPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(pnlDialogPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlDialogPieLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnCancelar)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        panelGlobal.add(pnlDialogPie, java.awt.BorderLayout.PAGE_END);
+
+        javax.swing.GroupLayout dialogPagoLayout = new javax.swing.GroupLayout(dialogPago.getContentPane());
+        dialogPago.getContentPane().setLayout(dialogPagoLayout);
+        dialogPagoLayout.setHorizontalGroup(
+            dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 748, Short.MAX_VALUE)
+            .addGroup(dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        dialogPagoLayout.setVerticalGroup(
+            dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 651, Short.MAX_VALUE)
+            .addGroup(dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tren Castilla y León");
         setBackground(new java.awt.Color(233, 255, 255));
 
         pnlGlobal.setBackground(new java.awt.Color(233, 255, 255));
@@ -186,17 +327,36 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         }
     }
 
+
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField PIN;
+    private javax.swing.JButton btnAceptarPin;
     private javax.swing.JToggleButton btnBillete10;
     private javax.swing.JToggleButton btnBillete20;
     private javax.swing.JToggleButton btnBillete50;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRecargar;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JDialog dialogPago;
+    private javax.swing.JLabel lbInfoPasarTarjeta;
+    private javax.swing.JLabel lbPIN;
     private javax.swing.JLabel lbSaldo;
+    private javax.swing.JLabel lbTitulo;
+    private javax.swing.JPanel panelGlobal;
     private javax.swing.JPanel pnlBilletes;
     private javax.swing.JPanel pnlCabecera;
     private javax.swing.JPanel pnlCentral;
+    private javax.swing.JPanel pnlDialogCabecera;
+    private javax.swing.JPanel pnlDialogCentral;
+    private javax.swing.JPanel pnlDialogPie;
     private javax.swing.JPanel pnlGlobal;
+    private javax.swing.JPanel pnlLbInfo;
+    private javax.swing.JPanel pnlLbTarjeta;
+    private javax.swing.JPanel pnlPIN;
     private javax.swing.JPanel pnlPie;
+    private javax.swing.JPanel pnlTarjeta;
+    private javax.swing.JLabel tarjetaCredito;
     // End of variables declaration//GEN-END:variables
 }

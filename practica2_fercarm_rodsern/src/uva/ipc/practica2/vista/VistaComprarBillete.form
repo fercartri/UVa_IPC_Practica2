@@ -139,7 +139,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btn_sig_p1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSig1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -148,7 +148,7 @@
                           <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="2" attributes="0">
                               <Component id="subtitulo1" alignment="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="lb_error1" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbError1" alignment="2" min="-2" max="-2" attributes="0"/>
                               <Component id="titulo1" alignment="2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -158,11 +158,11 @@
                               <Component id="calendario" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="elegir_destino" max="32767" attributes="0"/>
-                                      <Component id="elegir_salida" max="32767" attributes="0"/>
+                                      <Component id="elegirDestino" max="32767" attributes="0"/>
+                                      <Component id="elegirOrigen" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btn_intercambio" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnIntercambio" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="btnCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -182,23 +182,23 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="elegir_salida" min="-2" max="-2" attributes="0"/>
+                          <Component id="elegirOrigen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="elegir_destino" min="-2" max="-2" attributes="0"/>
+                          <Component id="elegirDestino" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btn_intercambio" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnIntercambio" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="calendario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="lb_error1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbError1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="230" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_sig_p1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSig1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
@@ -237,7 +237,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_sig_p1">
+        <Component class="javax.swing.JButton" name="btnSig1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="88" green="91" red="5e" type="rgb"/>
@@ -255,10 +255,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_sig_p1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSig1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="elegir_salida">
+        <Component class="javax.swing.JComboBox" name="elegirOrigen">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f8" green="f6" red="cf" type="rgb"/>
@@ -282,7 +282,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="elegir_destino">
+        <Component class="javax.swing.JComboBox" name="elegirDestino">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f8" green="f6" red="cf" type="rgb"/>
@@ -305,7 +305,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_intercambio">
+        <Component class="javax.swing.JButton" name="btnIntercambio">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/flechas.png"/>
@@ -313,7 +313,7 @@
             <Property name="toolTipText" type="java.lang.String" value="Intercambiar origen-destino"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_intercambioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIntercambioActionPerformed"/>
           </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="calendario">
@@ -328,7 +328,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_error1">
+        <Component class="javax.swing.JLabel" name="lbError1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="0"/>
@@ -377,20 +377,20 @@
                           <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="lb_mascota" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbMascota" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="check_box_silla" min="-2" max="-2" attributes="0"/>
-                                      <Component id="check_box_mascota" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkBoxSilla" min="-2" max="-2" attributes="0"/>
+                                      <Component id="checkBoxMascota" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lb_bicicleta" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbBicicleta" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="check_box_bici" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ckeckBoxBici" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="lb_silla" min="-2" max="-2" attributes="0"/>
-                              <Component id="lb_equipaje" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbSilla" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbEquipaje" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -402,7 +402,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                          <Component id="lb_error3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbError2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -413,9 +413,9 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="btn_ant_p2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAnt2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btn_sig_p2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSig2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -430,28 +430,28 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="199" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="lb_equipaje" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbEquipaje" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="check_box_bici" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_bicicleta" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="ckeckBoxBici" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbBicicleta" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="check_box_silla" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_silla" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkBoxSilla" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbSilla" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="check_box_mascota" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_mascota" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkBoxMascota" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbMascota" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="lb_error3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbError2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_sig_p2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_ant_p2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSig2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAnt2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
               </Group>
@@ -495,7 +495,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_sig_p2">
+        <Component class="javax.swing.JButton" name="btnSig2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="88" green="91" red="5e" type="rgb"/>
@@ -513,10 +513,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_sig_p2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSig2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_ant_p2">
+        <Component class="javax.swing.JButton" name="btnAnt2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="88" green="91" red="5e" type="rgb"/>
@@ -534,10 +534,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ant_p2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnt2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="check_box_bici">
+        <Component class="javax.swing.JCheckBox" name="ckeckBoxBici">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="1"/>
@@ -558,7 +558,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="check_box_silla">
+        <Component class="javax.swing.JCheckBox" name="checkBoxSilla">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="1"/>
@@ -573,7 +573,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="check_box_mascota">
+        <Component class="javax.swing.JCheckBox" name="checkBoxMascota">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="1"/>
@@ -588,7 +588,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_equipaje">
+        <Component class="javax.swing.JLabel" name="lbEquipaje">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="18" style="1"/>
@@ -599,7 +599,7 @@
             <Property name="text" type="java.lang.String" value="Equipaje especial:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_bicicleta">
+        <Component class="javax.swing.JLabel" name="lbBicicleta">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/bicicleta.png"/>
@@ -607,14 +607,14 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_mascota">
+        <Component class="javax.swing.JLabel" name="lbMascota">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/mascota.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_silla">
+        <Component class="javax.swing.JLabel" name="lbSilla">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/silla.png"/>
@@ -647,7 +647,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lb_error3">
+        <Component class="javax.swing.JLabel" name="lbError2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="0"/>
@@ -676,13 +676,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="lb_tarjetacredito" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_mantener_credito" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTarjetaCredito" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbInfoTarjeta1" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="lb_mantener_renfe" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_tarjetarenfe" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbInfoTarjeta2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTarjetaRenfe" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
@@ -697,26 +697,26 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="lb_pin" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbPIN" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="pin" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="btn_pin" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPIN" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
-                          <Component id="btn_ant_p3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAnt3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="radio_btn_renfe" min="-2" max="-2" attributes="0"/>
-                              <Component id="radio_btn_credito" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioBtnRenfe" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioBtnCredito" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                          <Component id="lb_error4" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbError3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -731,29 +731,29 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="subtitulo3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="radio_btn_credito" min="-2" max="-2" attributes="0"/>
+                  <Component id="radioBtnCredito" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="radio_btn_renfe" min="-2" max="-2" attributes="0"/>
+                  <Component id="radioBtnRenfe" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lb_tarjetarenfe" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_tarjetacredito" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTarjetaRenfe" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTarjetaCredito" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lb_mantener_renfe" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lb_mantener_credito" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbInfoTarjeta2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbInfoTarjeta1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="lb_pin" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbPIN" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="pin" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_pin" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPIN" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="lb_error4" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbError3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="149" max="32767" attributes="0"/>
-                  <Component id="btn_ant_p3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAnt3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -787,7 +787,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_ant_p3">
+        <Component class="javax.swing.JButton" name="btnAnt3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="88" green="91" red="5e" type="rgb"/>
@@ -805,10 +805,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ant_p3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnt3ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="radio_btn_credito">
+        <Component class="javax.swing.JRadioButton" name="radioBtnCredito">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="18" style="1"/>
@@ -820,10 +820,10 @@
             <Property name="toolTipText" type="java.lang.String" value="Seleccionar m&#xe9;todo de pago"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radio_btn_creditoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioBtnCreditoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="radio_btn_renfe">
+        <Component class="javax.swing.JRadioButton" name="radioBtnRenfe">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="18" style="1"/>
@@ -835,32 +835,32 @@
             <Property name="toolTipText" type="java.lang.String" value="Seleccionar m&#xe9;todo de pago"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radio_btn_renfeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioBtnRenfeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_tarjetacredito">
+        <Component class="javax.swing.JLabel" name="lbTarjetaCredito">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/tarjeta_credito.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_tarjetacreditoMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_tarjetacreditoMouseExited"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbTarjetaCreditoMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbTarjetaCreditoMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_tarjetarenfe">
+        <Component class="javax.swing.JLabel" name="lbTarjetaRenfe">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/tarjeta_renfe.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_tarjetarenfeMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_tarjetarenfeMouseExited"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbTarjetaRenfeMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbTarjetaRenfeMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_mantener_credito">
+        <Component class="javax.swing.JLabel" name="lbInfoTarjeta1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="1"/>
@@ -876,16 +876,16 @@
             <Property name="toolTipText" type="java.lang.String" value="Inserte el PIN"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_pin">
+        <Component class="javax.swing.JButton" name="btnPIN">
           <Properties>
             <Property name="text" type="java.lang.String" value="ACEPTAR"/>
             <Property name="toolTipText" type="java.lang.String" value="Aceptar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_pinActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPINActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_mantener_renfe">
+        <Component class="javax.swing.JLabel" name="lbInfoTarjeta2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="1"/>
@@ -896,7 +896,7 @@
             <Property name="text" type="java.lang.String" value="Mantenga la tarjeta AQU&#xcd; 2 segundos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_pin">
+        <Component class="javax.swing.JLabel" name="lbPIN">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="1"/>
@@ -907,7 +907,7 @@
             <Property name="text" type="java.lang.String" value="PIN:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lb_error4">
+        <Component class="javax.swing.JLabel" name="lbError3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Monospaced" size="14" style="0"/>

@@ -27,7 +27,7 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
 
         panelGlobal = new javax.swing.JPanel();
         pnlTexto = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbTitulo = new javax.swing.JLabel();
         pnlBotones = new javax.swing.JPanel();
         pnlBtnSup = new javax.swing.JPanel();
         btnComprar = new javax.swing.JButton();
@@ -36,6 +36,7 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tren Castilla y León");
         setBackground(new java.awt.Color(233, 255, 255));
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
@@ -43,10 +44,10 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
 
         pnlTexto.setBackground(new java.awt.Color(233, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel1.setText("BIENVENIDO A TCYL");
-        pnlTexto.add(jLabel1);
+        lbTitulo.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
+        lbTitulo.setForeground(new java.awt.Color(94, 145, 136));
+        lbTitulo.setText("BIENVENIDO A TCYL");
+        pnlTexto.add(lbTitulo);
 
         panelGlobal.add(pnlTexto, java.awt.BorderLayout.PAGE_START);
 
@@ -156,7 +157,7 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTarjeta;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbTitulo;
     private javax.swing.JPanel panelGlobal;
     private javax.swing.JPanel pnlBotones;
     private javax.swing.JPanel pnlBtnInf;

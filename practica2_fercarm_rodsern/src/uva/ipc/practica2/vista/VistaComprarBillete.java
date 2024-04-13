@@ -35,13 +35,13 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     private Timer timer_tarjeta_renfe = new Timer(2000, new ActionListener(){
         public void actionPerformed(ActionEvent e){
             if(miControlador.tarjetaRenfePasada(getPrecio())){
-                lb_error4.setVisible(false);
+                lbError3.setVisible(false);
                 pago_correcto.setVisible(true);
                 miControlador.meterBilleteHistorial();
             }
             else{
-                lb_error4.setText("Saldo insuficiente");
-                lb_error4.setVisible(true);
+                lbError3.setText("Saldo insuficiente");
+                lbError3.setVisible(true);
             }
         }
     });
@@ -75,42 +75,42 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         info1 = new javax.swing.JPanel();
         titulo1 = new javax.swing.JLabel();
         subtitulo1 = new javax.swing.JLabel();
-        btn_sig_p1 = new javax.swing.JButton();
-        elegir_salida = new javax.swing.JComboBox<>();
-        elegir_destino = new javax.swing.JComboBox<>();
-        btn_intercambio = new javax.swing.JButton();
+        btnSig1 = new javax.swing.JButton();
+        elegirOrigen = new javax.swing.JComboBox<>();
+        elegirDestino = new javax.swing.JComboBox<>();
+        btnIntercambio = new javax.swing.JButton();
         calendario = new com.toedter.calendar.JDateChooser();
-        lb_error1 = new javax.swing.JLabel();
+        lbError1 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         info2 = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
         subtitulo2 = new javax.swing.JLabel();
-        btn_sig_p2 = new javax.swing.JButton();
-        btn_ant_p2 = new javax.swing.JButton();
-        check_box_bici = new javax.swing.JCheckBox();
-        check_box_silla = new javax.swing.JCheckBox();
-        check_box_mascota = new javax.swing.JCheckBox();
-        lb_equipaje = new javax.swing.JLabel();
-        lb_bicicleta = new javax.swing.JLabel();
-        lb_mascota = new javax.swing.JLabel();
-        lb_silla = new javax.swing.JLabel();
+        btnSig2 = new javax.swing.JButton();
+        btnAnt2 = new javax.swing.JButton();
+        ckeckBoxBici = new javax.swing.JCheckBox();
+        checkBoxSilla = new javax.swing.JCheckBox();
+        checkBoxMascota = new javax.swing.JCheckBox();
+        lbEquipaje = new javax.swing.JLabel();
+        lbBicicleta = new javax.swing.JLabel();
+        lbMascota = new javax.swing.JLabel();
+        lbSilla = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista_rutas_posibles = new javax.swing.JList<>();
-        lb_error3 = new javax.swing.JLabel();
+        lbError2 = new javax.swing.JLabel();
         info3 = new javax.swing.JPanel();
         titulo3 = new javax.swing.JLabel();
         subtitulo3 = new javax.swing.JLabel();
-        btn_ant_p3 = new javax.swing.JButton();
-        radio_btn_credito = new javax.swing.JRadioButton();
-        radio_btn_renfe = new javax.swing.JRadioButton();
-        lb_tarjetacredito = new javax.swing.JLabel();
-        lb_tarjetarenfe = new javax.swing.JLabel();
-        lb_mantener_credito = new javax.swing.JLabel();
+        btnAnt3 = new javax.swing.JButton();
+        radioBtnCredito = new javax.swing.JRadioButton();
+        radioBtnRenfe = new javax.swing.JRadioButton();
+        lbTarjetaCredito = new javax.swing.JLabel();
+        lbTarjetaRenfe = new javax.swing.JLabel();
+        lbInfoTarjeta1 = new javax.swing.JLabel();
         pin = new javax.swing.JPasswordField();
-        btn_pin = new javax.swing.JButton();
-        lb_mantener_renfe = new javax.swing.JLabel();
-        lb_pin = new javax.swing.JLabel();
-        lb_error4 = new javax.swing.JLabel();
+        btnPIN = new javax.swing.JButton();
+        lbInfoTarjeta2 = new javax.swing.JLabel();
+        lbPIN = new javax.swing.JLabel();
+        lbError3 = new javax.swing.JLabel();
 
         pago_correcto.setTitle("PAGO CORRECTO");
         pago_correcto.setAlwaysOnTop(true);
@@ -189,40 +189,40 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         subtitulo1.setText("ESTACIONES Y FECHAS");
         subtitulo1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        btn_sig_p1.setBackground(new java.awt.Color(94, 145, 136));
-        btn_sig_p1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        btn_sig_p1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_sig_p1.setText("SIGUIENTE >");
-        btn_sig_p1.setToolTipText("Siguiente paso");
-        btn_sig_p1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_sig_p1.addActionListener(new java.awt.event.ActionListener() {
+        btnSig1.setBackground(new java.awt.Color(94, 145, 136));
+        btnSig1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnSig1.setForeground(new java.awt.Color(255, 255, 255));
+        btnSig1.setText("SIGUIENTE >");
+        btnSig1.setToolTipText("Siguiente paso");
+        btnSig1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSig1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_sig_p1ActionPerformed(evt);
+                btnSig1ActionPerformed(evt);
             }
         });
 
-        elegir_salida.setBackground(new java.awt.Color(207, 246, 248));
-        elegir_salida.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        elegir_salida.setMaximumRowCount(18);
-        elegir_salida.setToolTipText("Estación origen");
-        elegir_salida.setAutoscrolls(true);
-        elegir_salida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        elegir_salida.setFocusable(false);
-        elegir_salida.setName(""); // NOI18N
+        elegirOrigen.setBackground(new java.awt.Color(207, 246, 248));
+        elegirOrigen.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        elegirOrigen.setMaximumRowCount(18);
+        elegirOrigen.setToolTipText("Estación origen");
+        elegirOrigen.setAutoscrolls(true);
+        elegirOrigen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        elegirOrigen.setFocusable(false);
+        elegirOrigen.setName(""); // NOI18N
 
-        elegir_destino.setBackground(new java.awt.Color(207, 246, 248));
-        elegir_destino.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        elegir_destino.setMaximumRowCount(18);
-        elegir_destino.setToolTipText("Estación destino");
-        elegir_destino.setAutoscrolls(true);
-        elegir_destino.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        elegir_destino.setFocusable(false);
+        elegirDestino.setBackground(new java.awt.Color(207, 246, 248));
+        elegirDestino.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        elegirDestino.setMaximumRowCount(18);
+        elegirDestino.setToolTipText("Estación destino");
+        elegirDestino.setAutoscrolls(true);
+        elegirDestino.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        elegirDestino.setFocusable(false);
 
-        btn_intercambio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flechas.png"))); // NOI18N
-        btn_intercambio.setToolTipText("Intercambiar origen-destino");
-        btn_intercambio.addActionListener(new java.awt.event.ActionListener() {
+        btnIntercambio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flechas.png"))); // NOI18N
+        btnIntercambio.setToolTipText("Intercambiar origen-destino");
+        btnIntercambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_intercambioActionPerformed(evt);
+                btnIntercambioActionPerformed(evt);
             }
         });
 
@@ -231,9 +231,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         calendario.setMaxSelectableDate(new java.util.Date(1735603274000L));
         calendario.setMinSelectableDate(new java.util.Date(1704067274000L));
 
-        lb_error1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        lb_error1.setForeground(new java.awt.Color(255, 0, 0));
-        lb_error1.setText("Ruta no existente");
+        lbError1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbError1.setForeground(new java.awt.Color(255, 0, 0));
+        lbError1.setText("Ruta no existente");
 
         btnCancelar.setBackground(new java.awt.Color(94, 145, 136));
         btnCancelar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -251,7 +251,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
             info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, info1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_sig_p1)
+                .addComponent(btnSig1)
                 .addGap(100, 100, 100))
             .addGroup(info1Layout.createSequentialGroup()
                 .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +259,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                         .addGap(148, 148, 148)
                         .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(subtitulo1)
-                            .addComponent(lb_error1)
+                            .addComponent(lbError1)
                             .addComponent(titulo1)))
                     .addGroup(info1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -267,10 +267,10 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                             .addComponent(calendario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, info1Layout.createSequentialGroup()
                                 .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(elegir_destino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(elegir_salida, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(elegirDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(elegirOrigen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_intercambio))
+                                .addComponent(btnIntercambio))
                             .addComponent(btnCancelar, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addContainerGap(341, Short.MAX_VALUE))
         );
@@ -284,20 +284,20 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                 .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(info1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(elegir_salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(elegirOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
-                        .addComponent(elegir_destino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(elegirDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, info1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_intercambio)
+                        .addComponent(btnIntercambio)
                         .addGap(61, 61, 61)))
                 .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addComponent(lb_error1)
+                .addComponent(lbError1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_sig_p1)
+                    .addComponent(btnSig1)
                     .addComponent(btnCancelar))
                 .addGap(75, 75, 75))
         );
@@ -321,60 +321,60 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         subtitulo2.setMinimumSize(new java.awt.Dimension(268, 19));
         subtitulo2.setPreferredSize(new java.awt.Dimension(268, 19));
 
-        btn_sig_p2.setBackground(new java.awt.Color(94, 145, 136));
-        btn_sig_p2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        btn_sig_p2.setForeground(new java.awt.Color(255, 255, 255));
-        btn_sig_p2.setText("SIGUIENTE >");
-        btn_sig_p2.setToolTipText("Siguiente paso");
-        btn_sig_p2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_sig_p2.addActionListener(new java.awt.event.ActionListener() {
+        btnSig2.setBackground(new java.awt.Color(94, 145, 136));
+        btnSig2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnSig2.setForeground(new java.awt.Color(255, 255, 255));
+        btnSig2.setText("SIGUIENTE >");
+        btnSig2.setToolTipText("Siguiente paso");
+        btnSig2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSig2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_sig_p2ActionPerformed(evt);
+                btnSig2ActionPerformed(evt);
             }
         });
 
-        btn_ant_p2.setBackground(new java.awt.Color(94, 145, 136));
-        btn_ant_p2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        btn_ant_p2.setForeground(new java.awt.Color(255, 255, 255));
-        btn_ant_p2.setText("< ANTERIOR");
-        btn_ant_p2.setToolTipText("Anterior paso");
-        btn_ant_p2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_ant_p2.addActionListener(new java.awt.event.ActionListener() {
+        btnAnt2.setBackground(new java.awt.Color(94, 145, 136));
+        btnAnt2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnAnt2.setForeground(new java.awt.Color(255, 255, 255));
+        btnAnt2.setText("< ANTERIOR");
+        btnAnt2.setToolTipText("Anterior paso");
+        btnAnt2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAnt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ant_p2ActionPerformed(evt);
+                btnAnt2ActionPerformed(evt);
             }
         });
 
-        check_box_bici.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        check_box_bici.setForeground(new java.awt.Color(94, 145, 136));
-        check_box_bici.setText("Bicicleta");
-        check_box_bici.setToolTipText("Marcar si se va a llevar bicicleta");
-        check_box_bici.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        check_box_bici.setMaximumSize(new java.awt.Dimension(598, 516));
-        check_box_bici.setMinimumSize(new java.awt.Dimension(598, 516));
+        ckeckBoxBici.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        ckeckBoxBici.setForeground(new java.awt.Color(94, 145, 136));
+        ckeckBoxBici.setText("Bicicleta");
+        ckeckBoxBici.setToolTipText("Marcar si se va a llevar bicicleta");
+        ckeckBoxBici.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ckeckBoxBici.setMaximumSize(new java.awt.Dimension(598, 516));
+        ckeckBoxBici.setMinimumSize(new java.awt.Dimension(598, 516));
 
-        check_box_silla.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        check_box_silla.setForeground(new java.awt.Color(94, 145, 136));
-        check_box_silla.setText("Silla de ruedas");
-        check_box_silla.setToolTipText("Marcar si se va a llevar silla de ruedas");
-        check_box_silla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        checkBoxSilla.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        checkBoxSilla.setForeground(new java.awt.Color(94, 145, 136));
+        checkBoxSilla.setText("Silla de ruedas");
+        checkBoxSilla.setToolTipText("Marcar si se va a llevar silla de ruedas");
+        checkBoxSilla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        check_box_mascota.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        check_box_mascota.setForeground(new java.awt.Color(94, 145, 136));
-        check_box_mascota.setText("Mascota");
-        check_box_mascota.setToolTipText("Marcar si se va a llevar mascota");
-        check_box_mascota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        checkBoxMascota.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        checkBoxMascota.setForeground(new java.awt.Color(94, 145, 136));
+        checkBoxMascota.setText("Mascota");
+        checkBoxMascota.setToolTipText("Marcar si se va a llevar mascota");
+        checkBoxMascota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        lb_equipaje.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        lb_equipaje.setForeground(new java.awt.Color(94, 145, 136));
-        lb_equipaje.setText("Equipaje especial:");
+        lbEquipaje.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        lbEquipaje.setForeground(new java.awt.Color(94, 145, 136));
+        lbEquipaje.setText("Equipaje especial:");
 
-        lb_bicicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bicicleta.png"))); // NOI18N
-        lb_bicicleta.setToolTipText("");
+        lbBicicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bicicleta.png"))); // NOI18N
+        lbBicicleta.setToolTipText("");
 
-        lb_mascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mascota.png"))); // NOI18N
+        lbMascota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mascota.png"))); // NOI18N
 
-        lb_silla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/silla.png"))); // NOI18N
+        lbSilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/silla.png"))); // NOI18N
 
         lista_rutas_posibles.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         lista_rutas_posibles.setToolTipText("Seleccionar tren");
@@ -382,9 +382,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         lista_rutas_posibles.setPreferredSize(new java.awt.Dimension(400, 200));
         jScrollPane1.setViewportView(lista_rutas_posibles);
 
-        lb_error3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        lb_error3.setForeground(new java.awt.Color(255, 0, 0));
-        lb_error3.setText("Debe seleccionar un billete");
+        lbError2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbError2.setForeground(new java.awt.Color(255, 0, 0));
+        lbError2.setText("Debe seleccionar un billete");
 
         javax.swing.GroupLayout info2Layout = new javax.swing.GroupLayout(info2);
         info2.setLayout(info2Layout);
@@ -396,17 +396,17 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                         .addGap(100, 100, 100)
                         .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(info2Layout.createSequentialGroup()
-                                .addComponent(lb_mascota)
+                                .addComponent(lbMascota)
                                 .addGap(10, 10, 10)
                                 .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(check_box_silla)
-                                    .addComponent(check_box_mascota)))
+                                    .addComponent(checkBoxSilla)
+                                    .addComponent(checkBoxMascota)))
                             .addGroup(info2Layout.createSequentialGroup()
-                                .addComponent(lb_bicicleta)
+                                .addComponent(lbBicicleta)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(check_box_bici, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lb_silla)
-                            .addComponent(lb_equipaje)))
+                                .addComponent(ckeckBoxBici, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbSilla)
+                            .addComponent(lbEquipaje)))
                     .addGroup(info2Layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -414,16 +414,16 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                             .addComponent(subtitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(info2Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(lb_error3))
+                        .addComponent(lbError2))
                     .addGroup(info2Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(info2Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(btn_ant_p2)
+                .addComponent(btnAnt2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_sig_p2)
+                .addComponent(btnSig2)
                 .addGap(100, 100, 100))
         );
         info2Layout.setVerticalGroup(
@@ -436,25 +436,25 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addComponent(lb_equipaje)
+                .addComponent(lbEquipaje)
                 .addGap(10, 10, 10)
                 .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(check_box_bici, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_bicicleta))
+                    .addComponent(ckeckBoxBici, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbBicicleta))
                 .addGap(0, 0, 0)
                 .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(check_box_silla)
-                    .addComponent(lb_silla))
+                    .addComponent(checkBoxSilla)
+                    .addComponent(lbSilla))
                 .addGap(0, 0, 0)
                 .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(check_box_mascota)
-                    .addComponent(lb_mascota))
+                    .addComponent(checkBoxMascota)
+                    .addComponent(lbMascota))
                 .addGap(45, 45, 45)
-                .addComponent(lb_error3)
+                .addComponent(lbError2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_sig_p2)
-                    .addComponent(btn_ant_p2))
+                    .addComponent(btnSig2)
+                    .addComponent(btnAnt2))
                 .addGap(75, 75, 75))
         );
 
@@ -474,83 +474,83 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         subtitulo3.setText("PAGO");
         subtitulo3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        btn_ant_p3.setBackground(new java.awt.Color(94, 145, 136));
-        btn_ant_p3.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        btn_ant_p3.setForeground(new java.awt.Color(255, 255, 255));
-        btn_ant_p3.setText("< ANTERIOR");
-        btn_ant_p3.setToolTipText("Anterior paso");
-        btn_ant_p3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_ant_p3.addActionListener(new java.awt.event.ActionListener() {
+        btnAnt3.setBackground(new java.awt.Color(94, 145, 136));
+        btnAnt3.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnAnt3.setForeground(new java.awt.Color(255, 255, 255));
+        btnAnt3.setText("< ANTERIOR");
+        btnAnt3.setToolTipText("Anterior paso");
+        btnAnt3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAnt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ant_p3ActionPerformed(evt);
+                btnAnt3ActionPerformed(evt);
             }
         });
 
-        radio_btn_credito.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        radio_btn_credito.setForeground(new java.awt.Color(94, 145, 136));
-        radio_btn_credito.setText("Tarjeta de crédito");
-        radio_btn_credito.setToolTipText("Seleccionar método de pago");
-        radio_btn_credito.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnCredito.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        radioBtnCredito.setForeground(new java.awt.Color(94, 145, 136));
+        radioBtnCredito.setText("Tarjeta de crédito");
+        radioBtnCredito.setToolTipText("Seleccionar método de pago");
+        radioBtnCredito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radio_btn_creditoActionPerformed(evt);
+                radioBtnCreditoActionPerformed(evt);
             }
         });
 
-        radio_btn_renfe.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        radio_btn_renfe.setForeground(new java.awt.Color(94, 145, 136));
-        radio_btn_renfe.setText("Tarjeta de Usuario TCyL");
-        radio_btn_renfe.setToolTipText("Seleccionar método de pago");
-        radio_btn_renfe.addActionListener(new java.awt.event.ActionListener() {
+        radioBtnRenfe.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        radioBtnRenfe.setForeground(new java.awt.Color(94, 145, 136));
+        radioBtnRenfe.setText("Tarjeta de Usuario TCyL");
+        radioBtnRenfe.setToolTipText("Seleccionar método de pago");
+        radioBtnRenfe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radio_btn_renfeActionPerformed(evt);
+                radioBtnRenfeActionPerformed(evt);
             }
         });
 
-        lb_tarjetacredito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_credito.jpg"))); // NOI18N
-        lb_tarjetacredito.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbTarjetaCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_credito.jpg"))); // NOI18N
+        lbTarjetaCredito.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lb_tarjetacreditoMouseEntered(evt);
+                lbTarjetaCreditoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lb_tarjetacreditoMouseExited(evt);
+                lbTarjetaCreditoMouseExited(evt);
             }
         });
 
-        lb_tarjetarenfe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_renfe.jpg"))); // NOI18N
-        lb_tarjetarenfe.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbTarjetaRenfe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_renfe.jpg"))); // NOI18N
+        lbTarjetaRenfe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lb_tarjetarenfeMouseEntered(evt);
+                lbTarjetaRenfeMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lb_tarjetarenfeMouseExited(evt);
+                lbTarjetaRenfeMouseExited(evt);
             }
         });
 
-        lb_mantener_credito.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        lb_mantener_credito.setForeground(new java.awt.Color(94, 145, 136));
-        lb_mantener_credito.setText("Mantenga la tarjeta AQUÍ 2 segundos");
+        lbInfoTarjeta1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbInfoTarjeta1.setForeground(new java.awt.Color(94, 145, 136));
+        lbInfoTarjeta1.setText("Mantenga la tarjeta AQUÍ 2 segundos");
 
         pin.setToolTipText("Inserte el PIN");
 
-        btn_pin.setText("ACEPTAR");
-        btn_pin.setToolTipText("Aceptar");
-        btn_pin.addActionListener(new java.awt.event.ActionListener() {
+        btnPIN.setText("ACEPTAR");
+        btnPIN.setToolTipText("Aceptar");
+        btnPIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pinActionPerformed(evt);
+                btnPINActionPerformed(evt);
             }
         });
 
-        lb_mantener_renfe.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        lb_mantener_renfe.setForeground(new java.awt.Color(94, 145, 136));
-        lb_mantener_renfe.setText("Mantenga la tarjeta AQUÍ 2 segundos");
+        lbInfoTarjeta2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbInfoTarjeta2.setForeground(new java.awt.Color(94, 145, 136));
+        lbInfoTarjeta2.setText("Mantenga la tarjeta AQUÍ 2 segundos");
 
-        lb_pin.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        lb_pin.setForeground(new java.awt.Color(94, 145, 136));
-        lb_pin.setText("PIN:");
+        lbPIN.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbPIN.setForeground(new java.awt.Color(94, 145, 136));
+        lbPIN.setText("PIN:");
 
-        lb_error4.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        lb_error4.setForeground(new java.awt.Color(255, 0, 0));
-        lb_error4.setText("Error al procesar el pago");
+        lbError3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbError3.setForeground(new java.awt.Color(255, 0, 0));
+        lbError3.setText("Error al procesar el pago");
 
         javax.swing.GroupLayout info3Layout = new javax.swing.GroupLayout(info3);
         info3.setLayout(info3Layout);
@@ -559,12 +559,12 @@ public class VistaComprarBillete extends javax.swing.JFrame {
             .addGroup(info3Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lb_tarjetacredito)
-                    .addComponent(lb_mantener_credito))
+                    .addComponent(lbTarjetaCredito)
+                    .addComponent(lbInfoTarjeta1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lb_mantener_renfe)
-                    .addComponent(lb_tarjetarenfe))
+                    .addComponent(lbInfoTarjeta2)
+                    .addComponent(lbTarjetaRenfe))
                 .addGap(40, 40, 40))
             .addGroup(info3Layout.createSequentialGroup()
                 .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,22 +575,22 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                             .addComponent(subtitulo3)))
                     .addGroup(info3Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(lb_pin)
+                        .addComponent(lbPIN)
                         .addGap(10, 10, 10)
                         .addComponent(pin, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
-                        .addComponent(btn_pin))
+                        .addComponent(btnPIN))
                     .addGroup(info3Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(btn_ant_p3))
+                        .addComponent(btnAnt3))
                     .addGroup(info3Layout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radio_btn_renfe)
-                            .addComponent(radio_btn_credito)))
+                            .addComponent(radioBtnRenfe)
+                            .addComponent(radioBtnCredito)))
                     .addGroup(info3Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(lb_error4)))
+                        .addComponent(lbError3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         info3Layout.setVerticalGroup(
@@ -601,26 +601,26 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subtitulo3)
                 .addGap(29, 29, 29)
-                .addComponent(radio_btn_credito)
+                .addComponent(radioBtnCredito)
                 .addGap(18, 18, 18)
-                .addComponent(radio_btn_renfe)
+                .addComponent(radioBtnRenfe)
                 .addGap(50, 50, 50)
                 .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_tarjetarenfe)
-                    .addComponent(lb_tarjetacredito))
+                    .addComponent(lbTarjetaRenfe)
+                    .addComponent(lbTarjetaCredito))
                 .addGap(10, 10, 10)
                 .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lb_mantener_renfe)
-                    .addComponent(lb_mantener_credito))
+                    .addComponent(lbInfoTarjeta2)
+                    .addComponent(lbInfoTarjeta1))
                 .addGap(10, 10, 10)
                 .addGroup(info3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lb_pin)
+                    .addComponent(lbPIN)
                     .addComponent(pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_pin))
+                    .addComponent(btnPIN))
                 .addGap(38, 38, 38)
-                .addComponent(lb_error4)
+                .addComponent(lbError3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
-                .addComponent(btn_ant_p3)
+                .addComponent(btnAnt3)
                 .addGap(75, 75, 75))
         );
 
@@ -699,9 +699,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         if(tres == 1){
             titulo3.setVisible(true);
             subtitulo3.setVisible(true);
-            btn_ant_p3.setVisible(true);
-            radio_btn_renfe.setVisible(true);
-            radio_btn_credito.setVisible(true);
+            btnAnt3.setVisible(true);
+            radioBtnRenfe.setVisible(true);
+            radioBtnCredito.setVisible(true);
         }
         
         resetErrores();
@@ -715,11 +715,11 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         calendario.setDate(null);
         resetErrores();
         lista_rutas_posibles.removeAll();
-        check_box_bici.setSelected(false);
-        check_box_silla.setSelected(false);
-        check_box_mascota.setSelected(false);
-        radio_btn_credito.setSelected(false);
-        radio_btn_renfe.setSelected(false);
+        ckeckBoxBici.setSelected(false);
+        checkBoxSilla.setSelected(false);
+        checkBoxMascota.setSelected(false);
+        radioBtnCredito.setSelected(false);
+        radioBtnRenfe.setSelected(false);
         pin.setText("");
         miControlador.resetTodo();
     }
@@ -730,13 +730,13 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     public void cargarEstaciones(){
         ArrayList<String> aux = new ArrayList<>();
         
-        elegir_salida.removeAllItems();
-        elegir_destino.removeAllItems();
+        elegirOrigen.removeAllItems();
+        elegirDestino.removeAllItems();
         aux = miControlador.cargarEstaciones();
         
         for (String item : aux) {
-            elegir_salida.addItem(item);
-            elegir_destino.addItem(item);
+            elegirOrigen.addItem(item);
+            elegirDestino.addItem(item);
         }   
     }
     
@@ -763,9 +763,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Elimina la visibilidad de las etiquetas de error
      */
     public void resetErrores(){
-        lb_error1.setVisible(false);
-        lb_error3.setVisible(false);
-        lb_error4.setVisible(false);
+        lbError1.setVisible(false);
+        lbError2.setVisible(false);
+        lbError3.setVisible(false);
     }
 
     
@@ -780,7 +780,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * @return la estación de origen
      */
     public String getOrigen(){
-        return (String)elegir_salida.getSelectedItem();
+        return (String)elegirOrigen.getSelectedItem();
     }
     
     /**
@@ -788,19 +788,19 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * @return la estación de destino
      */
     public String getDestino(){
-        return (String)elegir_destino.getSelectedItem();
+        return (String)elegirDestino.getSelectedItem();
     }
     
     public boolean getBicicleta(){
-        return check_box_bici.isSelected();
+        return ckeckBoxBici.isSelected();
     }
     
     public boolean getMascota(){
-        return check_box_mascota.isSelected();
+        return checkBoxMascota.isSelected();
     }
      
     public boolean getSilla(){
-        return check_box_silla.isSelected();
+        return checkBoxSilla.isSelected();
     }
     
     
@@ -854,43 +854,43 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     }
     
     public void setVisibilidadLbError1(boolean valor){
-        lb_error1.setVisible(valor);
+        lbError1.setVisible(valor);
     }
     
     public void setTextoLbError1(String valor){
-        lb_error1.setText(valor);
+        lbError1.setText(valor);
     }
     
     public void setVisibilidadLbError3(boolean valor){
-        lb_error3.setVisible(valor);
+        lbError2.setVisible(valor);
     }
     
     public void setVisibilidadLbError4(boolean valor){
-        lb_error4.setVisible(valor);
+        lbError3.setVisible(valor);
     }
     
     public void setTextoLbError4(String valor){
-        lb_error4.setText(valor);
+        lbError3.setText(valor);
     }
     
     public void setVisibilidadLbTarjetaRenfe(boolean valor){
-        lb_tarjetarenfe.setVisible(valor);
+        lbTarjetaRenfe.setVisible(valor);
     }
     
     public void setVisibilidadLbMantenerRenfe(boolean valor){
-        lb_mantener_renfe.setVisible(valor);
+        lbInfoTarjeta2.setVisible(valor);
     }
     
     public void setVisibilidadLbTarjetaCredito(boolean valor){
-        lb_tarjetacredito.setVisible(valor);
+        lbTarjetaCredito.setVisible(valor);
     }
     
     public void setVisibilidadLbMantenerCredito(boolean valor){
-        lb_mantener_credito.setVisible(valor);
+        lbInfoTarjeta1.setVisible(valor);
     }
     
     public void setVisibilidadLbPin(boolean valor){
-        lb_pin.setVisible(valor);
+        lbPIN.setVisible(valor);
     }
     
     public void setVisibilidadPin(boolean valor){
@@ -898,7 +898,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     }
     
     public void setVisibilidadButtonPin(boolean valor){
-        btn_pin.setVisible(valor);
+        btnPIN.setVisible(valor);
     }
     
     public boolean isListaRutasPosiblesSelected(){
@@ -914,35 +914,35 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     }
     
     public void setRadioButtonRenfe(boolean valor){
-        radio_btn_renfe.setSelected(valor);
+        radioBtnRenfe.setSelected(valor);
     }
     
     public void setRadioButtonCredito(boolean valor){
-        radio_btn_credito.setSelected(valor);
+        radioBtnCredito.setSelected(valor);
     }
     
     public boolean getRadioButtonCredito(){
-        return radio_btn_credito.isSelected();
+        return radioBtnCredito.isSelected();
     }
     
     public boolean getRadioButtonRenfe(){
-        return radio_btn_renfe.isSelected();
+        return radioBtnRenfe.isSelected();
     }
     
     public int getIndexOrigen(){
-        return elegir_salida.getSelectedIndex();
+        return elegirOrigen.getSelectedIndex();
     }
     
     public int getIndexDestino(){
-        return elegir_destino.getSelectedIndex();
+        return elegirDestino.getSelectedIndex();
     }
     
     public void setIndexDestino(int valor){
-        elegir_destino.setSelectedIndex(valor);
+        elegirDestino.setSelectedIndex(valor);
     }
     
     public void setIndexOrigen(int valor){
-        elegir_salida.setSelectedIndex(valor);
+        elegirOrigen.setSelectedIndex(valor);
     }
     
     public void setVisibilidadPagoCorrecto(boolean valor){
@@ -962,86 +962,86 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     /**
      * Evento al pulsar el botón de siguiente del primer paso
      */
-    private void btn_sig_p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sig_p1ActionPerformed
+    private void btnSig1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSig1ActionPerformed
         miControlador.procesarBtnSigP1ActionPerformed();
-    }//GEN-LAST:event_btn_sig_p1ActionPerformed
+    }//GEN-LAST:event_btnSig1ActionPerformed
 
     /**
      * Evento al pulsar el botón de siguiente del segundo paso
      */
-    private void btn_sig_p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sig_p2ActionPerformed
+    private void btnSig2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSig2ActionPerformed
         miControlador.procesarBtnSigP2ActionPerformed();
-    }//GEN-LAST:event_btn_sig_p2ActionPerformed
+    }//GEN-LAST:event_btnSig2ActionPerformed
     
     /**
      * Evento al pulsar el botón de anterior del segundo paso
      */
-    private void btn_ant_p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ant_p2ActionPerformed
+    private void btnAnt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnt2ActionPerformed
         miControlador.procesarBtnAntP2ActionPerformed();
-    }//GEN-LAST:event_btn_ant_p2ActionPerformed
+    }//GEN-LAST:event_btnAnt2ActionPerformed
 
     /**
      * Evento al seleccionar la opción de pago con tarjeta de usuario TCyL
      */
-    private void radio_btn_renfeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_btn_renfeActionPerformed
+    private void radioBtnRenfeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnRenfeActionPerformed
         miControlador.procesarRadioBtnRenfeActionPerformed();
-    }//GEN-LAST:event_radio_btn_renfeActionPerformed
+    }//GEN-LAST:event_radioBtnRenfeActionPerformed
 
     /**
      * Evento al seleccionar la opción de pago con tarjeta de crédito
      */
-    private void radio_btn_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_btn_creditoActionPerformed
+    private void radioBtnCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnCreditoActionPerformed
         miControlador.procesarRadioBtnCreditoActionPerformed();
-    }//GEN-LAST:event_radio_btn_creditoActionPerformed
+    }//GEN-LAST:event_radioBtnCreditoActionPerformed
 
     /**
      * Evento al pulsar el botón de anterior del tercer paso
      */
-    private void btn_ant_p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ant_p3ActionPerformed
+    private void btnAnt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnt3ActionPerformed
         miControlador.procesarBtnAntP3ActionPerformed();
-    }//GEN-LAST:event_btn_ant_p3ActionPerformed
+    }//GEN-LAST:event_btnAnt3ActionPerformed
 
     /**
      * Evento al pulsar el botón de intercambio de estaciones
      */
-    private void btn_intercambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_intercambioActionPerformed
+    private void btnIntercambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntercambioActionPerformed
         miControlador.procesarBtnIntercambioActionPerformed();
-    }//GEN-LAST:event_btn_intercambioActionPerformed
+    }//GEN-LAST:event_btnIntercambioActionPerformed
 
     /**
      * Evento al pulsar el botón de aceptar el PIN
      */
-    private void btn_pinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pinActionPerformed
+    private void btnPINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPINActionPerformed
        miControlador.procesarBtnPinActionPerformed();
-    }//GEN-LAST:event_btn_pinActionPerformed
+    }//GEN-LAST:event_btnPINActionPerformed
     
     /**
      * Evento al introducir el ratón sobre la tarjeta de crédito
      */
-    private void lb_tarjetacreditoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_tarjetacreditoMouseEntered
+    private void lbTarjetaCreditoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaCreditoMouseEntered
         timer_tarjeta_credito.start();
-    }//GEN-LAST:event_lb_tarjetacreditoMouseEntered
+    }//GEN-LAST:event_lbTarjetaCreditoMouseEntered
 
     /**
      * Evento al sacar el ratón de la tarjeta de crédito
      */
-    private void lb_tarjetacreditoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_tarjetacreditoMouseExited
+    private void lbTarjetaCreditoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaCreditoMouseExited
         timer_tarjeta_credito.stop();
-    }//GEN-LAST:event_lb_tarjetacreditoMouseExited
+    }//GEN-LAST:event_lbTarjetaCreditoMouseExited
 
     /**
      * Evento al introducir el ratón sobre la tarjeta de usuario de TCyL
      */
-    private void lb_tarjetarenfeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_tarjetarenfeMouseEntered
+    private void lbTarjetaRenfeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaRenfeMouseEntered
         timer_tarjeta_renfe.start();
-    }//GEN-LAST:event_lb_tarjetarenfeMouseEntered
+    }//GEN-LAST:event_lbTarjetaRenfeMouseEntered
 
     /**
      * Evento al sacar el ratón de la tarjeta de usuario de TCyL
      */
-    private void lb_tarjetarenfeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_tarjetarenfeMouseExited
+    private void lbTarjetaRenfeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaRenfeMouseExited
         timer_tarjeta_renfe.stop();
-    }//GEN-LAST:event_lb_tarjetarenfeMouseExited
+    }//GEN-LAST:event_lbTarjetaRenfeMouseExited
 
     /**
      * Evento al pulsar el botón de comprar nuevo billete
@@ -1068,43 +1068,43 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAnt2;
+    private javax.swing.JButton btnAnt3;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btn_ant_p2;
-    private javax.swing.JButton btn_ant_p3;
+    private javax.swing.JButton btnIntercambio;
+    private javax.swing.JButton btnPIN;
+    private javax.swing.JButton btnSig1;
+    private javax.swing.JButton btnSig2;
     private javax.swing.JButton btn_billete;
-    private javax.swing.JButton btn_intercambio;
-    private javax.swing.JButton btn_pin;
     private javax.swing.JButton btn_salir;
-    private javax.swing.JButton btn_sig_p1;
-    private javax.swing.JButton btn_sig_p2;
     private com.toedter.calendar.JDateChooser calendario;
-    private javax.swing.JCheckBox check_box_bici;
-    private javax.swing.JCheckBox check_box_mascota;
-    private javax.swing.JCheckBox check_box_silla;
-    private javax.swing.JComboBox<String> elegir_destino;
-    private javax.swing.JComboBox<String> elegir_salida;
+    private javax.swing.JCheckBox checkBoxMascota;
+    private javax.swing.JCheckBox checkBoxSilla;
+    private javax.swing.JCheckBox ckeckBoxBici;
+    private javax.swing.JComboBox<String> elegirDestino;
+    private javax.swing.JComboBox<String> elegirOrigen;
     private javax.swing.JPanel info1;
     private javax.swing.JPanel info2;
     private javax.swing.JPanel info3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lb_bicicleta;
-    private javax.swing.JLabel lb_equipaje;
-    private javax.swing.JLabel lb_error1;
-    private javax.swing.JLabel lb_error3;
-    private javax.swing.JLabel lb_error4;
-    private javax.swing.JLabel lb_mantener_credito;
-    private javax.swing.JLabel lb_mantener_renfe;
-    private javax.swing.JLabel lb_mascota;
+    private javax.swing.JLabel lbBicicleta;
+    private javax.swing.JLabel lbEquipaje;
+    private javax.swing.JLabel lbError1;
+    private javax.swing.JLabel lbError2;
+    private javax.swing.JLabel lbError3;
+    private javax.swing.JLabel lbInfoTarjeta1;
+    private javax.swing.JLabel lbInfoTarjeta2;
+    private javax.swing.JLabel lbMascota;
+    private javax.swing.JLabel lbPIN;
+    private javax.swing.JLabel lbSilla;
+    private javax.swing.JLabel lbTarjetaCredito;
+    private javax.swing.JLabel lbTarjetaRenfe;
     private javax.swing.JLabel lb_pago_aceptado;
-    private javax.swing.JLabel lb_pin;
-    private javax.swing.JLabel lb_silla;
-    private javax.swing.JLabel lb_tarjetacredito;
-    private javax.swing.JLabel lb_tarjetarenfe;
     private javax.swing.JList<String> lista_rutas_posibles;
     private javax.swing.JDialog pago_correcto;
     private javax.swing.JPasswordField pin;
-    private javax.swing.JRadioButton radio_btn_credito;
-    private javax.swing.JRadioButton radio_btn_renfe;
+    private javax.swing.JRadioButton radioBtnCredito;
+    private javax.swing.JRadioButton radioBtnRenfe;
     private javax.swing.JLabel subtitulo1;
     private javax.swing.JLabel subtitulo2;
     private javax.swing.JLabel subtitulo3;

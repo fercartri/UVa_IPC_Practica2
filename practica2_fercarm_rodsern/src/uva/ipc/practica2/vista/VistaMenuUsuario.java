@@ -37,6 +37,7 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tren Castilla y León");
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
         panelGlobal.setLayout(new java.awt.BorderLayout(15, 15));
