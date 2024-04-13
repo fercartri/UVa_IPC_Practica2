@@ -93,6 +93,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         btn_intercambio = new javax.swing.JButton();
         calendario = new com.toedter.calendar.JDateChooser();
         lb_error1 = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JButton();
         info2 = new javax.swing.JPanel();
         titulo2 = new javax.swing.JLabel();
         subtitulo2 = new javax.swing.JLabel();
@@ -246,6 +247,16 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         lb_error1.setForeground(new java.awt.Color(255, 0, 0));
         lb_error1.setText("Ruta no existente");
 
+        btnCancelar.setBackground(new java.awt.Color(94, 145, 136));
+        btnCancelar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout info1Layout = new javax.swing.GroupLayout(info1);
         info1.setLayout(info1Layout);
         info1Layout.setHorizontalGroup(
@@ -271,8 +282,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                                     .addComponent(elegir_destino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(elegir_salida, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_intercambio)))))
-                .addContainerGap(347, Short.MAX_VALUE))
+                                .addComponent(btn_intercambio))
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
         info1Layout.setVerticalGroup(
             info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,7 +308,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addComponent(lb_error1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
-                .addComponent(btn_sig_p1)
+                .addGroup(info1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_sig_p1)
+                    .addComponent(btnCancelar))
                 .addGap(75, 75, 75))
         );
 
@@ -1055,6 +1069,10 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         miControlador.procesarBtnSalirActionPerformed();
     }//GEN-LAST:event_btn_salirActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        miControlador.procesarCancelar();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
     
     
     
@@ -1062,6 +1080,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btn_ant_p2;
     private javax.swing.JButton btn_ant_p3;
     private javax.swing.JButton btn_billete;

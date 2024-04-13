@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import uva.ipc.practica2.Main;
 import uva.ipc.practica2.modelo.Modelo;
 
 /**
@@ -23,8 +24,8 @@ public class ControladorComprarBillete {
      * @param vista un objeto vista cualquiera
      */
     public ControladorComprarBillete(VistaComprarBillete vista) {
-        this.miVista = vista;
-        this.miModelo = uva.ipc.practica2.Main.getModelo();
+        miVista = vista;
+        miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
     /**
@@ -326,4 +327,7 @@ public class ControladorComprarBillete {
         System.exit(0);
     }
     
+    public void procesarCancelar(){
+        Main.getGestorVistas().mostrarVistaMenuUsuario();
+    }
 }
