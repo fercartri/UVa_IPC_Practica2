@@ -6,11 +6,10 @@ package uva.ipc.practica2.vista;
  * @author Rodrigo Serna
  */
 public class VistaMenuPrincipal extends javax.swing.JFrame {
-
-    private ControladorMenuPrincipal miControlador;
+    private final ControladorMenuPrincipal miControlador;
     
     /**
-     * Creates new form VistaMenuPrincipal
+     * Crea la nueva vista del menú principal
      */
     public VistaMenuPrincipal() {
         initComponents();
@@ -137,6 +136,7 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Eventos-----------------------------------------------------------------------------
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
         miControlador.procesarComprar();
     }//GEN-LAST:event_btnComprarActionPerformed

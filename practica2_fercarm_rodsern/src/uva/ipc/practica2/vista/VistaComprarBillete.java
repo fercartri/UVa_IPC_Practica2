@@ -1,17 +1,8 @@
 package uva.ipc.practica2.vista;
 
 import java.awt.Component;
-import java.awt.Container;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import static java.lang.Double.parseDouble;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
@@ -19,9 +10,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.Timer;
 
 /**
@@ -30,7 +18,7 @@ import javax.swing.Timer;
  * @author Rodrigo Serna
  */
 public class VistaComprarBillete extends javax.swing.JFrame {
-    private ControladorComprarBillete miControlador;
+    private final ControladorComprarBillete miControlador;
     
     /**
      * Cronómetro para comprobar el pago con tarjeta de crédito
@@ -59,7 +47,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     });
     
     /**
-     * Crea la vista en el estado inicial (mostrando solo el primer paso)
+     * Crea la nueva vista del menú principal en el estado inicial (mostrando solo el primer paso)
      */
     public VistaComprarBillete() {
         initComponents();

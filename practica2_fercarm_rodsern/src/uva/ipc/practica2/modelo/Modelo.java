@@ -23,6 +23,7 @@ public class Modelo {
     private String miOrigen;
     private String miDestino;
     
+    
     public Modelo(){
         cargarEstaciones();
         cargarRutas();

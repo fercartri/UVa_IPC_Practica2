@@ -6,11 +6,10 @@ package uva.ipc.practica2.vista;
  * @author Rodrigo Serna
  */
 public class VistaRecargarTarjeta extends javax.swing.JFrame {
-
-    private ControladorRecargarTarjeta miControlador;
+    private final ControladorRecargarTarjeta miControlador;
     
     /**
-     * Creates new form VistaRecargarTarjeta
+     * Crea la nueva vista de recarga de tarjeta
      */
     public VistaRecargarTarjeta() {
         initComponents();

@@ -11,12 +11,21 @@ import uva.ipc.practica2.vista.GestorVistas;
  */
 public class Main {
     private static GestorVistas gestor;
-    private static uva.ipc.practica2.modelo.Modelo modelo;
+    private static Modelo modelo;
     
+    
+    /**
+     * Consultar el gestor de vistas de la aplicación
+     * @return gestor el gestor de vistas
+     */
     public static GestorVistas getGestorVistas(){
         return gestor;
     }
     
+    /**
+     * Consultar el modelo de la aplicación
+     * @return modelo el modelo
+     */
     public static Modelo getModelo(){
         return modelo;
     }

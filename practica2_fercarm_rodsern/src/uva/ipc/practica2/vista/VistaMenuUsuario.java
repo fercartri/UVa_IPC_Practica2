@@ -1,16 +1,15 @@
 package uva.ipc.practica2.vista;
 
 /**
- * Clase para la interfaz gráfica de la vista de menu usuario
+ * Clase para la interfaz gráfica de la vista de menu de usuario
  * @author Fernando Carmona
  * @author Rodrigo Serna
  */
 public class VistaMenuUsuario extends javax.swing.JFrame {
-
-    private ControladorMenuUsuario miControlador;
+    private final ControladorMenuUsuario miControlador;
     
     /**
-     * Creates new form VistaMenuUsuario
+     * Crea la nueva vista del menú de usuario
      */
     public VistaMenuUsuario() {
         initComponents();
@@ -143,21 +142,22 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Eventos-----------------------------------------------------------------------------
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         miControlador.procesarRecargar();
     }//GEN-LAST:event_btnRecargarActionPerformed
-
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        miControlador.procesarVolver();
-    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnMisViajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMisViajesActionPerformed
         miControlador.procesarMisViajes();
     }//GEN-LAST:event_btnMisViajesActionPerformed
 
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        miControlador.procesarVolver();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
-    
-    
+
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMisViajes;
     private javax.swing.JButton btnRecargar;
