@@ -211,7 +211,7 @@ public class ControladorComprarBillete {
     }
     
     public void meterBilleteHistorial(){
-        miModelo.guardarHistorial(datosBillete, miVista.getBicicleta(),miVista.getMascota(), miVista.getSilla());
+        miModelo.guardarHistorial(datosBillete);
     }
     
     //PROCESAR EVENTOS------------------------------------------------------------------------------------
@@ -247,6 +247,7 @@ public class ControladorComprarBillete {
             miVista.setRadioButtonRenfe(false);
             miVista.setVisible(0,0,1);
             miVista.setNoVisible(1,1,0);
+            miModelo.guardarRadios(miVista.getBicicleta(), miVista.getSilla(), miVista.getMascota());
         }
         else{   //No hay elementos seleccionados
              miVista.setVisibilidadLbError3(true);
@@ -330,4 +331,25 @@ public class ControladorComprarBillete {
     public void procesarCancelar(){
         Main.getGestorVistas().mostrarVistaMenuUsuario();
     }
+    
+    public void procesarLbTarjetaRenfeMouseEntered(){
+        miVista.empezarTimerRenfe();
+    }
+    
+    public void procesarLbTarjetaRenfeMouseExited(){
+        miVista.pararTimerRenfe();
+    }
+    
+    public void procesarTimerRenfeActionPerformed(){
+         if(tarjetaRenfePasada(miVista.getPrecio())){
+                meterBilleteHistorial();
+                miVista.setVisibilidadLbError3(false);
+                miVista.setVisibilidadPagoCorrecto(true);
+            }
+            else{
+                miVista.setTextoLbError3("Saldo insuficiente");
+                miVista.setVisibilidadLbError3(true);
+            }
+    }
+    
 }

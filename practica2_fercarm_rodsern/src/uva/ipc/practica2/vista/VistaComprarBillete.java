@@ -34,15 +34,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      */
     private Timer timer_tarjeta_renfe = new Timer(2000, new ActionListener(){
         public void actionPerformed(ActionEvent e){
-            if(miControlador.tarjetaRenfePasada(getPrecio())){
-                lbError3.setVisible(false);
-                pago_correcto.setVisible(true);
-                miControlador.meterBilleteHistorial();
-            }
-            else{
-                lbError3.setText("Saldo insuficiente");
-                lbError3.setVisible(true);
-            }
+            miControlador.procesarTimerRenfeActionPerformed();
         }
     });
     
@@ -865,6 +857,10 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         lbError2.setVisible(valor);
     }
     
+    public void setTextoLbError3(String valor){
+        lbError3.setText(valor);
+    }
+    
     public void setVisibilidadLbError4(boolean valor){
         lbError3.setVisible(valor);
     }
@@ -957,6 +953,14 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         pago_correcto.dispose();
     }
     
+    public void empezarTimerRenfe(){
+         timer_tarjeta_renfe.start();
+    }
+    
+    public void pararTimerRenfe(){
+         timer_tarjeta_renfe.stop();
+    }
+    
     //EVENTOS***************************************************************************************************************************
     
     /**
@@ -1033,14 +1037,14 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Evento al introducir el ratón sobre la tarjeta de usuario de TCyL
      */
     private void lbTarjetaRenfeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaRenfeMouseEntered
-        timer_tarjeta_renfe.start();
+        miControlador.procesarLbTarjetaRenfeMouseEntered();
     }//GEN-LAST:event_lbTarjetaRenfeMouseEntered
 
     /**
      * Evento al sacar el ratón de la tarjeta de usuario de TCyL
      */
     private void lbTarjetaRenfeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaRenfeMouseExited
-        timer_tarjeta_renfe.stop();
+        miControlador.procesarLbTarjetaRenfeMouseExited();
     }//GEN-LAST:event_lbTarjetaRenfeMouseExited
 
     /**

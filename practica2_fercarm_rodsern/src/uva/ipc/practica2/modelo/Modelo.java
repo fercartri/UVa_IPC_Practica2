@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -16,12 +17,16 @@ import java.util.Scanner;
 public class Modelo {
     private ArrayList<String> estaciones = new ArrayList<>();
     private ArrayList<String> rutas = new ArrayList<>();
+    private ArrayList<String> historial = new ArrayList<>();
     private boolean tarjeta_credito_pasada;
     private boolean tarjeta_renfe_pasada;    
     private double saldo;
     private String miFecha;
     private String miOrigen;
     private String miDestino;
+    private boolean miBici;
+    private boolean miSilla;
+    private boolean miMascota;
     
     
     public Modelo(){
@@ -156,21 +161,26 @@ public class Modelo {
         miDestino = destino;
     }
     
+    public void guardarRadios(boolean bici, boolean silla, boolean mascota){
+        miBici = bici;
+        miSilla = silla;
+        miMascota = mascota;
+    }
     
-    
-    public void guardarHistorial(String datosBillete, boolean bicicleta, boolean mascota, boolean silla){
+    public void guardarHistorial(String datosBillete){
         // Ruta del archivo
-        String rutaArchivo = "./file/historial.txt";
+        System.out.println("a");
+        String rutaArchivo = "./file/billetes.csv";
         String bicicletaString = "false";
         String mascotaString = "false";
         String sillaString = "false";
-        if(bicicleta){
+        if(miBici){
             bicicletaString = "true";
         }
-        if(mascota){
+        if(miMascota){
             mascotaString = "true";
         }
-        if(silla){
+        if(miSilla){
             sillaString = "true";
         }
         //Preparar el formato correcto
@@ -202,7 +212,7 @@ public class Modelo {
         datosFinal = datosFinal.concat(mascotaString);
         datosFinal = datosFinal.concat(";");
         
-        
+       
         // Verificar si el archivo no existe y crearlo si es necesario
         File archivo = new File(rutaArchivo);
         if (!archivo.exists()) {
@@ -218,6 +228,7 @@ public class Modelo {
             BufferedWriter bw = new BufferedWriter(fw)) {
 
             bw.write(datosFinal);
+            historial.add(datosFinal);
             bw.newLine(); // Agrega una nueva línea al final
             bw.close();
             
