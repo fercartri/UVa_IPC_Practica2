@@ -18,6 +18,31 @@ public class ControladorMenuUsuario {
         this.miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
+    public double getSaldo(){
+        return miModelo.getSaldo();
+    }
+    
+    public int getNumBilletes(){
+        int num = miModelo.getNumBilletes();
+        return num;
+    }
+    
+    public void actualizarNumBilletes(){
+        String cadena = "NÚMERO DE BILLETES COMPRADOS: ";
+        String numero = String.valueOf(getNumBilletes());
+        cadena = cadena.concat(numero);
+        miVista.lbNumBilletesSetText(cadena);
+    }
+    
+     public void actualizarSaldo(){
+        String cadena = "SALDO DE LA TARJETA: ";
+        String euro = "€";
+        String dinero = String.valueOf(getSaldo());
+        cadena = cadena.concat(dinero);
+        cadena = cadena.concat(euro);
+        miVista.lbSaldoSetText(cadena);
+    }
+    
     //Eventos-----------------------------------------------------------------------------
     public void procesarRecargar(){
         Main.getGestorVistas().mostrarVistaRecargarTarjeta();

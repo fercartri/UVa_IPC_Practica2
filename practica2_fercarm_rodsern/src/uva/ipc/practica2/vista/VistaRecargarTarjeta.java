@@ -14,6 +14,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     public VistaRecargarTarjeta() {
         initComponents();
         miControlador = new ControladorRecargarTarjeta(this);
+        actualizarSaldo();
     }
 
     /**
@@ -326,7 +327,16 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
             btnBillete50.setSelected(false);
         }
     }
-
+    
+    public void actualizarSaldo(){
+        String cadena = "SALDO DE LA TARJETA: ";
+        String euro = "€";
+        String dinero = String.valueOf(miControlador.getSaldo());
+        cadena = cadena.concat(dinero);
+        cadena = cadena.concat(euro);
+        System.out.println(cadena);
+        lbSaldo.setText(cadena);
+    }
 
 
 

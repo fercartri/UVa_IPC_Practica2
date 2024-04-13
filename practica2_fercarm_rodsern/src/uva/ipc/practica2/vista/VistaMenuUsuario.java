@@ -14,8 +14,19 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
     public VistaMenuUsuario() {
         initComponents();
         miControlador = new ControladorMenuUsuario(this);
+        miControlador.actualizarSaldo();
+        miControlador.actualizarNumBilletes();
     }
-
+    
+    public void lbNumBilletesSetText(String cadena){
+        lbNumBilletes.setText(cadena);
+    }
+    
+    public void lbSaldoSetText(String cadena){
+        lbSaldo.setText(cadena);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

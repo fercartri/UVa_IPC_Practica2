@@ -1,8 +1,10 @@
 package uva.ipc.practica2.modelo;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -169,7 +171,6 @@ public class Modelo {
     
     public void guardarHistorial(String datosBillete){
         // Ruta del archivo
-        System.out.println("a");
         String rutaArchivo = "./file/billetes.csv";
         String bicicletaString = "false";
         String mascotaString = "false";
@@ -235,6 +236,24 @@ public class Modelo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    public int getNumBilletes(){
+        String rutaArchivo = "./file/billetes.csv";
+        int numLineas= 0;
+        
+        File archivo = new File(rutaArchivo);     
+        if (!archivo.exists()) {
+           return 0;
+        }
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            while (br.readLine() != null) {
+                numLineas++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return numLineas;
     }
     
 }
