@@ -14,8 +14,8 @@ public class ControladorMenuPrincipal {
     
     
     public ControladorMenuPrincipal(VistaMenuPrincipal vista){
-        this.miVista = vista;
-        this.miModelo = uva.ipc.practica2.Main.getModelo();
+        miVista = vista;
+        miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
     //Eventos-----------------------------------------------------------------------------

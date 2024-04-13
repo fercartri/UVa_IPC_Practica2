@@ -7,11 +7,14 @@ package uva.ipc.practica2.vista;
  */
 public class VistaRecargarTarjeta extends javax.swing.JFrame {
 
+    private ControladorRecargarTarjeta miControlador;
+    
     /**
      * Creates new form VistaRecargarTarjeta
      */
     public VistaRecargarTarjeta() {
         initComponents();
+        miControlador = new ControladorRecargarTarjeta(this);
     }
 
     /**
@@ -25,7 +28,6 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
 
         pnlGlobal = new javax.swing.JPanel();
         pnlCentral = new javax.swing.JPanel();
-        lbRecargar = new javax.swing.JLabel();
         pnlBilletes = new javax.swing.JPanel();
         btnBillete10 = new javax.swing.JToggleButton();
         btnBillete20 = new javax.swing.JToggleButton();
@@ -43,12 +45,6 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlGlobal.setLayout(new java.awt.BorderLayout(15, 15));
 
         pnlCentral.setBackground(new java.awt.Color(233, 255, 255));
-        pnlCentral.setLayout(new java.awt.GridLayout(2, 1));
-
-        lbRecargar.setForeground(new java.awt.Color(94, 145, 136));
-        lbRecargar.setText("RECARGAR:");
-        lbRecargar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        pnlCentral.add(lbRecargar);
 
         pnlBilletes.setBackground(new java.awt.Color(233, 255, 255));
 
@@ -61,9 +57,19 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlBilletes.add(btnBillete10);
 
         btnBillete20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete20.jpg"))); // NOI18N
+        btnBillete20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBillete20ActionPerformed(evt);
+            }
+        });
         pnlBilletes.add(btnBillete20);
 
         btnBillete50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/billete50.png"))); // NOI18N
+        btnBillete50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBillete50ActionPerformed(evt);
+            }
+        });
         pnlBilletes.add(btnBillete50);
 
         pnlCentral.add(pnlBilletes);
@@ -80,7 +86,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlCabecera.setLayout(pnlCabeceraLayout);
         pnlCabeceraLayout.setHorizontalGroup(
             pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 856, Short.MAX_VALUE)
+            .addGap(0, 818, Short.MAX_VALUE)
             .addGroup(pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlCabeceraLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -117,6 +123,11 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         btnVolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("VOLVER");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
         pnlPie.add(btnVolver);
 
         pnlGlobal.add(pnlPie, java.awt.BorderLayout.PAGE_END);
@@ -125,61 +136,55 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 856, Short.MAX_VALUE)
+            .addGap(0, 818, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 368, Short.MAX_VALUE)
+            .addGap(0, 344, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Eventos-----------------------------------------------------------------------------
     private void btnBillete10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillete10ActionPerformed
-        // TODO add your handling code here:
+        miControlador.procesarBillete10();
     }//GEN-LAST:event_btnBillete10ActionPerformed
 
+    private void btnBillete20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillete20ActionPerformed
+        miControlador.procesarBillete20();
+    }//GEN-LAST:event_btnBillete20ActionPerformed
+
+    private void btnBillete50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillete50ActionPerformed
+        miControlador.procesarBillete50();
+    }//GEN-LAST:event_btnBillete50ActionPerformed
+
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
-        // TODO add your handling code here:
+        miControlador.procesarCargarCantidad();
     }//GEN-LAST:event_btnRecargarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaRecargarTarjeta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaRecargarTarjeta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaRecargarTarjeta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaRecargarTarjeta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        miControlador.procesarVolver();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaRecargarTarjeta().setVisible(true);
-            }
-        });
+    //Métodos públicos--------------------------------------------------------------------
+    public void despulsarBilletes(int uno, int dos, int tres){
+        if(uno == 1){
+            btnBillete10.setSelected(false);
+        }
+        
+        if(dos == 1){
+            btnBillete20.setSelected(false);
+        }
+        
+        if(tres == 1){
+            btnBillete50.setSelected(false);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -188,7 +193,6 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnBillete50;
     private javax.swing.JButton btnRecargar;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel lbRecargar;
     private javax.swing.JLabel lbSaldo;
     private javax.swing.JPanel pnlBilletes;
     private javax.swing.JPanel pnlCabecera;
