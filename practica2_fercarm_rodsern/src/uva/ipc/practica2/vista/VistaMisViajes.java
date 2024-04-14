@@ -19,16 +19,27 @@ public class VistaMisViajes extends javax.swing.JFrame {
         miControlador = new ControladorMisViajes(this);
         cargarHistorial();      
     }
-
-    DefaultListModel<String> listModel = new DefaultListModel<>();
+    
     public void cargarHistorial(){
-        listModel.clear();
-        ArrayList<String> miHistorial = new ArrayList<>();     
-        miHistorial = miControlador.cargarViajes();
-        for (String viaje : miHistorial) {
-            listModel.addElement(viaje);
+        ArrayList<String> aux = new ArrayList<>();
+        
+        listaAntiguos.removeAll();
+        aux = miControlador.cargarViajesAntiguos();
+        String[] add = new String[aux.size()];
+        for(int i = 0; i < add.length; i++){
+            add[i] = aux.get(i);
         }
-        listaAntiguos.setModel(listModel);
+        
+        listaAntiguos.setListData(add);
+        
+        listaFuturos.removeAll();
+        aux = miControlador.cargarViajesFuturos();
+        add = new String[aux.size()];
+        for(int i = 0; i < add.length; i++){
+            add[i] = aux.get(i);
+        }
+        
+        listaFuturos.setListData(add);
     }
     
     /**

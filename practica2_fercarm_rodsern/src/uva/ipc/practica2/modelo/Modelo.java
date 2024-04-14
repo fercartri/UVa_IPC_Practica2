@@ -18,7 +18,6 @@ import java.util.Scanner;
 public class Modelo {
     private ArrayList<String> estaciones = new ArrayList<>();
     private ArrayList<String> rutas = new ArrayList<>();
-    private ArrayList<String> historial = new ArrayList<>();
     private boolean tarjeta_credito_pasada;
     private boolean tarjeta_renfe_pasada;    
     private double saldo;
@@ -88,21 +87,22 @@ public class Modelo {
     }
     
     public ArrayList<String> getHistorial(){
-        String rutaArchivo = "./file/billetes.csv";
+        ArrayList<String> historial = new ArrayList<>();
         
-        File archivo = new File(rutaArchivo);     
-        if(!archivo.exists()) {
-           return null;
-        }
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
-            while (br.readLine() != null) {
-                if(!historial.contains(br.readLine())){     //Mete las líneas que no estuviesen ya en el historial pero si en el fichero
-                    historial.add(br.readLine());
-                }
+        File archivo = new File("./file/billetes.csv");
+        
+        try {
+            Scanner scanner = new Scanner(archivo);
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                historial.add(linea);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.getStackTrace();
         }
+        
         return historial;
     }
     
@@ -246,9 +246,9 @@ public class Modelo {
         try (FileWriter fw = new FileWriter(archivo, true);
             BufferedWriter bw = new BufferedWriter(fw)) {
 
-            bw.write(datosFinal);
-            historial.add(datosFinal);
             bw.newLine(); // Agrega una nueva línea al final
+            bw.write(datosFinal);
+            
             bw.close();
             
         } catch (IOException e) {
