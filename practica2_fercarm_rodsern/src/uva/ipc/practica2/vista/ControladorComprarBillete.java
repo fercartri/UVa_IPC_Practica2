@@ -3,6 +3,8 @@ package uva.ipc.practica2.vista;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import uva.ipc.practica2.Main;
@@ -62,19 +64,25 @@ public class ControladorComprarBillete {
             String h_semana = token[5];
             String h_finde = token[6];
             
+            LocalTime ahora = LocalTime.now();  //Guardar la hora actual
+            
             if(orig.equals(origen) && dest.equals(destino)){
                 if(findesemana){   //Es fin de semana
                     String[] pos_h = h_finde.split(",");
                     for(int j = 0; j < pos_h.length; j++){
-                        String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
-                        rutas.add(l);
+                        if(ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
+                            String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
+                            rutas.add(l);
+                        }
                     }
                 }
                 else{
                     String[] pos_h = h_semana.split(",");
                     for(int j = 0; j < pos_h.length; j++){
-                        String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
-                        rutas.add(l);
+                        if(ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
+                            String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
+                            rutas.add(l);
+                        }
                     }
                 }
             }

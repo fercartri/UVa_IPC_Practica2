@@ -28,7 +28,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
         for (String viaje : miHistorial) {
             listModel.addElement(viaje);
         }
-        listHistorial.setModel(listModel);
+        listaAntiguos.setModel(listModel);
     }
     
     /**
@@ -41,88 +41,109 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private void initComponents() {
 
         panelGlobal = new javax.swing.JPanel();
-        pnlLista = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        pnlListas = new javax.swing.JPanel();
+        pnlListaAtiguos = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listHistorial = new javax.swing.JList<>();
+        listaAntiguos = new javax.swing.JList<>();
+        pnlListaFuturos = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listaFuturos = new javax.swing.JList<>();
         pnlTitulo = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         lblViajes = new javax.swing.JLabel();
         pnlButtons = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlBtnModificar = new javax.swing.JPanel();
         btnEquipaje = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        pnlBtnVolver = new javax.swing.JPanel();
         btnVolver = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tren Castilla y León");
 
+        panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
         panelGlobal.setLayout(new java.awt.BorderLayout());
 
-        pnlLista.setBackground(new java.awt.Color(233, 255, 255));
-        pnlLista.setMinimumSize(new java.awt.Dimension(400, 100));
-        pnlLista.setPreferredSize(new java.awt.Dimension(400, 100));
-        pnlLista.setLayout(new java.awt.GridLayout(1, 1));
+        pnlListas.setBackground(new java.awt.Color(233, 255, 255));
+        pnlListas.setMinimumSize(new java.awt.Dimension(400, 100));
+        pnlListas.setPreferredSize(new java.awt.Dimension(400, 100));
+        pnlListas.setLayout(new java.awt.GridLayout(2, 1));
 
-        jPanel4.setBackground(new java.awt.Color(233, 255, 255));
+        pnlListaAtiguos.setBackground(new java.awt.Color(233, 255, 255));
+        pnlListaAtiguos.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                pnlListaAtiguosAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(94, 145, 136));
+        jLabel1.setText("BILLETES ANTIGUOS:");
+        pnlListaAtiguos.add(jLabel1);
 
         jScrollPane1.setMinimumSize(new java.awt.Dimension(300, 80));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 80));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(450, 150));
 
-        listHistorial.setBackground(new java.awt.Color(204, 255, 255));
-        listHistorial.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        listHistorial.setToolTipText("");
-        jScrollPane1.setViewportView(listHistorial);
+        listaAntiguos.setBackground(new java.awt.Color(204, 255, 255));
+        listaAntiguos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaAntiguos.setToolTipText("");
+        jScrollPane1.setViewportView(listaAntiguos);
 
-        jPanel4.add(jScrollPane1);
+        pnlListaAtiguos.add(jScrollPane1);
 
-        pnlLista.add(jPanel4);
+        pnlListas.add(pnlListaAtiguos);
 
-        panelGlobal.add(pnlLista, java.awt.BorderLayout.CENTER);
+        pnlListaFuturos.setBackground(new java.awt.Color(233, 255, 255));
 
-        pnlTitulo.setBackground(new java.awt.Color(204, 0, 255));
+        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(94, 145, 136));
+        jLabel2.setText("BILLETES FUTUROS:");
+        pnlListaFuturos.add(jLabel2);
+
+        jScrollPane3.setMinimumSize(new java.awt.Dimension(300, 80));
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(450, 150));
+
+        listaFuturos.setBackground(new java.awt.Color(204, 255, 255));
+        listaFuturos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaFuturos.setToolTipText("");
+        jScrollPane3.setViewportView(listaFuturos);
+
+        pnlListaFuturos.add(jScrollPane3);
+
+        pnlListas.add(pnlListaFuturos);
+
+        panelGlobal.add(pnlListas, java.awt.BorderLayout.CENTER);
+
+        pnlTitulo.setBackground(new java.awt.Color(233, 255, 255));
         pnlTitulo.setMinimumSize(new java.awt.Dimension(400, 100));
-        pnlTitulo.setLayout(new java.awt.GridLayout());
-
-        jPanel2.setBackground(new java.awt.Color(233, 255, 255));
 
         lblViajes.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
         lblViajes.setForeground(new java.awt.Color(94, 145, 136));
         lblViajes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblViajes.setText("MIS VIAJES");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblViajes, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(lblViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
-        );
-
-        pnlTitulo.add(jPanel2);
+        pnlTitulo.add(lblViajes);
 
         panelGlobal.add(pnlTitulo, java.awt.BorderLayout.PAGE_START);
 
-        pnlButtons.setBackground(new java.awt.Color(255, 255, 51));
+        pnlButtons.setBackground(new java.awt.Color(233, 255, 255));
         pnlButtons.setMinimumSize(new java.awt.Dimension(400, 100));
-        pnlButtons.setLayout(new java.awt.GridLayout(2, 1));
+        pnlButtons.setLayout(new java.awt.GridLayout(2, 0, 0, 15));
 
-        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBtnModificar.setBackground(new java.awt.Color(233, 255, 255));
 
         btnEquipaje.setBackground(new java.awt.Color(94, 145, 136));
         btnEquipaje.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnEquipaje.setForeground(new java.awt.Color(255, 255, 255));
         btnEquipaje.setText("MODIFICAR EQUIPAJE ESPECIAL");
-        jPanel1.add(btnEquipaje);
+        pnlBtnModificar.add(btnEquipaje);
 
-        pnlButtons.add(jPanel1);
+        pnlButtons.add(pnlBtnModificar);
 
-        jPanel3.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBtnVolver.setBackground(new java.awt.Color(233, 255, 255));
 
         btnVolver.setBackground(new java.awt.Color(94, 145, 136));
         btnVolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -133,9 +154,9 @@ public class VistaMisViajes extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel3.add(btnVolver);
+        pnlBtnVolver.add(btnVolver);
 
-        pnlButtons.add(jPanel3);
+        pnlButtons.add(pnlBtnVolver);
 
         panelGlobal.add(pnlButtons, java.awt.BorderLayout.PAGE_END);
 
@@ -143,15 +164,15 @@ public class VistaMisViajes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 684, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 618, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,6 +184,10 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         miControlador.procesarBtnVolver();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void pnlListaAtiguosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_pnlListaAtiguosAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlListaAtiguosAncestorAdded
     
     
     
@@ -171,16 +196,20 @@ public class VistaMisViajes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEquipaje;
     private javax.swing.JToggleButton btnVolver;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblViajes;
-    private javax.swing.JList<String> listHistorial;
+    private javax.swing.JList<String> listaAntiguos;
+    private javax.swing.JList<String> listaFuturos;
     private javax.swing.JPanel panelGlobal;
+    private javax.swing.JPanel pnlBtnModificar;
+    private javax.swing.JPanel pnlBtnVolver;
     private javax.swing.JPanel pnlButtons;
-    private javax.swing.JPanel pnlLista;
+    private javax.swing.JPanel pnlListaAtiguos;
+    private javax.swing.JPanel pnlListaFuturos;
+    private javax.swing.JPanel pnlListas;
     private javax.swing.JPanel pnlTitulo;
     // End of variables declaration//GEN-END:variables
 }
