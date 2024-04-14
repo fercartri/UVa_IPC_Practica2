@@ -274,4 +274,35 @@ public class Modelo {
         return numLineas;
     }
     
+     public static void borrarLinea(String nombreArchivo, String lineaABorrar) {
+        String archivoTemporal = "./file/temp.csv";
+        String lineaActual;
+
+        try {
+            File ficheroActual = new File(nombreArchivo);
+            File ficheroTemp = new File(archivoTemporal);
+
+            BufferedReader br = new BufferedReader(new FileReader(ficheroActual));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroTemp));
+            while ((lineaActual = br.readLine()) != null) {
+                // Si la línea no es la que queremos borrar, la escribimos en el archivo temporal
+                if (!lineaActual.trim().equals(lineaABorrar)) {
+                    bw.write(lineaActual + System.getProperty("line.separator"));
+                }
+            }
+            bw.close();
+            br.close();
+
+            if (!ficheroActual.delete()) {
+                return;
+            }
+
+            // Renombramos el archivo temporal al nombre original
+            ficheroTemp.renameTo(ficheroActual);
+           
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }
