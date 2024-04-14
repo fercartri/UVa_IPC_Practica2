@@ -30,9 +30,8 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         panelGlobal = new javax.swing.JPanel();
         pnlDialogCentral = new javax.swing.JPanel();
         pnlTarjeta = new javax.swing.JPanel();
-        pnlLbTarjeta = new javax.swing.JPanel();
         tarjetaCredito = new javax.swing.JLabel();
-        pnlLbInfo = new javax.swing.JPanel();
+        pnlInfoTarjeta = new javax.swing.JPanel();
         lbInfoPasarTarjeta = new javax.swing.JLabel();
         pnlPIN = new javax.swing.JPanel();
         lbPIN = new javax.swing.JLabel();
@@ -63,28 +62,23 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         panelGlobal.setLayout(new java.awt.BorderLayout());
 
         pnlDialogCentral.setBackground(new java.awt.Color(233, 255, 255));
-        pnlDialogCentral.setLayout(new java.awt.GridLayout(2, 0));
+        pnlDialogCentral.setLayout(new java.awt.GridLayout(3, 0));
 
         pnlTarjeta.setBackground(new java.awt.Color(233, 255, 255));
-        pnlTarjeta.setLayout(new java.awt.GridLayout(2, 1));
-
-        pnlLbTarjeta.setBackground(new java.awt.Color(233, 255, 255));
 
         tarjetaCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_credito.jpg"))); // NOI18N
-        pnlLbTarjeta.add(tarjetaCredito);
+        pnlTarjeta.add(tarjetaCredito);
 
-        pnlTarjeta.add(pnlLbTarjeta);
+        pnlDialogCentral.add(pnlTarjeta);
 
-        pnlLbInfo.setBackground(new java.awt.Color(233, 255, 255));
+        pnlInfoTarjeta.setBackground(new java.awt.Color(233, 255, 255));
 
         lbInfoPasarTarjeta.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         lbInfoPasarTarjeta.setForeground(new java.awt.Color(94, 145, 136));
         lbInfoPasarTarjeta.setText("Mantenga la tarjeta AQUÍ 2 segundos");
-        pnlLbInfo.add(lbInfoPasarTarjeta);
+        pnlInfoTarjeta.add(lbInfoPasarTarjeta);
 
-        pnlTarjeta.add(pnlLbInfo);
-
-        pnlDialogCentral.add(pnlTarjeta);
+        pnlDialogCentral.add(pnlInfoTarjeta);
 
         pnlPIN.setBackground(new java.awt.Color(233, 255, 255));
 
@@ -106,7 +100,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
 
         pnlDialogCabecera.setBackground(new java.awt.Color(233, 255, 255));
 
-        lbTitulo.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        lbTitulo.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
         lbTitulo.setForeground(new java.awt.Color(94, 145, 136));
         lbTitulo.setText("PROCESAR EL RECARGO");
 
@@ -173,9 +167,9 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         );
         dialogPagoLayout.setVerticalGroup(
             dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 651, Short.MAX_VALUE)
+            .addGap(0, 615, Short.MAX_VALUE)
             .addGroup(dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -362,8 +356,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     private javax.swing.JPanel pnlDialogCentral;
     private javax.swing.JPanel pnlDialogPie;
     private javax.swing.JPanel pnlGlobal;
-    private javax.swing.JPanel pnlLbInfo;
-    private javax.swing.JPanel pnlLbTarjeta;
+    private javax.swing.JPanel pnlInfoTarjeta;
     private javax.swing.JPanel pnlPIN;
     private javax.swing.JPanel pnlPie;
     private javax.swing.JPanel pnlTarjeta;

@@ -124,7 +124,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
             }
         });
 
-        btn_salir.setText("SALIR");
+        btn_salir.setText("VOLVER AL MENÚ");
         btn_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1058,6 +1058,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Evento al pulsar el botón de salir
      */
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        this.disponerPagoCorrecto();
         miControlador.procesarBtnSalirActionPerformed();
     }//GEN-LAST:event_btn_salirActionPerformed
 

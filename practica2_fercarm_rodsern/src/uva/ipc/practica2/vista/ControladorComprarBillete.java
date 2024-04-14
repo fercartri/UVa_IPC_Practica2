@@ -70,7 +70,13 @@ public class ControladorComprarBillete {
                 if(findesemana){   //Es fin de semana
                     String[] pos_h = h_finde.split(",");
                     for(int j = 0; j < pos_h.length; j++){
-                        if(ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
+                        if(hoySeleccionado(miVista.getFecha())){    //La fecha seleccionada es hoy
+                            if(ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
+                                String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
+                                rutas.add(l);
+                            }
+                        }
+                        else{
                             String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
                             rutas.add(l);
                         }
@@ -79,7 +85,7 @@ public class ControladorComprarBillete {
                 else{
                     String[] pos_h = h_semana.split(",");
                     for(int j = 0; j < pos_h.length; j++){
-                        if(ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
+                        if(hoySeleccionado(miVista.getFecha()) && ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
                             String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
                             rutas.add(l);
                         }
@@ -162,6 +168,53 @@ public class ControladorComprarBillete {
             Date fechaApp = sdf.parse(fApp);
 
             if (fechaApp.compareTo(fechaActual) >= 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    /**
+     * Consulta si la fecha seleccionada para el viaje es el mismo día que se hace la compra
+     * @return true si es el mismo día y false en caso contrario
+     */
+    public boolean hoySeleccionado(String fApp){
+        String fActual;
+        String dia, mes, anno;
+        
+        LocalDate hoy = LocalDate.now();
+        int d = hoy.getDayOfMonth();
+        int m = hoy.getMonthValue();
+        int a = hoy.getYear();
+                
+        if(d < 10){
+            dia = "0" + d;
+        }
+        else{
+            dia = "" + d;
+        }
+        
+        if(m < 10){
+            mes = "0" + m;
+        }
+        else{
+            mes = "" + m;
+        }      
+        
+        fActual = dia + "-" + mes + "-" + a;
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+        try {
+            Date fechaActual = sdf.parse(fActual);
+            Date fechaApp = sdf.parse(fApp);
+
+            if (fechaApp.equals(fechaActual)) {
                 return true;
             }
             else {
@@ -333,7 +386,7 @@ public class ControladorComprarBillete {
     }
     
     public void procesarBtnSalirActionPerformed(){
-        System.exit(0);
+        Main.getGestorVistas().mostrarVistaMenuPrincipal();
     }
     
     public void procesarCancelar(){
