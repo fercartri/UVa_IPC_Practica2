@@ -329,7 +329,7 @@ public class ControladorComprarBillete {
     }
     
     public void procesarCancelar(){
-        Main.getGestorVistas().mostrarVistaMenuUsuario();
+        Main.getGestorVistas().mostrarVistaMenuPrincipal();
     }
     
     public void procesarLbTarjetaRenfeMouseEntered(){

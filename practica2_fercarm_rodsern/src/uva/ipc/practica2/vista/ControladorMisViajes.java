@@ -1,5 +1,6 @@
 package uva.ipc.practica2.vista;
 
+import java.util.ArrayList;
 import uva.ipc.practica2.Main;
 import uva.ipc.practica2.modelo.Modelo;
 
@@ -18,8 +19,14 @@ public class ControladorMisViajes {
         miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
+    public ArrayList<String> cargarViajes(){
+        ArrayList<String> miHistorial = new ArrayList<>();
+        miHistorial = miModelo.getHistorial();
+        return miHistorial; 
+    }
+    
     //Eventos-----------------------------------------------------------------------------
-    public void procesarX(){
-        //TODO
+    public void procesarBtnVolver(){
+        Main.getGestorVistas().mostrarVistaMenuUsuario();
     }
 }

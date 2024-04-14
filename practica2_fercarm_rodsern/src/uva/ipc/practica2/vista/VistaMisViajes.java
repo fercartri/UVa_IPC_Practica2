@@ -1,5 +1,8 @@
 package uva.ipc.practica2.vista;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  * Clase para la interfaz gráfica de la vista de mis viajes
  * @author Fernando Carmona
@@ -14,8 +17,20 @@ public class VistaMisViajes extends javax.swing.JFrame {
     public VistaMisViajes() {
         initComponents();
         miControlador = new ControladorMisViajes(this);
+        cargarHistorial();      
     }
 
+    DefaultListModel<String> listModel = new DefaultListModel<>();
+    public void cargarHistorial(){
+        listModel.clear();
+        ArrayList<String> miHistorial = new ArrayList<>();     
+        miHistorial = miControlador.cargarViajes();
+        for (String viaje : miHistorial) {
+            listModel.addElement(viaje);
+        }
+        listHistorial.setModel(listModel);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,25 +40,147 @@ public class VistaMisViajes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelGlobal = new javax.swing.JPanel();
+        pnlLista = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listHistorial = new javax.swing.JList<>();
+        pnlTitulo = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        lblViajes = new javax.swing.JLabel();
+        pnlButtons = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        btnEquipaje = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JToggleButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tren Castilla y León");
+
+        panelGlobal.setLayout(new java.awt.BorderLayout());
+
+        pnlLista.setBackground(new java.awt.Color(233, 255, 255));
+        pnlLista.setMinimumSize(new java.awt.Dimension(400, 100));
+        pnlLista.setPreferredSize(new java.awt.Dimension(400, 100));
+        pnlLista.setLayout(new java.awt.GridLayout(1, 1));
+
+        jPanel4.setBackground(new java.awt.Color(233, 255, 255));
+
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(300, 80));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 80));
+
+        listHistorial.setBackground(new java.awt.Color(204, 255, 255));
+        listHistorial.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listHistorial.setToolTipText("");
+        jScrollPane1.setViewportView(listHistorial);
+
+        jPanel4.add(jScrollPane1);
+
+        pnlLista.add(jPanel4);
+
+        panelGlobal.add(pnlLista, java.awt.BorderLayout.CENTER);
+
+        pnlTitulo.setBackground(new java.awt.Color(204, 0, 255));
+        pnlTitulo.setMinimumSize(new java.awt.Dimension(400, 100));
+        pnlTitulo.setLayout(new java.awt.GridLayout());
+
+        jPanel2.setBackground(new java.awt.Color(233, 255, 255));
+
+        lblViajes.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        lblViajes.setForeground(new java.awt.Color(94, 145, 136));
+        lblViajes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblViajes.setText("MIS VIAJES");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblViajes, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(lblViajes, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 45, Short.MAX_VALUE))
+        );
+
+        pnlTitulo.add(jPanel2);
+
+        panelGlobal.add(pnlTitulo, java.awt.BorderLayout.PAGE_START);
+
+        pnlButtons.setBackground(new java.awt.Color(255, 255, 51));
+        pnlButtons.setMinimumSize(new java.awt.Dimension(400, 100));
+        pnlButtons.setLayout(new java.awt.GridLayout(2, 1));
+
+        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
+
+        btnEquipaje.setBackground(new java.awt.Color(94, 145, 136));
+        btnEquipaje.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnEquipaje.setForeground(new java.awt.Color(255, 255, 255));
+        btnEquipaje.setText("MODIFICAR EQUIPAJE ESPECIAL");
+        jPanel1.add(btnEquipaje);
+
+        pnlButtons.add(jPanel1);
+
+        jPanel3.setBackground(new java.awt.Color(233, 255, 255));
+
+        btnVolver.setBackground(new java.awt.Color(94, 145, 136));
+        btnVolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("VOLVER");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnVolver);
+
+        pnlButtons.add(jPanel3);
+
+        panelGlobal.add(pnlButtons, java.awt.BorderLayout.PAGE_END);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Eventos-----------------------------------------------------------------------------
+    
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        miControlador.procesarBtnVolver();
+    }//GEN-LAST:event_btnVolverActionPerformed
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEquipaje;
+    private javax.swing.JToggleButton btnVolver;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblViajes;
+    private javax.swing.JList<String> listHistorial;
+    private javax.swing.JPanel panelGlobal;
+    private javax.swing.JPanel pnlButtons;
+    private javax.swing.JPanel pnlLista;
+    private javax.swing.JPanel pnlTitulo;
     // End of variables declaration//GEN-END:variables
 }

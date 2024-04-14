@@ -88,6 +88,25 @@ public class Modelo {
         return estaciones;
     }
     
+    public ArrayList<String> getHistorial(){
+        String rutaArchivo = "./file/billetes.csv";
+        
+        File archivo = new File(rutaArchivo);     
+        if(!archivo.exists()) {
+           return null;
+        }
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            while (br.readLine() != null) {
+                if(!historial.contains(br.readLine())){     //Mete las líneas que no estuviesen ya en el historial pero si en el fichero
+                    historial.add(br.readLine());
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return historial;
+    }
+    
     /**
      * Consultar todas las rutas posibles del sistema
      * @return rutas un ArrayList<String> con toda la información de las rutas
