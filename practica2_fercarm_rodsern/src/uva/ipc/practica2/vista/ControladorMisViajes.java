@@ -29,10 +29,16 @@ public class ControladorMisViajes {
         ArrayList<String> listaAntiguos = new ArrayList<>();
         listaAntiguos = miModelo.getHistorial();  //Cargar todo el historial de viajes
         
+        
+        
         for(int i = 0; i < listaAntiguos.size(); i++){  //Eliminar los que todavía no han ocurrido
             if(!billetePasado(listaAntiguos.get(i))){
                 listaAntiguos.remove(i);
+                //System.out.println("He intentado borrar el billete "+listaAntiguos.get(i));
             }
+        }
+        for(int i = 0; i < listaAntiguos.size(); i++){  //Eliminar los que todavía no han ocurrido          
+            System.out.println(listaAntiguos.get(i));
         }
         
         return listaAntiguos; 
@@ -41,9 +47,10 @@ public class ControladorMisViajes {
     public ArrayList<String> cargarViajesFuturos(){
         ArrayList<String> listaFuturos = new ArrayList<>();
         listaFuturos = miModelo.getHistorial();  //Cargar todo el historial de viajes
-        
+  
         for(int i = 0; i < listaFuturos.size(); i++){  //Eliminar los que ya han ocurrido
             if(billetePasado(listaFuturos.get(i))){
+                //System.out.println("He intentado borrar el billete "+listaFuturos.get(i));
                 listaFuturos.remove(i);
             }
         }
@@ -92,7 +99,7 @@ public class ControladorMisViajes {
         try {
             Date fechaActual = sdf.parse(fActual);
             Date fechaBillete = sdf.parse(fecha);
-
+            
             if (fechaBillete.compareTo(fechaActual) < 0) { //La fecha del billete antes de la actual
                 return true;
             }
@@ -101,7 +108,6 @@ public class ControladorMisViajes {
             }
             else{   //Mismo día => Comparar horas
                 LocalTime ahora = LocalTime.now();  //Guardar la hora actual
-                
                 if(ahora.isBefore(LocalTime.parse(hora, DateTimeFormatter.ofPattern("HH:mm")))){
                     return false;
                 }

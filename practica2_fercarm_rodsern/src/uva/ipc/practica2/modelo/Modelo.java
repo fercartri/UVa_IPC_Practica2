@@ -284,7 +284,7 @@ public class Modelo {
         return numLineas;
     }
     
-     public static void borrarLinea(String nombreArchivo, String lineaABorrar) {
+    public static void borrarLinea(String nombreArchivo, String lineaABorrar) {
         String archivoTemporal = "./file/temp.csv";
         String lineaActual;
 
@@ -314,5 +314,12 @@ public class Modelo {
             e.printStackTrace();
         }
     }
+     
+    //TODO creo que podemos para borrar un billete borrar el elemento de la lista, borrar el historial y crearlo de nuevo con la lista actualizada
+    public void borrarHistorial(){
+        String nombreArchivo = "./file/billetes.csv";
+        File ficheroActual = new File(nombreArchivo);
+        ficheroActual.delete();
+    } 
     
 }
