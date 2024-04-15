@@ -837,13 +837,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         return parseDouble(token[token.length - 2]);
     }
     
-    /**
-     * Consulta el PIN introducido por el usuario
-     * @return un array de caracteres cualquiera
-     */
-    public char[] getPin(){
-        return pin.getPassword();
-    }
+    
     
     public void setVisibilidadLbError1(boolean valor){
         lbError1.setVisible(valor);

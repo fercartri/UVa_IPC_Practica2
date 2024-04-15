@@ -366,7 +366,7 @@ public class ControladorComprarBillete {
     }
     
     public void procesarBtnPinActionPerformed(){
-         if(comprobarPagoCredito(miVista.getPin())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
+         if(comprobarPagoCredito(miModelo.getPin())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
             miVista.setVisibilidadLbError4(false);
             miVista.setVisibilidadPagoCorrecto(true);
             meterBilleteHistorial();

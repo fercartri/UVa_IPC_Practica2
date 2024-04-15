@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 /**
  * Clase para el modelo de la aplicación
  * @author Fernando Carmona
@@ -27,7 +29,7 @@ public class Modelo {
     private boolean miBici;
     private boolean miSilla;
     private boolean miMascota;
-    
+    final char[] pin = {'1', '2', '3', '4'};
     
     public Modelo(){
         cargarEstaciones();
@@ -76,6 +78,14 @@ public class Modelo {
         } catch (FileNotFoundException e) {
             e.getStackTrace();
         }
+    }
+    
+    /**
+     * Consulta el PIN introducido por el usuario
+     * @return un array de caracteres cualquiera
+     */
+    public char[] getPin(){
+        return pin;
     }
     
     /**
