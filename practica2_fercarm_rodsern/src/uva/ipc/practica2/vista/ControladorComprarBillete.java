@@ -65,18 +65,17 @@ public class ControladorComprarBillete {
             String h_finde = token[6];
             
             LocalTime ahora = LocalTime.now();  //Guardar la hora actual
-            
+            Date hoy = new Date();
             if(orig.equals(origen) && dest.equals(destino)){
                 if(findesemana){   //Es fin de semana
                     String[] pos_h = h_finde.split(",");
                     for(int j = 0; j < pos_h.length; j++){
                         if(hoySeleccionado(miVista.getFecha())){    //La fecha seleccionada es hoy
                             if(ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
-                                String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
+                                String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";                                
                                 rutas.add(l);
                             }
-                        }
-                        else{
+                        }else{
                             String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
                             rutas.add(l);
                         }
@@ -86,6 +85,9 @@ public class ControladorComprarBillete {
                     String[] pos_h = h_semana.split(",");
                     for(int j = 0; j < pos_h.length; j++){
                         if(hoySeleccionado(miVista.getFecha()) && ahora.isBefore(LocalTime.parse(pos_h[j], DateTimeFormatter.ofPattern("HH:mm")))){
+                            String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
+                            rutas.add(l);
+                        }else if(hoy.before(miVista.getDate())){
                             String l = ruta + " " + pos_h[j] + " " + tiempo + "min " + precio + " €";
                             rutas.add(l);
                         }

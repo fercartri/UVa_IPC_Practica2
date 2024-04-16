@@ -809,6 +809,18 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         return null;
     }
     
+      /**
+     * Consulta la fecha seleccionada por el usuario
+     * @return una fecha en formato date
+     */
+    public Date getDate(){
+        if(calendario.getDate() != null){
+            return calendario.getDate();
+        }
+        
+        return null;
+    }
+    
     /**
      * Consulta si la fecha seleccionada por el usuario cae en fin de semana
      * @return true si es un fin de semana y false en caso contrario
