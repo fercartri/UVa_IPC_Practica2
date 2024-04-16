@@ -108,7 +108,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         pago_correcto.setAlwaysOnTop(true);
         pago_correcto.setBackground(new java.awt.Color(255, 255, 255));
         pago_correcto.setLocation(new java.awt.Point(200, 200));
-        pago_correcto.setModal(true);
         pago_correcto.setUndecorated(true);
         pago_correcto.setSize(new java.awt.Dimension(463, 186));
 
@@ -944,6 +943,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     }
     
     public void disponerPagoCorrecto(){
+        pago_correcto.setVisible(false);
         pago_correcto.dispose();
     }
     
@@ -1052,7 +1052,6 @@ public class VistaComprarBillete extends javax.swing.JFrame {
      * Evento al pulsar el botón de salir
      */
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        this.disponerPagoCorrecto();
         miControlador.procesarBtnSalirActionPerformed();
     }//GEN-LAST:event_btn_salirActionPerformed
 

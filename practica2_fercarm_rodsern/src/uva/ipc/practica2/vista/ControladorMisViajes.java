@@ -136,6 +136,10 @@ public class ControladorMisViajes {
                 }
             }
             
+            for(int i = 0; i < billetesValidos.size(); i++){
+                System.out.println(billetesValidos.get(i));
+            }
+            
             miModelo.guardarHistorial(billetesValidos);
             
             miVista.dispose();

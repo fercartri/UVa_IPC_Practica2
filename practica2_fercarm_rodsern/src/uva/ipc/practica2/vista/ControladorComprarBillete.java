@@ -386,6 +386,10 @@ public class ControladorComprarBillete {
     }
     
     public void procesarBtnSalirActionPerformed(){
+        miVista.resetTodo();
+        miVista.setVisible(1,0,0);
+        miVista.setNoVisible(0,1,1);
+        miVista.disponerPagoCorrecto();
         Main.getGestorVistas().mostrarVistaMenuPrincipal();
     }
     
