@@ -79,6 +79,17 @@ public class VistaMisViajes extends javax.swing.JFrame {
         lbErrorDialog.setVisible(valor);
     }
     
+    public void cargarRutasDialog(String origen, String destino, boolean findesemana){
+        lista_rutas_posiblesDialog.removeAll();
+         ArrayList<String> aux = new ArrayList<>();
+        aux = miControlador.cargarRutasPosiblesDialog(origen, destino, findesemana);
+        String[] add = new String[aux.size()];
+        for(int i = 0; i < add.length; i++){
+            add[i] = aux.get(i);
+        }
+        
+        lista_rutas_posiblesDialog.setListData(add);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

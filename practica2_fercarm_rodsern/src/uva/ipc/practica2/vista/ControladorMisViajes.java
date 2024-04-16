@@ -116,6 +116,11 @@ public class ControladorMisViajes {
         return false;
     }
     
+    public ArrayList <String> cargarRutasPosiblesDialog(String origen, String destino, boolean findesemana){
+        //TODO
+        return null;
+    }
+    
     //Eventos-----------------------------------------------------------------------------
     public void procesarBtnVolver(){
         Main.getGestorVistas().mostrarVistaMenuUsuario();
@@ -154,6 +159,7 @@ public class ControladorMisViajes {
         else{
             miVista.resetError();
             miVista.setlbErrorDialogVisible(false);
+            
             miVista.setDialogVisible(true);
         }
     }
