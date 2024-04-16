@@ -119,4 +119,14 @@ public class ControladorMisViajes {
     public void procesarBtnVolver(){
         Main.getGestorVistas().mostrarVistaMenuUsuario();
     }
+    
+    public void procesarDevolver(){
+        if(miVista.billeteSeleccionado() == null){
+            miVista.setErrorNoBillete();
+        }
+        else{
+            miVista.resetError();
+            System.out.println(miVista.billeteSeleccionado());
+        }
+    }
 }

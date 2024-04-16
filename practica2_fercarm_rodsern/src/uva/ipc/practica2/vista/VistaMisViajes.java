@@ -42,6 +42,18 @@ public class VistaMisViajes extends javax.swing.JFrame {
         listaFuturos.setListData(add);
     }
     
+    public String billeteSeleccionado(){
+        return listaFuturos.getSelectedValue();
+    }
+    
+    public void setErrorNoBillete(){
+        lbError.setText("Debe seleccionar un billete");
+    }
+    
+    public void resetError(){
+        lbError.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,9 +70,12 @@ public class VistaMisViajes extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaAntiguos = new javax.swing.JList<>();
         pnlListaFuturos = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listaFuturos = new javax.swing.JList<>();
+        pnlError = new javax.swing.JPanel();
+        lbError = new javax.swing.JLabel();
         pnlTitulo = new javax.swing.JPanel();
         lblViajes = new javax.swing.JLabel();
         pnlButtons = new javax.swing.JPanel();
@@ -110,11 +125,14 @@ public class VistaMisViajes extends javax.swing.JFrame {
         pnlListas.add(pnlListaAtiguos);
 
         pnlListaFuturos.setBackground(new java.awt.Color(233, 255, 255));
+        pnlListaFuturos.setLayout(new java.awt.GridLayout(2, 1));
+
+        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(94, 145, 136));
         jLabel2.setText("BILLETES FUTUROS:");
-        pnlListaFuturos.add(jLabel2);
+        jPanel1.add(jLabel2);
 
         jScrollPane3.setMinimumSize(new java.awt.Dimension(300, 80));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(450, 150));
@@ -124,7 +142,37 @@ public class VistaMisViajes extends javax.swing.JFrame {
         listaFuturos.setToolTipText("");
         jScrollPane3.setViewportView(listaFuturos);
 
-        pnlListaFuturos.add(jScrollPane3);
+        jPanel1.add(jScrollPane3);
+
+        pnlListaFuturos.add(jPanel1);
+
+        pnlError.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbError.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbError.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout pnlErrorLayout = new javax.swing.GroupLayout(pnlError);
+        pnlError.setLayout(pnlErrorLayout);
+        pnlErrorLayout.setHorizontalGroup(
+            pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 684, Short.MAX_VALUE)
+            .addGroup(pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlErrorLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbError)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        pnlErrorLayout.setVerticalGroup(
+            pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 88, Short.MAX_VALUE)
+            .addGroup(pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlErrorLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbError)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        pnlListaFuturos.add(pnlError);
 
         pnlListas.add(pnlListaFuturos);
 
@@ -152,6 +200,11 @@ public class VistaMisViajes extends javax.swing.JFrame {
         btnDevolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnDevolver.setForeground(new java.awt.Color(255, 255, 255));
         btnDevolver.setText("DEVOLVER BILLETE");
+        btnDevolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDevolverActionPerformed(evt);
+            }
+        });
         pnlBtnModificar.add(btnDevolver);
 
         btnEquipaje.setBackground(new java.awt.Color(94, 145, 136));
@@ -189,9 +242,9 @@ public class VistaMisViajes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 494, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,6 +260,10 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private void pnlListaAtiguosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_pnlListaAtiguosAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_pnlListaAtiguosAncestorAdded
+
+    private void btnDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverActionPerformed
+        miControlador.procesarDevolver();
+    }//GEN-LAST:event_btnDevolverActionPerformed
     
     
     
@@ -218,8 +275,10 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lbError;
     private javax.swing.JLabel lblViajes;
     private javax.swing.JList<String> listaAntiguos;
     private javax.swing.JList<String> listaFuturos;
@@ -227,6 +286,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private javax.swing.JPanel pnlBtnModificar;
     private javax.swing.JPanel pnlBtnVolver;
     private javax.swing.JPanel pnlButtons;
+    private javax.swing.JPanel pnlError;
     private javax.swing.JPanel pnlListaAtiguos;
     private javax.swing.JPanel pnlListaFuturos;
     private javax.swing.JPanel pnlListas;
