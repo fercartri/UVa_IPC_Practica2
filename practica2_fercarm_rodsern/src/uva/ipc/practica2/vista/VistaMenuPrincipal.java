@@ -1,7 +1,7 @@
 package uva.ipc.practica2.vista;
 
 /**
- * Clase para la interfaz gráfica de la vista de menu principal
+ * Clase para la interfaz gráfica de la vista de menú principal
  * @author Fernando Carmona
  * @author Rodrigo Serna
  */
@@ -40,9 +40,10 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(233, 255, 255));
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
-        panelGlobal.setLayout(new java.awt.BorderLayout(15, 15));
+        panelGlobal.setLayout(new java.awt.BorderLayout());
 
         pnlTexto.setBackground(new java.awt.Color(233, 255, 255));
+        pnlTexto.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 15));
 
         lbTitulo.setFont(new java.awt.Font("Stencil", 1, 48)); // NOI18N
         lbTitulo.setForeground(new java.awt.Color(94, 145, 136));
@@ -128,9 +129,9 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 336, Short.MAX_VALUE)
+            .addGap(0, 341, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
         );
 
         pack();

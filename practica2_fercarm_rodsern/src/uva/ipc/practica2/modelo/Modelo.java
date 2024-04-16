@@ -82,7 +82,7 @@ public class Modelo {
     
     /**
      * Consulta el PIN introducido por el usuario
-     * @return un array de caracteres cualquiera
+     * @return un array de caracteres
      */
     public char[] getPin(){
         return pin;
@@ -96,6 +96,10 @@ public class Modelo {
         return estaciones;
     }
     
+    /**
+     * Consulta el historial de billetes adquiridos
+     * @return un ArrayList<String> con los billetes adquiridos en el formato adecuado
+     */
     public ArrayList<String> getHistorial(){
         ArrayList<String> historial = new ArrayList<>();
         
@@ -167,6 +171,10 @@ public class Modelo {
         return tarjeta_renfe_pasada;
     }
     
+    /**
+     * Actualiza el saldo de la tarjeta TCyL al saldo pasado como parámetro
+     * @param nuevo un double con el nuevo saldo de la tarjeta
+     */
     public void setSaldo(double nuevo){
         saldo = nuevo;
     }
@@ -354,8 +362,8 @@ public class Modelo {
             e.printStackTrace();
         }
     }
-     
-    //TODO creo que podemos para borrar un billete borrar el elemento de la lista, borrar el historial y crearlo de nuevo con la lista actualizada
+    
+    
     public void borrarHistorial(){
         String nombreArchivo = "./file/billetes.csv";
         File ficheroActual = new File(nombreArchivo);

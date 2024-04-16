@@ -23,6 +23,7 @@ public class ControladorMisViajes {
     public ControladorMisViajes(VistaMisViajes vista){
         miVista = vista;
         miModelo = uva.ipc.practica2.Main.getModelo();
+        miModelo.resetTodo();
     }
     
     public ArrayList<String> cargarViajesAntiguos(){

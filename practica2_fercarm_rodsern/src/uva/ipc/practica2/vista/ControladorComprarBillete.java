@@ -28,6 +28,7 @@ public class ControladorComprarBillete {
     public ControladorComprarBillete(VistaComprarBillete vista) {
         miVista = vista;
         miModelo = uva.ipc.practica2.Main.getModelo();
+        miModelo.resetTodo();
     }
     
     /**
@@ -302,7 +303,6 @@ public class ControladorComprarBillete {
     
     public void procesarBtnSigP2ActionPerformed(){
         if(miVista.isListaRutasPosiblesSelected()){   //Hay algún elemento seleccionado
-            //TODO coger el dato del billete de la lista de rutas posibles
             int indice = miVista.getListaRutasPosiblesIndex();
             String datosBillete = miVista.getListaRutasPosiblesString();
             prepararDatosHistorial(datosBillete);

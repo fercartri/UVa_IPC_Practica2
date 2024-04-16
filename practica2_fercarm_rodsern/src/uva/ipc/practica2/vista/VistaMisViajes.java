@@ -81,7 +81,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
     
     public void cargarRutasDialog(String origen, String destino, boolean findesemana){
         lista_rutas_posiblesDialog.removeAll();
-         ArrayList<String> aux = new ArrayList<>();
+        ArrayList<String> aux = new ArrayList<>();
         aux = miControlador.cargarRutasPosiblesDialog(origen, destino, findesemana);
         String[] add = new String[aux.size()];
         for(int i = 0; i < add.length; i++){
@@ -118,12 +118,12 @@ public class VistaMisViajes extends javax.swing.JFrame {
         panelGlobal = new javax.swing.JPanel();
         pnlListas = new javax.swing.JPanel();
         pnlListaAtiguos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbAntiguos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaAntiguos = new javax.swing.JList<>();
         pnlListaFuturos = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lbFuturos = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listaFuturos = new javax.swing.JList<>();
         pnlError = new javax.swing.JPanel();
@@ -314,6 +314,8 @@ public class VistaMisViajes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tren Castilla y León");
+        setPreferredSize(new java.awt.Dimension(660, 530));
+        setSize(new java.awt.Dimension(660, 530));
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
         panelGlobal.setLayout(new java.awt.BorderLayout());
@@ -321,7 +323,6 @@ public class VistaMisViajes extends javax.swing.JFrame {
         pnlListas.setBackground(new java.awt.Color(233, 255, 255));
         pnlListas.setMinimumSize(new java.awt.Dimension(400, 100));
         pnlListas.setPreferredSize(new java.awt.Dimension(400, 100));
-        pnlListas.setLayout(new java.awt.GridLayout(2, 1));
 
         pnlListaAtiguos.setBackground(new java.awt.Color(233, 255, 255));
         pnlListaAtiguos.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -334,10 +335,10 @@ public class VistaMisViajes extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel1.setText("BILLETES ANTIGUOS:");
-        pnlListaAtiguos.add(jLabel1);
+        lbAntiguos.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbAntiguos.setForeground(new java.awt.Color(94, 145, 136));
+        lbAntiguos.setText("BILLETES ANTIGUOS:");
+        pnlListaAtiguos.add(lbAntiguos);
 
         jScrollPane1.setMinimumSize(new java.awt.Dimension(300, 80));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(450, 150));
@@ -356,10 +357,10 @@ public class VistaMisViajes extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(233, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(94, 145, 136));
-        jLabel2.setText("BILLETES FUTUROS:");
-        jPanel1.add(jLabel2);
+        lbFuturos.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        lbFuturos.setForeground(new java.awt.Color(94, 145, 136));
+        lbFuturos.setText("BILLETES FUTUROS:");
+        jPanel1.add(lbFuturos);
 
         jScrollPane3.setMinimumSize(new java.awt.Dimension(300, 80));
         jScrollPane3.setPreferredSize(new java.awt.Dimension(450, 150));
@@ -377,27 +378,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
 
         lbError.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         lbError.setForeground(new java.awt.Color(255, 0, 0));
-
-        javax.swing.GroupLayout pnlErrorLayout = new javax.swing.GroupLayout(pnlError);
-        pnlError.setLayout(pnlErrorLayout);
-        pnlErrorLayout.setHorizontalGroup(
-            pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 684, Short.MAX_VALUE)
-            .addGroup(pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlErrorLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(lbError)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        pnlErrorLayout.setVerticalGroup(
-            pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 88, Short.MAX_VALUE)
-            .addGroup(pnlErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlErrorLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(lbError)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        pnlError.add(lbError);
 
         pnlListaFuturos.add(pnlError);
 
@@ -468,15 +449,15 @@ public class VistaMisViajes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 684, Short.MAX_VALUE)
+            .addGap(0, 660, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGap(0, 530, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
         );
 
         pack();
@@ -524,16 +505,16 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxMascotaDialog;
     private javax.swing.JCheckBox checkBoxSillaDialog;
     private javax.swing.JPanel info2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2Dialog;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lbAntiguos;
     private javax.swing.JLabel lbBicicletaDialog;
     private javax.swing.JLabel lbEquipajeDialog;
     private javax.swing.JLabel lbError;
     private javax.swing.JLabel lbErrorDialog;
+    private javax.swing.JLabel lbFuturos;
     private javax.swing.JLabel lbMascotaDialog;
     private javax.swing.JLabel lbSillaDialog;
     private javax.swing.JLabel lblViajes;

@@ -18,15 +18,25 @@ public class ControladorMenuUsuario {
         this.miModelo = uva.ipc.practica2.Main.getModelo();
     }
     
+    /**
+     * Consulta el saldo de la tarjeta de TCyL
+     * @return un double mayor o igual a cero con el saldo
+     */
     public double getSaldo(){
         return miModelo.getSaldo();
     }
     
+    /**
+     * Consulta el número de billetes adquiridos
+     * @return un número mayor o igual a cero con el número de billetes
+     */
     public int getNumBilletes(){
-        int num = miModelo.getNumBilletes();
-        return num;
+        return miModelo.getNumBilletes();
     }
     
+    /**
+     * Actualiza en la cabecera el número de billetes
+     */
     public void actualizarNumBilletes(){
         String cadena = "NÚMERO DE BILLETES COMPRADOS: ";
         String numero = String.valueOf(getNumBilletes());
@@ -34,7 +44,10 @@ public class ControladorMenuUsuario {
         miVista.lbNumBilletesSetText(cadena);
     }
     
-     public void actualizarSaldo(){
+    /**
+     * Actualiza en la cabecera el saldo de la tarjeta
+     */
+    public void actualizarSaldo(){
         String cadena = "SALDO DE LA TARJETA: ";
         String euro = "€";
         String dinero = String.valueOf(getSaldo());

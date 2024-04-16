@@ -1,7 +1,7 @@
 package uva.ipc.practica2.vista;
 
 /**
- * Clase para la interfaz gráfica de la vista de menu de usuario
+ * Clase para la interfaz gráfica de la vista de menú de usuario
  * @author Fernando Carmona
  * @author Rodrigo Serna
  */
@@ -18,12 +18,12 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         miControlador.actualizarNumBilletes();
     }
     
-    public void lbNumBilletesSetText(String cadena){
-        lbNumBilletes.setText(cadena);
-    }
-    
     public void lbSaldoSetText(String cadena){
         lbSaldo.setText(cadena);
+    }
+    
+    public void lbNumBilletesSetText(String cadena){
+        lbNumBilletes.setText(cadena);
     }
     
     
