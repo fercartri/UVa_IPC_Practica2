@@ -61,9 +61,12 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     private void initComponents() {
 
         pago_correcto = new javax.swing.JDialog();
-        lb_pago_aceptado = new javax.swing.JLabel();
-        btn_billete = new javax.swing.JButton();
-        btn_salir = new javax.swing.JButton();
+        pnlGeneral = new javax.swing.JPanel();
+        pnlInfo = new javax.swing.JPanel();
+        lbPagoAceptado = new javax.swing.JLabel();
+        pnlBotones = new javax.swing.JPanel();
+        btnBillete = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         info1 = new javax.swing.JPanel();
         titulo1 = new javax.swing.JLabel();
         subtitulo1 = new javax.swing.JLabel();
@@ -107,53 +110,53 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         pago_correcto.setTitle("PAGO CORRECTO");
         pago_correcto.setAlwaysOnTop(true);
         pago_correcto.setLocation(new java.awt.Point(200, 200));
-        pago_correcto.setPreferredSize(new java.awt.Dimension(400, 300));
-        pago_correcto.setSize(new java.awt.Dimension(400, 300));
+        pago_correcto.setModal(true);
+        pago_correcto.setPreferredSize(new java.awt.Dimension(444, 130));
+        pago_correcto.setSize(new java.awt.Dimension(444, 130));
 
-        lb_pago_aceptado.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
-        lb_pago_aceptado.setForeground(new java.awt.Color(0, 153, 0));
-        lb_pago_aceptado.setText("EL PAGO HA SIDO PROCESADO CON ÉXITO");
+        pnlGeneral.setBackground(new java.awt.Color(233, 255, 255));
+        pnlGeneral.setLayout(new java.awt.GridLayout(2, 1));
 
-        btn_billete.setText("COMPRAR OTRO BILLETE");
-        btn_billete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_billete.addActionListener(new java.awt.event.ActionListener() {
+        pnlInfo.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbPagoAceptado.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        lbPagoAceptado.setForeground(new java.awt.Color(0, 153, 0));
+        lbPagoAceptado.setText("EL PAGO HA SIDO PROCESADO CON ÉXITO");
+        pnlInfo.add(lbPagoAceptado);
+
+        pnlGeneral.add(pnlInfo);
+
+        pnlBotones.setBackground(new java.awt.Color(233, 255, 255));
+
+        btnBillete.setText("COMPRAR OTRO BILLETE");
+        btnBillete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBillete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_billeteActionPerformed(evt);
+                btnBilleteActionPerformed(evt);
             }
         });
+        pnlBotones.add(btnBillete);
 
-        btn_salir.setText("VOLVER AL MENÚ");
-        btn_salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setText("VOLVER AL MENÚ");
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_salirActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
+        pnlBotones.add(btnVolver);
+
+        pnlGeneral.add(pnlBotones);
 
         javax.swing.GroupLayout pago_correctoLayout = new javax.swing.GroupLayout(pago_correcto.getContentPane());
         pago_correcto.getContentPane().setLayout(pago_correctoLayout);
         pago_correctoLayout.setHorizontalGroup(
             pago_correctoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pago_correctoLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(pago_correctoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pago_correctoLayout.createSequentialGroup()
-                        .addComponent(btn_billete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_salir))
-                    .addComponent(lb_pago_aceptado, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(45, Short.MAX_VALUE))
+            .addComponent(pnlGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
         );
         pago_correctoLayout.setVerticalGroup(
             pago_correctoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pago_correctoLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(lb_pago_aceptado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addGroup(pago_correctoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btn_salir)
-                    .addComponent(btn_billete))
-                .addGap(36, 36, 36))
+            .addComponent(pnlGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1055,16 +1058,16 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     /**
      * Evento al pulsar el botón de comprar nuevo billete
      */
-    private void btn_billeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_billeteActionPerformed
+    private void btnBilleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBilleteActionPerformed
         miControlador.procesarBtnBilleteActionPerformed();
-    }//GEN-LAST:event_btn_billeteActionPerformed
+    }//GEN-LAST:event_btnBilleteActionPerformed
 
     /**
      * Evento al pulsar el botón de salir
      */
-    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         miControlador.procesarBtnSalirActionPerformed();
-    }//GEN-LAST:event_btn_salirActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         miControlador.procesarCancelar();
@@ -1079,13 +1082,13 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnt2;
     private javax.swing.JButton btnAnt3;
+    private javax.swing.JButton btnBillete;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnIntercambio;
     private javax.swing.JButton btnPIN;
     private javax.swing.JButton btnSig1;
     private javax.swing.JButton btnSig2;
-    private javax.swing.JButton btn_billete;
-    private javax.swing.JButton btn_salir;
+    private javax.swing.JButton btnVolver;
     private com.toedter.calendar.JDateChooser calendario;
     private javax.swing.JCheckBox checkBoxMascota;
     private javax.swing.JCheckBox checkBoxSilla;
@@ -1105,13 +1108,16 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     private javax.swing.JLabel lbInfoTarjeta2;
     private javax.swing.JLabel lbMascota;
     private javax.swing.JLabel lbPIN;
+    private javax.swing.JLabel lbPagoAceptado;
     private javax.swing.JLabel lbSilla;
     private javax.swing.JLabel lbTarjetaCredito;
     private javax.swing.JLabel lbTarjetaRenfe;
-    private javax.swing.JLabel lb_pago_aceptado;
     private javax.swing.JList<String> lista_rutas_posibles;
     private javax.swing.JDialog pago_correcto;
     private javax.swing.JPasswordField pin;
+    private javax.swing.JPanel pnlBotones;
+    private javax.swing.JPanel pnlGeneral;
+    private javax.swing.JPanel pnlInfo;
     private javax.swing.JRadioButton radioBtnCredito;
     private javax.swing.JRadioButton radioBtnRenfe;
     private javax.swing.JLabel subtitulo1;
