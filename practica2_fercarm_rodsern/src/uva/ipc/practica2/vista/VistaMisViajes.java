@@ -65,6 +65,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
         lblViajes = new javax.swing.JLabel();
         pnlButtons = new javax.swing.JPanel();
         pnlBtnModificar = new javax.swing.JPanel();
+        btnDevolver = new javax.swing.JButton();
         btnEquipaje = new javax.swing.JButton();
         pnlBtnVolver = new javax.swing.JPanel();
         btnVolver = new javax.swing.JToggleButton();
@@ -145,11 +146,18 @@ public class VistaMisViajes extends javax.swing.JFrame {
         pnlButtons.setLayout(new java.awt.GridLayout(2, 0, 0, 15));
 
         pnlBtnModificar.setBackground(new java.awt.Color(233, 255, 255));
+        pnlBtnModificar.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5));
+
+        btnDevolver.setBackground(new java.awt.Color(94, 145, 136));
+        btnDevolver.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        btnDevolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnDevolver.setText("DEVOLVER BILLETE");
+        pnlBtnModificar.add(btnDevolver);
 
         btnEquipaje.setBackground(new java.awt.Color(94, 145, 136));
         btnEquipaje.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnEquipaje.setForeground(new java.awt.Color(255, 255, 255));
-        btnEquipaje.setText("MODIFICAR EQUIPAJE ESPECIAL");
+        btnEquipaje.setText("MODIFICAR BILLETE");
         pnlBtnModificar.add(btnEquipaje);
 
         pnlButtons.add(pnlBtnModificar);
@@ -205,6 +213,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDevolver;
     private javax.swing.JButton btnEquipaje;
     private javax.swing.JToggleButton btnVolver;
     private javax.swing.JLabel jLabel1;

@@ -28,33 +28,26 @@ public class ControladorMisViajes {
     public ArrayList<String> cargarViajesAntiguos(){
         ArrayList<String> listaAntiguos = new ArrayList<>();
         listaAntiguos = miModelo.getHistorial();  //Cargar todo el historial de viajes
-        
-        
-        
+
         for(int i = 0; i < listaAntiguos.size(); i++){  //Eliminar los que todavía no han ocurrido
             if(!billetePasado(listaAntiguos.get(i))){
                 listaAntiguos.remove(i);
-                //System.out.println("He intentado borrar el billete "+listaAntiguos.get(i));
             }
         }
-        for(int i = 0; i < listaAntiguos.size(); i++){  //Eliminar los que todavía no han ocurrido          
-            System.out.println(listaAntiguos.get(i));
-        }
-        
+
         return listaAntiguos; 
     }
     
     public ArrayList<String> cargarViajesFuturos(){
         ArrayList<String> listaFuturos = new ArrayList<>();
         listaFuturos = miModelo.getHistorial();  //Cargar todo el historial de viajes
-  
+
         for(int i = 0; i < listaFuturos.size(); i++){  //Eliminar los que ya han ocurrido
             if(billetePasado(listaFuturos.get(i))){
-                //System.out.println("He intentado borrar el billete "+listaFuturos.get(i));
                 listaFuturos.remove(i);
             }
         }
-        
+
         return listaFuturos; 
     }
     
@@ -65,41 +58,41 @@ public class ControladorMisViajes {
      */
     public boolean billetePasado(String billete){
         String tokens[] = billete.split(";");
-        
+
         String fecha = tokens[0];
         String hora = tokens[1];
-        
+
         //Comprobar la fecha
         String fActual;
         String dia, mes, anno;
-        
+
         LocalDate hoy = LocalDate.now();
         int d = hoy.getDayOfMonth();
         int m = hoy.getMonthValue();
         int a = hoy.getYear();
-                
+
         if(d < 10){
             dia = "0" + d;
         }
         else{
             dia = "" + d;
         }
-        
+
         if(m < 10){
             mes = "0" + m;
         }
         else{
             mes = "" + m;
         }      
-        
+
         fActual = dia + "-" + mes + "-" + a;
-        
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
         try {
             Date fechaActual = sdf.parse(fActual);
             Date fechaBillete = sdf.parse(fecha);
-            
+
             if (fechaBillete.compareTo(fechaActual) < 0) { //La fecha del billete antes de la actual
                 return true;
             }
@@ -108,6 +101,7 @@ public class ControladorMisViajes {
             }
             else{   //Mismo día => Comparar horas
                 LocalTime ahora = LocalTime.now();  //Guardar la hora actual
+
                 if(ahora.isBefore(LocalTime.parse(hora, DateTimeFormatter.ofPattern("HH:mm")))){
                     return false;
                 }
