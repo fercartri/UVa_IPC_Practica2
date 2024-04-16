@@ -28,10 +28,10 @@ public class ControladorMisViajes {
     public ArrayList<String> cargarViajesAntiguos(){
         ArrayList<String> listaAntiguos = new ArrayList<>();
         listaAntiguos = miModelo.getHistorial();  //Cargar todo el historial de viajes
-
         for(int i = 0; i < listaAntiguos.size(); i++){  //Eliminar los que todavía no han ocurrido
             if(!billetePasado(listaAntiguos.get(i))){
                 listaAntiguos.remove(i);
+                i--;
             }
         }
 
@@ -45,6 +45,7 @@ public class ControladorMisViajes {
         for(int i = 0; i < listaFuturos.size(); i++){  //Eliminar los que ya han ocurrido
             if(billetePasado(listaFuturos.get(i))){
                 listaFuturos.remove(i);
+                i--;
             }
         }
 
