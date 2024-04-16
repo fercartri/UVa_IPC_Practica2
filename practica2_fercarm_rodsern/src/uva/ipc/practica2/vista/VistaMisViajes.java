@@ -71,6 +71,14 @@ public class VistaMisViajes extends javax.swing.JFrame {
         return lista_rutas_posiblesDialog.getSelectedValue();
     }
     
+    public boolean isListaRutasPosiblesDialogSelected(){
+        return !lista_rutas_posiblesDialog.isSelectionEmpty();
+    }
+    
+    public void setlbErrorDialogVisible(boolean valor){
+        lbErrorDialog.setVisible(valor);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,7 +103,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
         lbSillaDialog = new javax.swing.JLabel();
         jScrollPane2Dialog = new javax.swing.JScrollPane();
         lista_rutas_posiblesDialog = new javax.swing.JList<>();
-        lbError2Dialog = new javax.swing.JLabel();
+        lbErrorDialog = new javax.swing.JLabel();
         panelGlobal = new javax.swing.JPanel();
         pnlListas = new javax.swing.JPanel();
         pnlListaAtiguos = new javax.swing.JPanel();
@@ -200,9 +208,9 @@ public class VistaMisViajes extends javax.swing.JFrame {
         lista_rutas_posiblesDialog.setPreferredSize(new java.awt.Dimension(400, 200));
         jScrollPane2Dialog.setViewportView(lista_rutas_posiblesDialog);
 
-        lbError2Dialog.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        lbError2Dialog.setForeground(new java.awt.Color(255, 0, 0));
-        lbError2Dialog.setText("Debe seleccionar un billete");
+        lbErrorDialog.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbErrorDialog.setForeground(new java.awt.Color(255, 0, 0));
+        lbErrorDialog.setText("Debe seleccionar una hora");
 
         javax.swing.GroupLayout info2Layout = new javax.swing.GroupLayout(info2);
         info2.setLayout(info2Layout);
@@ -232,7 +240,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
                             .addComponent(subtitulo2Dialog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(info2Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(lbError2Dialog))
+                        .addComponent(lbErrorDialog))
                     .addGroup(info2Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addComponent(jScrollPane2Dialog, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -268,7 +276,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
                     .addComponent(checkBoxMascotaDialog)
                     .addComponent(lbMascotaDialog))
                 .addGap(45, 45, 45)
-                .addComponent(lbError2Dialog)
+                .addComponent(lbErrorDialog)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfDialog)
@@ -514,7 +522,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private javax.swing.JLabel lbBicicletaDialog;
     private javax.swing.JLabel lbEquipajeDialog;
     private javax.swing.JLabel lbError;
-    private javax.swing.JLabel lbError2Dialog;
+    private javax.swing.JLabel lbErrorDialog;
     private javax.swing.JLabel lbMascotaDialog;
     private javax.swing.JLabel lbSillaDialog;
     private javax.swing.JLabel lblViajes;

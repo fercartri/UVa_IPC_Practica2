@@ -153,7 +153,8 @@ public class ControladorMisViajes {
         }
         else{
             miVista.resetError();
-            //TODO
+            miVista.setlbErrorDialogVisible(false);
+            miVista.setDialogVisible(true);
         }
     }
     
@@ -163,9 +164,16 @@ public class ControladorMisViajes {
     
     public void procesarBtnConfDialogActionPerformed(){
         //TODO MODIFICAR HISTORIAL Y ACTUALIZAR BILLETES
-        boolean[] options = miVista.getDialogOptions();
-        String ruta = miVista.getListaRutasPosiblesString();
-        miVista.setDialogVisible(false);
+        if(miVista.isListaRutasPosiblesDialogSelected()){
+            miVista.setlbErrorDialogVisible(false);
+            boolean[] options = miVista.getDialogOptions();
+            String ruta = miVista.getListaRutasPosiblesString();
+            //TODO MODIFICAR EL BILLETE EN EL FICHERO
+            miVista.cargarHistorial();
+            miVista.setDialogVisible(false);
+        }else{
+            miVista.setlbErrorDialogVisible(true);
+        }
     }
     
 }

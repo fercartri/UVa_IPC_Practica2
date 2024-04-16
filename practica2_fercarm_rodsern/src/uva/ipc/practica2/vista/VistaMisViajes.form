@@ -78,7 +78,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                              <Component id="lbError2Dialog" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbErrorDialog" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -123,7 +123,7 @@
                           <Component id="lbMascotaDialog" alignment="2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="lbError2Dialog" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbErrorDialog" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="29" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnConfDialog" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -323,7 +323,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="lbError2Dialog">
+            <Component class="javax.swing.JLabel" name="lbErrorDialog">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Monospaced" size="14" style="0"/>
@@ -331,7 +331,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Debe seleccionar un billete"/>
+                <Property name="text" type="java.lang.String" value="Debe seleccionar una hora"/>
               </Properties>
             </Component>
           </SubComponents>
