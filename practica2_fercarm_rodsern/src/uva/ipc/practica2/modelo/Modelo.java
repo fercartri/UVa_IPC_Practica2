@@ -260,8 +260,9 @@ public class Modelo {
         try (FileWriter fw = new FileWriter(archivo, true);
             BufferedWriter bw = new BufferedWriter(fw)) {
 
-            bw.newLine(); // Agrega una nueva línea al final
             bw.write(datosFinal);
+            bw.newLine(); // Agrega una nueva línea al final
+            
             
             bw.close();
             
@@ -294,8 +295,8 @@ public class Modelo {
             BufferedWriter bw = new BufferedWriter(fw)) {
             
             for(String aux : billetes){
-                bw.newLine();
                 bw.write(aux);
+                bw.newLine();
             }
             
             bw.close();
