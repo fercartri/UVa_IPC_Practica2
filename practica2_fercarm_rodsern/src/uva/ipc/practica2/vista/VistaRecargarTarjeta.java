@@ -328,7 +328,6 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         String dinero = String.valueOf(miControlador.getSaldo());
         cadena = cadena.concat(dinero);
         cadena = cadena.concat(euro);
-        System.out.println(cadena);
         lbSaldo.setText(cadena);
     }
 

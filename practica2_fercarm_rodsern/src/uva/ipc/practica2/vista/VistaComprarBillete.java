@@ -106,10 +106,9 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
         pago_correcto.setTitle("PAGO CORRECTO");
         pago_correcto.setAlwaysOnTop(true);
-        pago_correcto.setBackground(new java.awt.Color(255, 255, 255));
         pago_correcto.setLocation(new java.awt.Point(200, 200));
-        pago_correcto.setUndecorated(true);
-        pago_correcto.setSize(new java.awt.Dimension(463, 186));
+        pago_correcto.setPreferredSize(new java.awt.Dimension(400, 300));
+        pago_correcto.setSize(new java.awt.Dimension(400, 300));
 
         lb_pago_aceptado.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         lb_pago_aceptado.setForeground(new java.awt.Color(0, 153, 0));

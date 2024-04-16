@@ -156,4 +156,16 @@ public class ControladorMisViajes {
             //TODO
         }
     }
+    
+    public void procesarBtnCancelDialogActionPerformed(){
+        miVista.setDialogVisible(false);
+    }
+    
+    public void procesarBtnConfDialogActionPerformed(){
+        //TODO MODIFICAR HISTORIAL Y ACTUALIZAR BILLETES
+        boolean[] options = miVista.getDialogOptions();
+        String ruta = miVista.getListaRutasPosiblesString();
+        miVista.setDialogVisible(false);
+    }
+    
 }
