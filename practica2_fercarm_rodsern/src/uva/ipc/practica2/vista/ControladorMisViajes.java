@@ -136,6 +136,10 @@ public class ControladorMisViajes {
                 }
             }
             
+            String tokens[] = miVista.billeteSeleccionado().split(";");
+            
+            miModelo.setSaldo(miModelo.getSaldo()+ Double.parseDouble(tokens[6].replace("€", "")));
+            
             miModelo.guardarHistorial(billetesValidos);
             
             miVista.cargarHistorial();
