@@ -197,6 +197,10 @@ public class Modelo {
         miMascota = mascota;
     }
     
+    /**
+     * Añadir un billete al historial
+     * @param datosBillete 
+     */
     public void guardarHistorial(String datosBillete){
         // Ruta del archivo
         String rutaArchivo = "./file/billetes.csv";
@@ -258,6 +262,41 @@ public class Modelo {
 
             bw.newLine(); // Agrega una nueva línea al final
             bw.write(datosFinal);
+            
+            bw.close();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Actualizar el historial a la lista de billetes dados
+     * @param datosBillete 
+     */
+    public void guardarHistorial(ArrayList<String> billetes){
+        // Ruta del archivo
+        String rutaArchivo = "./file/billetes.csv";
+
+        
+        // Verificar si el archivo no existe y crearlo si es necesario
+        File archivo = new File(rutaArchivo);
+        if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }       
+        
+        // Escribir en el archivo
+        try (FileWriter fw = new FileWriter(archivo, false);
+            BufferedWriter bw = new BufferedWriter(fw)) {
+            
+            for(String aux : billetes){
+                bw.newLine();
+                bw.write(aux);
+            }
             
             bw.close();
             

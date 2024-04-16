@@ -211,6 +211,11 @@ public class VistaMisViajes extends javax.swing.JFrame {
         btnEquipaje.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnEquipaje.setForeground(new java.awt.Color(255, 255, 255));
         btnEquipaje.setText("MODIFICAR BILLETE");
+        btnEquipaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEquipajeActionPerformed(evt);
+            }
+        });
         pnlBtnModificar.add(btnEquipaje);
 
         pnlButtons.add(pnlBtnModificar);
@@ -264,6 +269,10 @@ public class VistaMisViajes extends javax.swing.JFrame {
     private void btnDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverActionPerformed
         miControlador.procesarDevolver();
     }//GEN-LAST:event_btnDevolverActionPerformed
+
+    private void btnEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipajeActionPerformed
+        miControlador.procesarModificar();
+    }//GEN-LAST:event_btnEquipajeActionPerformed
     
     
     

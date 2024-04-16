@@ -126,7 +126,30 @@ public class ControladorMisViajes {
         }
         else{
             miVista.resetError();
-            System.out.println(miVista.billeteSeleccionado());
+            
+            ArrayList<String> billetesValidos = new ArrayList<>();
+            billetesValidos = miModelo.getHistorial();  //Cargo todo el historial
+            
+            for(int i = 0; i < billetesValidos.size(); i++){
+                if(billetesValidos.get(i).equals(miVista.billeteSeleccionado())){   //Elimino de la lista el billete seleccionado
+                    billetesValidos.remove(i);
+                }
+            }
+            
+            miModelo.guardarHistorial(billetesValidos);
+            
+            miVista.dispose();
+            Main.getGestorVistas().mostrarVistaMisViajes();
+        }
+    }
+    
+    public void procesarModificar(){
+        if(miVista.billeteSeleccionado() == null){
+            miVista.setErrorNoBillete();
+        }
+        else{
+            miVista.resetError();
+            //TODO
         }
     }
 }
