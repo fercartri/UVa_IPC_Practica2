@@ -1,5 +1,9 @@
 package uva.ipc.practica2.vista;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
 /**
  * Clase para la interfaz gráfica de la vista de recargar tarjeta
  * @author Fernando Carmona
@@ -9,12 +13,23 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     private final ControladorRecargarTarjeta miControlador;
     
     /**
+     * Cronómetro para comprobar el pago con tarjeta de crédito
+     */
+    private Timer timerTarjeta = new Timer(2000, new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+            miControlador.tarjetaPasada();
+        }
+    });
+    
+    /**
      * Crea la nueva vista de recarga de tarjeta
      */
     public VistaRecargarTarjeta() {
         initComponents();
         miControlador = new ControladorRecargarTarjeta(this);
         actualizarSaldo();
+        lbError.setVisible(false);
+        lbErrorSeleccion.setVisible(false);
     }
 
     /**
@@ -34,9 +49,12 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlInfoTarjeta = new javax.swing.JPanel();
         lbInfoPasarTarjeta = new javax.swing.JLabel();
         pnlPIN = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         lbPIN = new javax.swing.JLabel();
         PIN = new javax.swing.JTextField();
         btnAceptarPin = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lbError = new javax.swing.JLabel();
         pnlDialogCabecera = new javax.swing.JPanel();
         lbTitulo = new javax.swing.JLabel();
         pnlDialogPie = new javax.swing.JPanel();
@@ -47,6 +65,8 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         btnBillete10 = new javax.swing.JToggleButton();
         btnBillete20 = new javax.swing.JToggleButton();
         btnBillete50 = new javax.swing.JToggleButton();
+        jPanel3 = new javax.swing.JPanel();
+        lbErrorSeleccion = new javax.swing.JLabel();
         pnlCabecera = new javax.swing.JPanel();
         lbSaldo = new javax.swing.JLabel();
         pnlPie = new javax.swing.JPanel();
@@ -57,6 +77,8 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         dialogPago.setAlwaysOnTop(true);
         dialogPago.setLocation(new java.awt.Point(200, 200));
         dialogPago.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        dialogPago.setPreferredSize(new java.awt.Dimension(430, 620));
+        dialogPago.setSize(new java.awt.Dimension(430, 620));
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
         panelGlobal.setLayout(new java.awt.BorderLayout());
@@ -67,6 +89,14 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlTarjeta.setBackground(new java.awt.Color(233, 255, 255));
 
         tarjetaCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta_credito.jpg"))); // NOI18N
+        tarjetaCredito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tarjetaCreditoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tarjetaCreditoMouseExited(evt);
+            }
+        });
         pnlTarjeta.add(tarjetaCredito);
 
         pnlDialogCentral.add(pnlTarjeta);
@@ -81,18 +111,58 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlDialogCentral.add(pnlInfoTarjeta);
 
         pnlPIN.setBackground(new java.awt.Color(233, 255, 255));
+        pnlPIN.setLayout(new java.awt.GridLayout(2, 1));
+
+        jPanel1.setBackground(new java.awt.Color(233, 255, 255));
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 5));
 
         lbPIN.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         lbPIN.setForeground(new java.awt.Color(94, 145, 136));
         lbPIN.setText("PIN:");
-        pnlPIN.add(lbPIN);
-        pnlPIN.add(PIN);
+        jPanel1.add(lbPIN);
+        jPanel1.add(PIN);
 
         btnAceptarPin.setBackground(new java.awt.Color(94, 145, 136));
         btnAceptarPin.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnAceptarPin.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptarPin.setText("ACEPTAR");
-        pnlPIN.add(btnAceptarPin);
+        btnAceptarPin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarPinActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAceptarPin);
+
+        pnlPIN.add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbError.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbError.setForeground(new java.awt.Color(255, 0, 0));
+        lbError.setText("Error al procesar el pago");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbError, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 69, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbError, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        pnlPIN.add(jPanel2);
 
         pnlDialogCentral.add(pnlPIN);
 
@@ -108,7 +178,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlDialogCabecera.setLayout(pnlDialogCabeceraLayout);
         pnlDialogCabeceraLayout.setHorizontalGroup(
             pnlDialogCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
             .addGroup(pnlDialogCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlDialogCabeceraLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -133,12 +203,17 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         btnCancelar.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDialogPieLayout = new javax.swing.GroupLayout(pnlDialogPie);
         pnlDialogPie.setLayout(pnlDialogPieLayout);
         pnlDialogPieLayout.setHorizontalGroup(
             pnlDialogPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
             .addGroup(pnlDialogPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlDialogPieLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -161,15 +236,15 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         dialogPago.getContentPane().setLayout(dialogPagoLayout);
         dialogPagoLayout.setHorizontalGroup(
             dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
             .addGroup(dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dialogPagoLayout.setVerticalGroup(
             dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 615, Short.MAX_VALUE)
+            .addGap(0, 619, Short.MAX_VALUE)
             .addGroup(dialogPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -180,6 +255,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlGlobal.setLayout(new java.awt.BorderLayout(15, 15));
 
         pnlCentral.setBackground(new java.awt.Color(233, 255, 255));
+        pnlCentral.setLayout(new java.awt.GridLayout(2, 1));
 
         pnlBilletes.setBackground(new java.awt.Color(233, 255, 255));
 
@@ -209,6 +285,35 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
 
         pnlCentral.add(pnlBilletes);
 
+        jPanel3.setBackground(new java.awt.Color(233, 255, 255));
+
+        lbErrorSeleccion.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        lbErrorSeleccion.setForeground(new java.awt.Color(255, 0, 0));
+        lbErrorSeleccion.setText("Debe seleccionar un billete");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1276, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbErrorSeleccion)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 86, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lbErrorSeleccion)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        pnlCentral.add(jPanel3);
+
         pnlGlobal.add(pnlCentral, java.awt.BorderLayout.CENTER);
 
         pnlCabecera.setBackground(new java.awt.Color(233, 255, 255));
@@ -221,7 +326,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlCabecera.setLayout(pnlCabeceraLayout);
         pnlCabeceraLayout.setHorizontalGroup(
             pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGap(0, 1276, Short.MAX_VALUE)
             .addGroup(pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlCabeceraLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -271,7 +376,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGap(0, 1276, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -279,7 +384,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 344, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
+                .addComponent(pnlGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -300,12 +405,34 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBillete50ActionPerformed
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
-        miControlador.procesarCargarCantidad();
+        if(getBilleteSeleccionado() != 0){
+            miControlador.procesarCargarCantidad();
+            setErrorSeleccion(false);
+        }
+        else{
+            setErrorSeleccion(true);
+        }
     }//GEN-LAST:event_btnRecargarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         miControlador.procesarVolver();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void tarjetaCreditoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tarjetaCreditoMouseEntered
+        timerTarjeta.start();
+    }//GEN-LAST:event_tarjetaCreditoMouseEntered
+
+    private void tarjetaCreditoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tarjetaCreditoMouseExited
+        timerTarjeta.stop();
+    }//GEN-LAST:event_tarjetaCreditoMouseExited
+
+    private void btnAceptarPinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarPinActionPerformed
+        miControlador.procesarAceptar();
+    }//GEN-LAST:event_btnAceptarPinActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        miControlador.procesarCancelar();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     //Métodos públicos--------------------------------------------------------------------
     public void despulsarBilletes(int uno, int dos, int tres){
@@ -330,6 +457,38 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         cadena = cadena.concat(euro);
         lbSaldo.setText(cadena);
     }
+    
+    public void setError(boolean b){
+        lbError.setVisible(b);
+    }
+    
+    public void setErrorSeleccion(boolean b){
+        lbErrorSeleccion.setVisible(b);
+    }
+    
+    public void mostrarPago(){
+        dialogPago.setVisible(true);
+    }
+    
+    public void disponerPagoCorrecto(){
+        dialogPago.setVisible(false);
+        dialogPago.dispose();
+    }
+    
+    public int getBilleteSeleccionado(){
+        if(btnBillete10.isSelected()){
+            return 10;
+        }
+        else if(btnBillete20.isSelected()){
+            return 20;
+        }
+        else if(btnBillete50.isSelected()){
+            return 50;
+        }
+        else{
+            return 0;
+        }
+    }
 
 
 
@@ -343,6 +502,11 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
     private javax.swing.JButton btnRecargar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JDialog dialogPago;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lbError;
+    private javax.swing.JLabel lbErrorSeleccion;
     private javax.swing.JLabel lbInfoPasarTarjeta;
     private javax.swing.JLabel lbPIN;
     private javax.swing.JLabel lbSaldo;
