@@ -1,6 +1,9 @@
 package uva.ipc.practica2.vista;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 
 /**
@@ -43,9 +46,30 @@ public class VistaMisViajes extends javax.swing.JFrame {
         listaFuturos.setListData(add);
     }
     
-    public String billeteSeleccionado(){
+    public String getBilleteSeleccionado(){
         return listaFuturos.getSelectedValue();
     }
+    
+    public String getFechaSeleccionada(){
+        String tokens[] = getBilleteSeleccionado().split(";");
+        return tokens[0];
+        
+    }
+    
+    public Date getDateSeleccionada(){
+        String tokens[] = getBilleteSeleccionado().split(";");
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date fecha = formato.parse(tokens[0]);
+            return fecha;
+        } catch (ParseException e) {
+            // Manejar la excepción si la cadena no puede ser parseada como una fecha
+            e.printStackTrace();
+            return null;
+        }
+        
+    }
+
     
     public void setErrorNoBillete(){
         lbError.setText("Debe seleccionar un billete");
