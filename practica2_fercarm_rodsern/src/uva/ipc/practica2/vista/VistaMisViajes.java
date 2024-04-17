@@ -52,7 +52,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
     }
     
     public void resetError(){
-        lbError.setText("");
+        lbError.setText(" ");
     }
     
     public void setDialogVisible(boolean valor){
@@ -314,8 +314,8 @@ public class VistaMisViajes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tren Castilla y León");
-        setPreferredSize(new java.awt.Dimension(660, 530));
-        setSize(new java.awt.Dimension(660, 530));
+        setPreferredSize(new java.awt.Dimension(660, 555));
+        setSize(new java.awt.Dimension(660, 555));
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
         panelGlobal.setLayout(new java.awt.BorderLayout());
@@ -378,6 +378,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
 
         lbError.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         lbError.setForeground(new java.awt.Color(255, 0, 0));
+        lbError.setText(" ");
         pnlError.add(lbError);
 
         pnlListaFuturos.add(pnlError);
@@ -455,9 +456,9 @@ public class VistaMisViajes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 553, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
+                .addComponent(panelGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE))
         );
 
         pack();
