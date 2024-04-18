@@ -12,7 +12,10 @@ public class ControladorMenuUsuario {
     private VistaMenuUsuario miVista;
     private Modelo miModelo;
     
-    
+    /**
+     * Inicializar la vista y el modelo a partir de una vista proporcionada
+     * @param vista un objeto vista cualquiera
+     */
     public ControladorMenuUsuario(VistaMenuUsuario vista){
         this.miVista = vista;
         this.miModelo = uva.ipc.practica2.Main.getModelo();
@@ -57,14 +60,23 @@ public class ControladorMenuUsuario {
     }
     
     //Eventos-----------------------------------------------------------------------------
+    /**
+     * Pone por pantalla el menú de recargar tarjeta
+     */
     public void procesarRecargar(){
         Main.getGestorVistas().mostrarVistaRecargarTarjeta();
     }
     
+    /**
+     * Pone por pantalla el menú del historial de mis viajes
+     */
     public void procesarMisViajes(){
         Main.getGestorVistas().mostrarVistaMisViajes();
     }
     
+    /**
+     * Pone por pantalla el menú principal de la aplicación
+     */
     public void procesarVolver(){
         Main.getGestorVistas().mostrarVistaMenuPrincipal();
     }

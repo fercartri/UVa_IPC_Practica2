@@ -21,13 +21,20 @@ public class ControladorMisViajes {
     private VistaMisViajes miVista;
     private Modelo miModelo;
     
-    
+    /**
+     * Inicializar la vista y el modelo a partir de una vista proporcionada
+     * @param vista un objeto vista cualquiera
+     */
     public ControladorMisViajes(VistaMisViajes vista){
         miVista = vista;
         miModelo = uva.ipc.practica2.Main.getModelo();
         miModelo.resetTodo();
     }
     
+    /**
+     * Devuelve la lista de los billetes anteriores a la fecha de hoy
+     * @return un ArrayList de tipo String no nulo
+     */
     public ArrayList<String> cargarViajesAntiguos(){
         ArrayList<String> listaAntiguos = new ArrayList<>();
         listaAntiguos = miModelo.getHistorial();  //Cargar todo el historial de viajes
@@ -41,6 +48,10 @@ public class ControladorMisViajes {
         return listaAntiguos; 
     }
     
+    /**
+     * Devuelve la lista de los billetes posteriores a la fecha de hoy
+     * @return un ArrayList de tipo String no nulo
+     */
     public ArrayList<String> cargarViajesFuturos(){
         ArrayList<String> listaFuturos = new ArrayList<>();
         listaFuturos = miModelo.getHistorial();  //Cargar todo el historial de viajes
@@ -55,7 +66,7 @@ public class ControladorMisViajes {
         return listaFuturos; 
     }
     
-     /**
+    /**
      * Consulta si la fecha seleccionada para el viaje es el mismo día que se hace la compra
      * @return true si es el mismo día y false en caso contrario
      */
@@ -167,7 +178,13 @@ public class ControladorMisViajes {
         return false;
     }
     
-    
+    /**
+     * Devuelve las rutas posibles a que coinciden en fecha, origen y destino del billete cuyos datos son introducidos
+     * @param origen un String no nulo
+     * @param destino un String no nulo
+     * @param findesemana un boolean cualquiera
+     * @return un ArrayList de tipo String no nulo
+     */
     public ArrayList <String> cargarRutasPosiblesDialog(String origen, String destino, boolean findesemana){
         //TODO
         ArrayList<String> rutas_aux = new ArrayList<>();
@@ -245,16 +262,27 @@ public class ControladorMisViajes {
         }
     }
 
-    
+    /**
+     * Actualiza el billete en el historial con los datos proporcionados
+     * @param options un array de 3 booleans
+     * @param ruta un String con la información de la ruta
+     * @param fecha un String con la fecha en formato DD-YY-MM
+     */
     private void actualizarBillete(boolean[] options,String ruta,String fecha){
         miModelo.actualizarBillete(options,ruta, fecha,miVista.getOrigenSeleccionado(),miVista.getDestinoSeleccionado(), miVista.getBilleteSeleccionado());
     }
     
     //Eventos-----------------------------------------------------------------------------
+    /**
+     * Pone por pantalla el menú de usuario
+     */
     public void procesarBtnVolver(){
         Main.getGestorVistas().mostrarVistaMenuUsuario();
     }
     
+    /**
+     * Elimina el billete seleccionado con fecha posterior a la de hoy del historial
+     */
     public void procesarDevolver(){
         if(miVista.getBilleteSeleccionado() == null){
             miVista.setErrorNoBillete();
@@ -281,6 +309,10 @@ public class ControladorMisViajes {
         }
     }
     
+    /**
+     * Comprueba que haya un billete seleccionado con fecha posterior a la de hoy, si no lo hay, devuelve error
+     * Pasa los datos del billete al modelo y muestra por pantalla el menú de las opciones modificables del billete
+     */
     public void procesarModificar(){
         if(miVista.getBilleteSeleccionado() == null){
             miVista.setErrorNoBillete();
@@ -307,11 +339,18 @@ public class ControladorMisViajes {
         }
     }
 
-    
+    /**
+     * Sale del menú de modificar un billete al menú de mis viajes
+     */
     public void procesarBtnCancelDialogActionPerformed(){
         miVista.setDialogVisible(false);
     }
     
+    /**
+     * Comprueba que haya una ruta seleccionada, en caso contrario devuelve error
+     * En caso de que la haya, actualiza el billete en el historial con la ruta y las opciones seleccionadas 
+     * Después, vuelve al menú de mis viajes
+     */
     public void procesarBtnConfDialogActionPerformed(){
         //TODO MODIFICAR HISTORIAL Y ACTUALIZAR BILLETES
         if(miVista.isListaRutasPosiblesDialogSelected()){
