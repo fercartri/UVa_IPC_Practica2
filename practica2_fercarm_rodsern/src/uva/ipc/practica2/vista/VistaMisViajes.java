@@ -169,7 +169,9 @@ public class VistaMisViajes extends javax.swing.JFrame {
 
         DialogModificar.setTitle("MODIFICAR BILLETE");
         DialogModificar.setBackground(new java.awt.Color(207, 246, 248));
-        DialogModificar.setSize(new java.awt.Dimension(500, 750));
+        DialogModificar.setModal(true);
+        DialogModificar.setPreferredSize(new java.awt.Dimension(600, 750));
+        DialogModificar.setSize(new java.awt.Dimension(600, 750));
 
         info2.setBackground(new java.awt.Color(207, 246, 248));
         info2.setPreferredSize(new java.awt.Dimension(500, 750));
@@ -275,23 +277,22 @@ public class VistaMisViajes extends javax.swing.JFrame {
                             .addComponent(lbSillaDialog)
                             .addComponent(lbEquipajeDialog)))
                     .addGroup(info2Layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(titulo2Dialog)
-                            .addComponent(subtitulo2Dialog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(info2Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(lbErrorDialog))
                     .addGroup(info2Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(jScrollPane2Dialog, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
-            .addGroup(info2Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(btnCancelDialog)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnConfDialog)
-                .addGap(100, 100, 100))
+                        .addComponent(jScrollPane2Dialog, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(info2Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(btnCancelDialog)
+                        .addGap(105, 105, 105)
+                        .addComponent(btnConfDialog))
+                    .addGroup(info2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(titulo2Dialog)
+                            .addComponent(subtitulo2Dialog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         info2Layout.setVerticalGroup(
             info2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,8 +339,7 @@ public class VistaMisViajes extends javax.swing.JFrame {
             DialogModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DialogModificarLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(info2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(info2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
