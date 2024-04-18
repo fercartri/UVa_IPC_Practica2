@@ -75,6 +75,12 @@ public class VistaMisViajes extends javax.swing.JFrame {
         lbError.setText("Debe seleccionar un billete");
     }
     
+    public void setDialogRadios(boolean bici, boolean silla, boolean mascota){
+        checkBoxBiciDialog.setSelected(bici);
+        checkBoxSillaDialog.setSelected(silla);
+        checkBoxMascotaDialog.setSelected(mascota);
+    }
+    
     public void resetError(){
         lbError.setText(" ");
     }

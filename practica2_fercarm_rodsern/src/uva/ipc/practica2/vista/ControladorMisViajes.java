@@ -286,6 +286,19 @@ public class ControladorMisViajes {
             miVista.setlbErrorDialogVisible(false);
             String tokens[] = miVista.getBilleteSeleccionado().split(";");
             miVista.cargarRutasDialog(tokens[3], tokens[4],getFinDeSemana(tokens[0]));
+            boolean radioBici;
+            boolean radioSilla;
+            boolean radioMascota;
+            if(tokens[7].equals("false")){
+                radioBici = false;
+            }else{radioBici = true;}
+            if(tokens[8].equals("false")){
+                radioSilla = false;
+            }else{radioSilla = true;}
+            if(tokens[9].equals("false")){
+                radioMascota = false;
+            }else{radioMascota = true;}
+            miVista.setDialogRadios(radioBici, radioSilla, radioMascota);
             miVista.setDialogVisible(true);
         }
     }
