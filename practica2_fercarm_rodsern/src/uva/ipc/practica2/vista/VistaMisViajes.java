@@ -52,8 +52,17 @@ public class VistaMisViajes extends javax.swing.JFrame {
     
     public String getFechaSeleccionada(){
         String tokens[] = getBilleteSeleccionado().split(";");
-        return tokens[0];
-        
+        return tokens[0];   
+    }
+    
+    public String getOrigenSeleccionado(){
+        String tokens[] = getBilleteSeleccionado().split(";");
+        return tokens[3];   
+    }
+    
+    public String getDestinoSeleccionado(){
+        String tokens[] = getBilleteSeleccionado().split(";");
+        return tokens[4];   
     }
     
     public Date getDateSeleccionada(){

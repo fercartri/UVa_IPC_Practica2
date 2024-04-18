@@ -246,6 +246,10 @@ public class ControladorMisViajes {
     }
 
     
+    private void actualizarBillete(boolean[] options,String ruta,String fecha){
+        miModelo.actualizarBillete(options,ruta, fecha,miVista.getOrigenSeleccionado(),miVista.getDestinoSeleccionado(), miVista.getBilleteSeleccionado());
+    }
+    
     //Eventos-----------------------------------------------------------------------------
     public void procesarBtnVolver(){
         Main.getGestorVistas().mostrarVistaMenuUsuario();
@@ -314,6 +318,7 @@ public class ControladorMisViajes {
             miVista.setlbErrorDialogVisible(false);
             boolean[] options = miVista.getDialogOptions();
             String ruta = miVista.getListaRutasPosiblesString();
+            actualizarBillete(options,ruta, miVista.getFechaSeleccionada());
             //TODO MODIFICAR EL BILLETE EN EL FICHERO
             miVista.cargarHistorial();
             miVista.setDialogVisible(false);

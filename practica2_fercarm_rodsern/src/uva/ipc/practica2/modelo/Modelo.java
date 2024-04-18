@@ -314,6 +314,101 @@ public class Modelo {
         }
     }
     
+    public void actualizarBillete(boolean[] options,String ruta,String fecha, String origenSelec, String destinoSelec, String billeteAnterior){
+        // Ruta del archivo
+        String rutaArchivo = "./file/billetes.csv";
+        String archivoTemporal = "./file/temp.csv";
+        String lineaActual;
+        String lineaABorrar = billeteAnterior;
+        String bicicletaString = "false";
+        String mascotaString = "false";
+        String sillaString = "false";
+        if(options[0]){
+            bicicletaString = "true";
+        }
+        if(options[2]){
+            mascotaString = "true";
+        }
+        if(options[1]){
+            sillaString = "true";
+        }
+        //CYL5 11:25 25min 4.25 € -- Ejemplo de ruta para hacer el split
+        String[] tokensRutas = ruta.split(" ");
+        //Preparar el formato correcto
+        String datosFinal;
+        String hora = tokensRutas[1];
+        String id = tokensRutas [0];
+        String tiempo = tokensRutas[2];
+        String precio = tokensRutas[3];
+        precio = precio.concat(tokensRutas[4]); //meter el símbolo de euro
+        datosFinal = fecha;
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(hora);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(id);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(origenSelec);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(destinoSelec);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(tiempo);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(precio);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(bicicletaString);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(sillaString);
+        datosFinal = datosFinal.concat(";");
+        datosFinal = datosFinal.concat(mascotaString);
+        datosFinal = datosFinal.concat(";");
+        
+       
+        // Verificar si el archivo no existe y crearlo si es necesario
+        File archivo = new File(rutaArchivo);
+        if (!archivo.exists()) {
+            throw new IllegalStateException("Error, el archivo del historial de billetes no existe");
+        }
+        
+        //Borrar el billete anterior
+         try {
+            File ficheroActual = new File(rutaArchivo);
+            File ficheroTemp = new File(archivoTemporal);
+
+            BufferedReader br = new BufferedReader(new FileReader(ficheroActual));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroTemp));
+            while ((lineaActual = br.readLine()) != null) {
+                // Si la línea no es la que queremos borrar, la escribimos en el archivo temporal
+                if (!lineaActual.trim().equals(lineaABorrar)) {
+                    bw.write(lineaActual + System.getProperty("line.separator"));
+                }
+            }
+            bw.close();
+            br.close();
+
+            ficheroActual.delete();
+
+            // Renombramos el archivo temporal al nombre original
+            ficheroTemp.renameTo(ficheroActual);
+           
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        // Escribir en el archivo
+        try (FileWriter fw = new FileWriter(archivo, true);
+            BufferedWriter bw = new BufferedWriter(fw)) {
+
+            bw.write(datosFinal);
+            bw.newLine(); // Agrega una nueva línea al final
+            
+            
+            bw.close();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     public int getNumBilletes(){
         String rutaArchivo = "./file/billetes.csv";
         int numLineas= 0;
