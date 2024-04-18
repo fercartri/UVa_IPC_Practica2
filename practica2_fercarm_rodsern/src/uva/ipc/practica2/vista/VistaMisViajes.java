@@ -170,7 +170,6 @@ public class VistaMisViajes extends javax.swing.JFrame {
         DialogModificar.setTitle("MODIFICAR BILLETE");
         DialogModificar.setBackground(new java.awt.Color(207, 246, 248));
         DialogModificar.setModal(true);
-        DialogModificar.setPreferredSize(new java.awt.Dimension(600, 750));
         DialogModificar.setSize(new java.awt.Dimension(600, 750));
 
         info2.setBackground(new java.awt.Color(207, 246, 248));
