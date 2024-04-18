@@ -270,15 +270,27 @@ public class ControladorComprarBillete {
         }
     }
     
+    /**
+     * Almacena el parámetro billete en una variable local para más tarde enviarla al historial
+     * @param billete un String con datos del billete
+     */
     public void prepararDatosHistorial(String billete){
         datosBillete = billete;
     }
     
+    /**
+     * Mete el billete almacenado localmente en el historial
+     */
     public void meterBilleteHistorial(){
-        miModelo.guardarHistorial(datosBillete);
+        miModelo.meterBilleteEnHistorial(datosBillete);
     }
     
     //PROCESAR EVENTOS------------------------------------------------------------------------------------
+    /**
+     * Comprueba que la ruta seleccionada existe, si no, devuelve error
+     * Comprueba que la fecha seleccionada es válida, si no, devuelve error
+     * Almacena los datos introducidos en el modelo y pone visible solo el siguiente paso
+     */
     public void procesarBtnSigP1ActionPerformed(){
         if(!compEstaciones(miVista.getOrigen(), miVista.getDestino())){    //Ruta no valida\\
             miVista.setTextoLbError1("Ruta no existente");
@@ -301,6 +313,10 @@ public class ControladorComprarBillete {
         }
     }
     
+    /**
+     * Comprueba que hay una ruta seleccionada, si no, devuelve error
+     * Almacena los datos introducidos en el modelo y pone visible solo el siguiente paso
+     */
     public void procesarBtnSigP2ActionPerformed(){
         if(miVista.isListaRutasPosiblesSelected()){   //Hay algún elemento seleccionado
             int indice = miVista.getListaRutasPosiblesIndex();
@@ -317,12 +333,18 @@ public class ControladorComprarBillete {
         }    
     }
     
+    /**
+     * Pone visible solo el paso anterior
+     */
     public void procesarBtnAntP2ActionPerformed(){
         miVista.setVisible(1,0,0);
         miVista.setNoVisible(0,1,1);
     }
             
-    
+    /**
+     * Activa este botón y hace visibles los pasos del mismo, 
+     * en caso de que el otro botón estuviera activado, lo desactiva y oculta sus pasos
+     */
     public void procesarRadioBtnRenfeActionPerformed(){
         resetTodo();    
         miVista.setVisibilidadLbError4(false);
@@ -339,6 +361,10 @@ public class ControladorComprarBillete {
         miVista.setVisibilidadButtonPin(false);
     }
     
+    /**
+     * Activa este botón y hace visibles los pasos del mismo, 
+     * en caso de que el otro botón estuviera activado, lo desactiva y oculta sus pasos
+     */
     public void procesarRadioBtnCreditoActionPerformed(){
         resetTodo();
         miVista.setVisibilidadLbError4(false);
@@ -355,11 +381,17 @@ public class ControladorComprarBillete {
         miVista.setVisibilidadButtonPin(true);
     }
     
+    /**
+     * Pone visible solo el paso anterior
+     */
     public void procesarBtnAntP3ActionPerformed(){
         miVista.setVisible(0,1,0);
         miVista.setNoVisible(1,0,1);
     }
     
+    /**
+     * Intercambia el origen y el destino introducidos entre sí
+     */
     public void procesarBtnIntercambioActionPerformed(){
         int origen = miVista.getIndexOrigen();
         int destino = miVista.getIndexDestino();
@@ -367,6 +399,10 @@ public class ControladorComprarBillete {
         miVista.setIndexOrigen(destino);
     }
     
+    /**
+     * Comprueba si el pin introducido por la tarjeta es correcto y si ha pasado la tarjeta 2 segundos, si no, devuelve error
+     * En caso correcto, pone visible el menú de pago correcto y mete el billete en el historial
+     */
     public void procesarBtnPinActionPerformed(){
         if(comprobarPagoCredito(miModelo.getPin())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
             miVista.setVisibilidadLbError4(false);
@@ -380,6 +416,9 @@ public class ControladorComprarBillete {
         }
     }
     
+    /**
+     * Oculta el menú de pago correcto y vuelve a poner visible el paso 1 para la compra de un nuevo billete
+     */
     public void procesarBtnBilleteActionPerformed(){
         miVista.resetTodo();
         miVista.setVisible(1,0,0);
@@ -387,23 +426,39 @@ public class ControladorComprarBillete {
         miVista.disponerPagoCorrecto();
     }
     
+    /**
+     * Oculta el menú de pago correcto y el menú de los pasos y vuelve a la pantalla del menú principal
+     */
     public void procesarBtnSalirActionPerformed(){
         miVista.disponerPagoCorrecto();
         Main.getGestorVistas().mostrarVistaMenuPrincipal();
     }
     
+    /**
+     * Oculta los pasos y vuelve a la pantalla del menú principal
+     */
     public void procesarCancelar(){
         Main.getGestorVistas().mostrarVistaMenuPrincipal();
     }
     
+    /**
+     * Inicia el timer de la tarjeta de renfe
+     */
     public void procesarLbTarjetaRenfeMouseEntered(){
         miVista.empezarTimerRenfe();
     }
     
+    /**
+     * Para el timer de la tarjeta renfe
+     */
     public void procesarLbTarjetaRenfeMouseExited(){
         miVista.pararTimerRenfe();
     }
     
+    /**
+     * Comprueba que el saldo es suficiente para efectuar la compra del billete, si no lo es, devuelve error
+     * En caso de que sí lo sea actualiza el saldo de la tarjeta y mete el billete en el historial poniendo visible el menú de pago correcto
+     */
     public void procesarTimerRenfeActionPerformed(){
          if(tarjetaRenfePasada(miVista.getPrecio())){
                 meterBilleteHistorial();

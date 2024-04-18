@@ -31,6 +31,9 @@ public class Modelo {
     private boolean miMascota;
     final char[] pin = {'1', '2', '3', '4'};
     
+    /**
+     * Constructor de la clase modelo
+     */
     public Modelo(){
         cargarEstaciones();
         cargarRutas();
@@ -186,19 +189,37 @@ public class Modelo {
     public double getSaldo(){
         return saldo;
     }
-
+    
+    /**
+     * Guarda en una variable del modelo el parámetro fecha en formato String
+     * @param fecha un String en formato DD-MM-YYYY
+     */
     public void guardarFecha(String fecha){
         miFecha = fecha;
     }
     
+    /**
+     * Guarda en una variable del modelo el parámetro origen en formato String
+     * @param origen un String 
+     */
     public void guardarOrigen(String origen){
         miOrigen = origen;
     }
     
+    /**
+     * Guarda en una variable del modelo el parámetro destino en formato String
+     * @param destino 
+     */
     public void guardarDestino(String destino){
         miDestino = destino;
     }
     
+    /**
+     * Almacena en variables locales del modelo los parámetros de estado proporcionados
+     * @param bici un booleano cualquiera
+     * @param silla un booleano cualquiera
+     * @param mascota un booleano cualquiera
+     */
     public void guardarRadios(boolean bici, boolean silla, boolean mascota){
         miBici = bici;
         miSilla = silla;
@@ -207,9 +228,9 @@ public class Modelo {
     
     /**
      * Añadir un billete al historial
-     * @param datosBillete 
+     * @param datosBillete un String con datos del billete
      */
-    public void guardarHistorial(String datosBillete){
+    public void meterBilleteEnHistorial(String datosBillete){
         // Ruta del archivo
         String rutaArchivo = "./file/billetes.csv";
         String bicicletaString = "false";
@@ -281,7 +302,7 @@ public class Modelo {
     
     /**
      * Actualizar el historial a la lista de billetes dados
-     * @param datosBillete 
+     * @param datosBillete un Array list de billetes en forma String
      */
     public void guardarHistorial(ArrayList<String> billetes){
         // Ruta del archivo
@@ -314,6 +335,15 @@ public class Modelo {
         }
     }
     
+    /**
+     * Actualiza un billete en el historial y lo manda al final del mismo
+     * @param options un conjunto de 3 booleanos con los valores booleanos de los parámetros de estado del billete
+     * @param ruta un String con la información de la ruta del billete
+     * @param fecha un String con la fecha del billete a modificar
+     * @param origenSelec un String con el origen del billete a modificar
+     * @param destinoSelec un String con el destino del billete a modificar
+     * @param billeteAnterior el billete anterior en forma de String para reemplazarlo por el nuevo
+     */
     public void actualizarBillete(boolean[] options,String ruta,String fecha, String origenSelec, String destinoSelec, String billeteAnterior){
         // Ruta del archivo
         String rutaArchivo = "./file/billetes.csv";
@@ -409,6 +439,10 @@ public class Modelo {
         }
     }
     
+    /**
+     * Devuelve el número de billetes del historial
+     * @return un int igual o mayor que 0
+     */
     public int getNumBilletes(){
         String rutaArchivo = "./file/billetes.csv";
         int numLineas= 0;
@@ -427,38 +461,9 @@ public class Modelo {
         return numLineas;
     }
     
-    public static void borrarLinea(String nombreArchivo, String lineaABorrar) {
-        String archivoTemporal = "./file/temp.csv";
-        String lineaActual;
-
-        try {
-            File ficheroActual = new File(nombreArchivo);
-            File ficheroTemp = new File(archivoTemporal);
-
-            BufferedReader br = new BufferedReader(new FileReader(ficheroActual));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroTemp));
-            while ((lineaActual = br.readLine()) != null) {
-                // Si la línea no es la que queremos borrar, la escribimos en el archivo temporal
-                if (!lineaActual.trim().equals(lineaABorrar)) {
-                    bw.write(lineaActual + System.getProperty("line.separator"));
-                }
-            }
-            bw.close();
-            br.close();
-
-            if (!ficheroActual.delete()) {
-                return;
-            }
-
-            // Renombramos el archivo temporal al nombre original
-            ficheroTemp.renameTo(ficheroActual);
-           
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    
+    /**
+     * Elimina el fichero del historial de billetes
+     */
     public void borrarHistorial(){
         String nombreArchivo = "./file/billetes.csv";
         File ficheroActual = new File(nombreArchivo);
