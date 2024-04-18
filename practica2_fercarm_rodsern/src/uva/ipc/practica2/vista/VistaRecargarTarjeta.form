@@ -140,7 +140,7 @@
                             <Property name="text" type="java.lang.String" value="PIN:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="PIN">
+                        <Component class="javax.swing.JPasswordField" name="PIN">
                         </Component>
                         <Component class="javax.swing.JButton" name="btnAceptarPin">
                           <Properties>

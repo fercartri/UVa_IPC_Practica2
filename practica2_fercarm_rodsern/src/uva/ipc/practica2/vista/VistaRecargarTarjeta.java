@@ -51,7 +51,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         pnlPIN = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lbPIN = new javax.swing.JLabel();
-        PIN = new javax.swing.JTextField();
+        PIN = new javax.swing.JPasswordField();
         btnAceptarPin = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lbError = new javax.swing.JLabel();
@@ -77,7 +77,6 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
         dialogPago.setAlwaysOnTop(true);
         dialogPago.setLocation(new java.awt.Point(200, 200));
         dialogPago.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogPago.setPreferredSize(new java.awt.Dimension(430, 620));
         dialogPago.setSize(new java.awt.Dimension(430, 620));
 
         panelGlobal.setBackground(new java.awt.Color(233, 255, 255));
@@ -406,8 +405,8 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         if(getBilleteSeleccionado() != 0){
-            miControlador.procesarCargarCantidad();
             setErrorSeleccion(false);
+            miControlador.procesarCargarCantidad();
         }
         else{
             setErrorSeleccion(true);
@@ -493,7 +492,7 @@ public class VistaRecargarTarjeta extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField PIN;
+    private javax.swing.JPasswordField PIN;
     private javax.swing.JButton btnAceptarPin;
     private javax.swing.JToggleButton btnBillete10;
     private javax.swing.JToggleButton btnBillete20;
