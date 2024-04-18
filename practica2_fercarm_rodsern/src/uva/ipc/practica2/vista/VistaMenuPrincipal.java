@@ -139,14 +139,26 @@ public class VistaMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Eventos-----------------------------------------------------------------------------
+    /**
+     * Evento al pulsar el botón de comprar billete
+     * @param evt 
+     */
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
         miControlador.procesarComprar();
     }//GEN-LAST:event_btnComprarActionPerformed
 
+    /**
+     * Evento al pulsar el botón de acceso con tarjeta
+     * @param evt 
+     */
     private void btnTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarjetaActionPerformed
         miControlador.procesarTarjeta();
     }//GEN-LAST:event_btnTarjetaActionPerformed
 
+    /**
+     * Evento al pulsar el botón de salir
+     * @param evt 
+     */
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         miControlador.procesarSalir();
     }//GEN-LAST:event_btnSalirActionPerformed

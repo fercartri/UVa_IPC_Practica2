@@ -784,14 +784,26 @@ public class VistaComprarBillete extends javax.swing.JFrame {
         return (String)elegirDestino.getSelectedItem();
     }
     
+    /**
+     * Devuelve el estado del botón de bicicleta
+     * @return un boolean cualquiera
+     */
     public boolean getBicicleta(){
         return ckeckBoxBici.isSelected();
     }
     
+    /**
+     * Devuelve el estado del botón de mascota
+     * @return un boolean cualquiera
+     */
     public boolean getMascota(){
         return checkBoxMascota.isSelected();
     }
-     
+    
+    /**
+     * Devuelve el estado del botón de silla
+     * @return un boolean cualquiera
+     */
     public boolean getSilla(){
         return checkBoxSilla.isSelected();
     }
@@ -851,128 +863,244 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     }
     
     
-    
+    /**
+     * Pone el estado de visibilidad de la label de error del paso 1 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadLbError1(boolean valor){
         lbError1.setVisible(valor);
     }
     
+    /**
+     * Establece el texto de la etiqueta de error del paso 1 al mismo texto que el parámetro proporcionado
+     * @param valor un String no nulo
+     */
     public void setTextoLbError1(String valor){
         lbError1.setText(valor);
     }
     
-    public void setVisibilidadLbError3(boolean valor){
+    /**
+     * Pone el estado de visibilidad de la label de error del paso 2 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
+    public void setVisibilidadLbError2(boolean valor){
         lbError2.setVisible(valor);
     }
     
+    /**
+     * Establece el texto de la etiqueta de error del paso 2 al mismo texto que el parámetro proporcionado
+     * @param valor un String no nulo
+     */
+    public void setTextoLbError2(String valor){
+        lbError3.setText(valor);
+    }
+    
+    /**
+     * Pone el estado de visibilidad de la label de error del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
+    public void setVisibilidadLbError3(boolean valor){
+        lbError3.setVisible(valor);
+    }
+    
+    /**
+     * Establece el texto de la etiqueta de error del paso 3 al mismo texto que el parámetro proporcionado
+     * @param valor un String no nulo
+     */
     public void setTextoLbError3(String valor){
         lbError3.setText(valor);
     }
     
-    public void setVisibilidadLbError4(boolean valor){
-        lbError3.setVisible(valor);
-    }
-    
-    public void setTextoLbError4(String valor){
-        lbError3.setText(valor);
-    }
-    
+    /**
+     * Pone el estado de visibilidad de la label con la imagen de la tarjeta renfe del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadLbTarjetaRenfe(boolean valor){
         lbTarjetaRenfe.setVisible(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad de la label con el mensaje de mantener la tarjeta renfe del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadLbMantenerRenfe(boolean valor){
         lbInfoTarjeta2.setVisible(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad de la label con la imagen de la tarjeta de crédito del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadLbTarjetaCredito(boolean valor){
         lbTarjetaCredito.setVisible(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad de la label con el mensaje de mantener la tarjeta de crédito del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadLbMantenerCredito(boolean valor){
         lbInfoTarjeta1.setVisible(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad de la label con el mensaje de PIN: del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadLbPin(boolean valor){
         lbPIN.setVisible(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad del campo de contraseña del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadPin(boolean valor){
         pin.setVisible(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad del botón de aceptar del paso 3 en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadButtonPin(boolean valor){
         btnPIN.setVisible(valor);
     }
     
+    /**
+     * Devuelve si hay alguna ruta seleccionada en el paso 2
+     * @return un boolean cualquiera
+     */
     public boolean isListaRutasPosiblesSelected(){
         return !(lista_rutas_posibles.isSelectionEmpty());
     }
     
+    /**
+     * Devuelve el índice de la ruta seleccionada en el paso 2, 
+     * si no hay ninguna seleccionada devuelve -1
+     * @return un int mayor o igual que -1
+     */
     public int getListaRutasPosiblesIndex(){
         return lista_rutas_posibles.getSelectedIndex();
     }
     
+    /**
+     * Devuelve la ruta seleccionada en el paso 2 en formato String
+     * @return un String no nulo
+     */
     public String getListaRutasPosiblesString(){
         return lista_rutas_posibles.getSelectedValue();
     }
     
+    /**
+     * Establece el botón de pago con tarjeta de renfe en el valor pasado como parámetro
+     * @param valor un boolean cualquiera
+     */
     public void setRadioButtonRenfe(boolean valor){
         radioBtnRenfe.setSelected(valor);
     }
     
+    /**
+     * Establece el botón de pago con tarjeta de crédito en el valor pasado como parámetro
+     * @param valor un boolean cualquiera
+     */
     public void setRadioButtonCredito(boolean valor){
         radioBtnCredito.setSelected(valor);
     }
     
+    /**
+     * Obtiene el estado del botón de pago con tarjeta de crédito
+     * @return un boolean cualquiera
+     */
     public boolean getRadioButtonCredito(){
         return radioBtnCredito.isSelected();
     }
     
+    /**
+     * Obtiene el estado del botón de pago con tarjeta de renfe
+     * @return un boolean cualquiera
+     */
     public boolean getRadioButtonRenfe(){
         return radioBtnRenfe.isSelected();
     }
     
+    /**
+     * Obtiene el índice del origen seleccionado en el paso 1,
+     * si no hay ninguno seleccionado devuelve -1
+     * @return un int mayor o igual que -1
+     */
     public int getIndexOrigen(){
         return elegirOrigen.getSelectedIndex();
     }
     
+    /**
+     * Obtiene el índice del destino seleccionado en el paso 1,
+     * si no hay ninguno seleccionado devuelve -1
+     * @return un int mayor o igual que -1
+     */
     public int getIndexDestino(){
         return elegirDestino.getSelectedIndex();
     }
     
+    /**
+     * Establece el índice del destino en el paso 1 al valor del parámetro recibido
+     * @param valor un int mayor que -1
+     */
     public void setIndexDestino(int valor){
         elegirDestino.setSelectedIndex(valor);
     }
     
+    /**
+     * Establece el índice del origen en el paso 1 al valor del parámetro recibido
+     * @param valor un int mayor que -1
+     */
     public void setIndexOrigen(int valor){
         elegirOrigen.setSelectedIndex(valor);
     }
     
+    /**
+     * Pone el estado de visibilidad del menú de pago correcto en el parámetro dado
+     * @param valor un boolean cualquiera
+     */
     public void setVisibilidadPagoCorrecto(boolean valor){
         pago_correcto.setVisible(valor);
     }
     
+    /**
+     * Establece el texto del campo de contraseña en el mismo del parámetro recibido
+     * @param valor un String no nulo
+     */
     public void setPinText(String valor){
         pin.setText(valor);
     }
     
+    /**
+     * Oculta y destruye el menú de pago correcto
+     */
     public void disponerPagoCorrecto(){
         pago_correcto.setVisible(false);
         pago_correcto.dispose();
     }
     
+    /**
+     * Empieza el temporizador de la tarjeta renfe
+     */
     public void empezarTimerRenfe(){
          timer_tarjeta_renfe.start();
     }
     
+    /**
+     * Para el temporizador de la tarjeta renfe
+     */
     public void pararTimerRenfe(){
          timer_tarjeta_renfe.stop();
     }
     
     //EVENTOS***************************************************************************************************************************
-    
+   
     /**
      * Evento al pulsar el botón de siguiente del primer paso
+     * @param evt 
      */
     private void btnSig1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSig1ActionPerformed
         miControlador.procesarBtnSigP1ActionPerformed();
@@ -980,6 +1108,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al pulsar el botón de siguiente del segundo paso
+     * @param evt
      */
     private void btnSig2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSig2ActionPerformed
         miControlador.procesarBtnSigP2ActionPerformed();
@@ -987,6 +1116,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     
     /**
      * Evento al pulsar el botón de anterior del segundo paso
+     * @param evt
      */
     private void btnAnt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnt2ActionPerformed
         miControlador.procesarBtnAntP2ActionPerformed();
@@ -994,6 +1124,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al seleccionar la opción de pago con tarjeta de usuario TCyL
+     * @param evt
      */
     private void radioBtnRenfeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnRenfeActionPerformed
         miControlador.procesarRadioBtnRenfeActionPerformed();
@@ -1001,6 +1132,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al seleccionar la opción de pago con tarjeta de crédito
+     * @param evt
      */
     private void radioBtnCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnCreditoActionPerformed
         miControlador.procesarRadioBtnCreditoActionPerformed();
@@ -1008,6 +1140,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al pulsar el botón de anterior del tercer paso
+     * @param evt
      */
     private void btnAnt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnt3ActionPerformed
         miControlador.procesarBtnAntP3ActionPerformed();
@@ -1015,6 +1148,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al pulsar el botón de intercambio de estaciones
+     * @param evt
      */
     private void btnIntercambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntercambioActionPerformed
         miControlador.procesarBtnIntercambioActionPerformed();
@@ -1022,6 +1156,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al pulsar el botón de aceptar el PIN
+     * @param evt
      */
     private void btnPINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPINActionPerformed
        miControlador.procesarBtnPinActionPerformed();
@@ -1029,6 +1164,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
     
     /**
      * Evento al introducir el ratón sobre la tarjeta de crédito
+     * @param evt
      */
     private void lbTarjetaCreditoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaCreditoMouseEntered
         timer_tarjeta_credito.start();
@@ -1036,6 +1172,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al sacar el ratón de la tarjeta de crédito
+     * @param evt
      */
     private void lbTarjetaCreditoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaCreditoMouseExited
         timer_tarjeta_credito.stop();
@@ -1043,6 +1180,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al introducir el ratón sobre la tarjeta de usuario de TCyL
+     * @param evt
      */
     private void lbTarjetaRenfeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaRenfeMouseEntered
         miControlador.procesarLbTarjetaRenfeMouseEntered();
@@ -1050,6 +1188,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al sacar el ratón de la tarjeta de usuario de TCyL
+     * @param evt
      */
     private void lbTarjetaRenfeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbTarjetaRenfeMouseExited
         miControlador.procesarLbTarjetaRenfeMouseExited();
@@ -1057,6 +1196,7 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al pulsar el botón de comprar nuevo billete
+     * @param evt
      */
     private void btnBilleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBilleteActionPerformed
         miControlador.procesarBtnBilleteActionPerformed();
@@ -1064,11 +1204,16 @@ public class VistaComprarBillete extends javax.swing.JFrame {
 
     /**
      * Evento al pulsar el botón de salir
+     * @param evt
      */
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         miControlador.procesarBtnSalirActionPerformed();
     }//GEN-LAST:event_btnVolverActionPerformed
-
+    
+    /**
+     * Evento al pulsar el botón de cancelar 
+     * @param evt
+     */
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         miControlador.procesarCancelar();
     }//GEN-LAST:event_btnCancelarActionPerformed

@@ -18,10 +18,18 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
         miControlador.actualizarNumBilletes();
     }
     
+    /**
+     * Establece el texto de la label de saldo al texto rexibido como parámetro
+     * @param cadena un String no nulo
+     */
     public void lbSaldoSetText(String cadena){
         lbSaldo.setText(cadena);
     }
     
+    /**
+     * Establece el texto de la label de número de billetes al texto rexibido como parámetro
+     * @param cadena un String no nulo
+     */
     public void lbNumBilletesSetText(String cadena){
         lbNumBilletes.setText(cadena);
     }
@@ -155,14 +163,26 @@ public class VistaMenuUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Eventos-----------------------------------------------------------------------------
+    /**
+     * Evento al pulsar el botón de recargar tarjeta
+     * @param evt 
+     */
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         miControlador.procesarRecargar();
     }//GEN-LAST:event_btnRecargarActionPerformed
 
+    /**
+     * Evento al pulsar el botón de mis viajes
+     * @param evt 
+     */
     private void btnMisViajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMisViajesActionPerformed
         miControlador.procesarMisViajes();
     }//GEN-LAST:event_btnMisViajesActionPerformed
 
+    /**
+     * Evento al pulsar el botón de volver
+     * @param evt 
+     */
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         miControlador.procesarVolver();
     }//GEN-LAST:event_btnVolverActionPerformed

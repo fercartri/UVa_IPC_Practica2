@@ -329,7 +329,7 @@ public class ControladorComprarBillete {
             miModelo.guardarRadios(miVista.getBicicleta(), miVista.getSilla(), miVista.getMascota());
         }
         else{   //No hay elementos seleccionados
-             miVista.setVisibilidadLbError3(true);
+             miVista.setVisibilidadLbError2(true);
         }    
     }
     
@@ -347,7 +347,7 @@ public class ControladorComprarBillete {
      */
     public void procesarRadioBtnRenfeActionPerformed(){
         resetTodo();    
-        miVista.setVisibilidadLbError4(false);
+        miVista.setVisibilidadLbError3(false);
         if(miVista.getRadioButtonCredito()){
             miVista.setRadioButtonCredito(false);
         }
@@ -367,7 +367,7 @@ public class ControladorComprarBillete {
      */
     public void procesarRadioBtnCreditoActionPerformed(){
         resetTodo();
-        miVista.setVisibilidadLbError4(false);
+        miVista.setVisibilidadLbError3(false);
         if(miVista.getRadioButtonRenfe()){
               miVista.setRadioButtonRenfe(false);
         }
@@ -405,14 +405,14 @@ public class ControladorComprarBillete {
      */
     public void procesarBtnPinActionPerformed(){
         if(comprobarPagoCredito(miModelo.getPin())){   //Se ha pagado con tarjeta de crédito y el PIN es correcto
-            miVista.setVisibilidadLbError4(false);
+            miVista.setVisibilidadLbError3(false);
             miVista.setVisibilidadPagoCorrecto(true);
             meterBilleteHistorial();
         }
         else{
             miVista.setPinText("");
-            miVista.setTextoLbError4("Error al procesar el pago");
-            miVista.setVisibilidadLbError4(true);
+            miVista.setTextoLbError3("Error al procesar el pago");
+            miVista.setVisibilidadLbError3(true);
         }
     }
     
@@ -462,12 +462,12 @@ public class ControladorComprarBillete {
     public void procesarTimerRenfeActionPerformed(){
          if(tarjetaRenfePasada(miVista.getPrecio())){
                 meterBilleteHistorial();
-                miVista.setVisibilidadLbError3(false);
+                miVista.setVisibilidadLbError2(false);
                 miVista.setVisibilidadPagoCorrecto(true);
             }
             else{
-                miVista.setTextoLbError3("Saldo insuficiente");
-                miVista.setVisibilidadLbError3(true);
+                miVista.setTextoLbError2("Saldo insuficiente");
+                miVista.setVisibilidadLbError2(true);
             }
     }
     
