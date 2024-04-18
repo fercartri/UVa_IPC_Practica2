@@ -66,6 +66,7 @@ public class ControladorRecargarTarjeta {
     
     public void procesarCargarCantidad(){
         miVista.mostrarPago();
+        miModelo.resetTodo();
     }
     
     public void procesarVolver(){
